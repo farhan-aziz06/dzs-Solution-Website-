@@ -25,9 +25,11 @@ const HeroSection = () => {
           </p>
           
           <div className="flex items-center space-x-4">
-            <Button size="lg" className="bg-white text-black hover:bg-white/90 rounded-full px-8 flex items-center gap-2">
-              Get in contact
-              <ArrowRight className="w-4 h-4" />
+            <Button size="lg" className="bg-white text-black hover:bg-white/90 rounded-full px-8 flex items-center gap-2" asChild>
+              <a href="/contact">
+                Get in contact
+                <ArrowRight className="w-4 h-4" />
+              </a>
             </Button>
           </div>
         </div>
