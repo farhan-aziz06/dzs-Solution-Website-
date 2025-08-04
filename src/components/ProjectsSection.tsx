@@ -3,7 +3,7 @@ import React from 'react';
 const ProjectsSection = () => {
   const projects = [
     {
-      title: "Global Creative Strategy for Public Affairs",
+      title: "",
       category: "AI Integrated Workflow Product",
       team: ["/girl.svg", "/girl1.svg", "/boy.svg"],
       image: "/fig1.svg",
@@ -11,7 +11,7 @@ const ProjectsSection = () => {
       badge: "AI"
     },
     {
-      title: "Movie Streaming Platform",
+      title: "",
       category: "AI Integrated Workflow Product", 
       team: ["/girl1.svg", "/boy.svg", "/girl.svg"],
       image: "/fig2.svg",
@@ -19,7 +19,7 @@ const ProjectsSection = () => {
       badge: "Web"
     },
     {
-      title: "Visual Designer Portfolio",
+      title: "",
       category: "AI Integrated Workflow Product",
       team: ["/boy.svg", "/girl.svg", "/girl1.svg"],
       image: "/fig3.svg",
@@ -27,7 +27,7 @@ const ProjectsSection = () => {
       badge: "App"
     },
     {
-      title: "Network Infrastructure", 
+      title: "", 
       category: "AI Integrated Workflow Product",
       team: ["/girl1.svg", "/girl.svg", "/boy.svg"],
       image: "/fig4.svg",
@@ -37,12 +37,12 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section className="py-16 px-6 bg-white">
+    <section className="pt-10 pb-16 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Projects</h2>
-          <p className="text-gray-600 text-lg max-w-2xl">
+          <h2 className="text-4xl font-semi-bold text-gray-900 mb-4">Our Projects</h2>
+          <p className="text-gray-500 text-lg max-w-2xl">
             We craft bold digital solutions that drive growth. From concept to launch, 
             solving real-world problems with precision and creativity.
           </p>
