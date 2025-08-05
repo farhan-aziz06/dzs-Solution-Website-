@@ -100,8 +100,8 @@ const ProjectsSection = () => {
           ))}
         </div>
 
-        {/* Services Section */}
-        <div className="mt-24">
+        {/* Services Section - Hidden on Mobile */}
+        <div className="hidden sm:block mt-24">
           {/* Services Header - Using same styling as Projects header */}
           <div className="mb-12">
             <h2 className="text-4xl font-semi-bold text-gray-900 mb-4">More Than Just Services</h2>

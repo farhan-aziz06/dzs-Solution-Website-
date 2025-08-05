@@ -1,122 +1,135 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import React from 'react';
 
 const Services = () => {
   const services = [
     {
       title: "Generative Intelligence (AI)",
-      description: "Advanced machine learning solutions that harness the power of artificial intelligence to automate processes, enhance decision-making, and drive innovation across your business operations.",
+      description: "We develop iOS and Android apps using cross-platform technologies for wider reach and consistent performance, enhanced with AI and ML integration for smarter user experiences.",
       features: [
-        "AI Strategy Development",
-        "Custom AI Model Training", 
-        "Natural Language Processing",
-        "Computer Vision Solutions",
-        "Predictive Analytics"
+        "Generative AI & Deep Learning",
+        "AI Research & Innovation",
+        "AI Driven Automation and Optimization",
+        "Computer Vision and Image Processing",
+        "Datascience and Predictive Analysis",
+        "Natural Language Processing"
       ],
+      image: "/genai.svg",
+      stack: "/stack1.svg",
       gradient: "bg-gradient-to-br from-purple-500 via-purple-600 to-indigo-700"
     },
     {
       title: "App Development", 
-      description: "End-to-end mobile application development services that bring your ideas to life with cutting-edge technology, intuitive design, and seamless user experiences across all platforms.",
+      description: "We develop iOS and Android apps using cross-platform technologies for wider reach and consistent performance, enhanced with AI and ML integration for smarter user experiences.",
       features: [
-        "iOS App Development",
-        "Android App Development",
-        "Cross-platform Solutions",
-        "App Store Optimization",
-        "Maintenance & Support"
+        "Cross-Platform Mobile Development",
+        "AI-Integrated Smart Apps",
+        "App Performance Tuning & Monitoring",
+        "Mobile UI/UX Innovation",
+        "Cloud-Connected Mobile Applications",
+        "Secure Mobile App Architecture"
       ],
+      image: "/appdev.svg",
+      stack: "/stack2.svg",
       gradient: "bg-gradient-to-br from-purple-600 via-indigo-600 to-blue-700"
     },
     {
       title: "Web Development",
-      description: "Comprehensive web development solutions that combine modern design principles with robust functionality to create websites that not only look amazing but perform exceptionally.",
+      description: "We develop iOS and Android apps using cross-platform technologies for wider reach and consistent performance, enhanced with AI and ML integration for smarter user experiences.",
       features: [
-        "Frontend Development",
-        "Backend Development", 
-        "E-commerce Solutions",
-        "CMS Development",
-        "API Integration"
+        "Modern Web Frameworks & Tooling",
+        "API-Driven Web Ecosystem",
+        "Dynamic Web Applications with Real-Time Data",
+        "Web Security and Encryption Protocols",
+        "Progressive Web Apps (PWA) Development",
+        "AI-Powered Web Interface"
       ],
+      image: "/genai.svg",
+      stack: "/stack3.svg",
       gradient: "bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-600"
     },
     {
       title: "UI/UX Design",
-      description: "User-centered design services that focus on creating intuitive, engaging, and accessible digital experiences that delight users and drive business results.",
+      description: "We develop iOS and Android apps using cross-platform technologies for wider reach and consistent performance, enhanced with AI and ML integration for smarter user experiences.",
       features: [
-        "User Research & Analysis",
-        "Wireframing & Prototyping",
-        "Visual Design",
-        "Usability Testing", 
-        "Design Systems"
+        "Human-Centered Design & Usability Testing",
+        "Motion Design & Microinteractions",
+        "Design System & Interactive Prototyping",
+        "Accessibility & Inclusive Design Practices",
+        "Visual Storytelling & Branding through Design",
+        "User Research & Data-Driven UI Decisions"
       ],
+      image: "/ui.svg",
+      stack: "/stack4.svg",
       gradient: "bg-gradient-to-br from-purple-500 via-pink-500 to-rose-600"
     }
   ];
 
-  const teamMembers = [
-    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face",
-    "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=40&h=40&fit=crop&crop=face", 
-    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face",
-    "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop&crop=face",
-    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=40&h=40&fit=crop&crop=face"
-  ];
-
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      
-      <main className="pt-20 pb-16">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              Services
-            </h1>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              We offer comprehensive digital solutions to help your business thrive in the modern landscape
-            </p>
-          </div>
+    <div className="min-h-screen bg-white">
+      {/* Header with Background Image */}
+      <div className="mt-10 px-6">
+        <div 
+          className="rounded-3xl overflow-hidden bg-white"
+          style={{
+            backgroundImage: 'url(/bg.svg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        >
+          <section className="pt-16 pb-10 max-w-5xl mx-auto">
+            {/* Header Content */}
+            <div className="mb-8 px-4">
+              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Services</h1>
+              <p className="text-gray-500 text-base max-w-2xl leading-relaxed">
+                We offer comprehensive digital solutions to help your business thrive in the modern landscape
+              </p>
+            </div>
+          </section>
+        </div>
+      </div>
 
-          <div className="space-y-8">
+      {/* Services Section */}
+      <section className="py-8 px-6 bg-white pb-16 pt-16">
+        <div className="max-w-6xl mx-auto">
+          <div className="space-y-6">
             {services.map((service, index) => (
-              <div key={index} className="bg-card rounded-3xl overflow-hidden shadow-lg border">
-                <div className={`h-48 ${service.gradient} relative`}>
-                  <div className="absolute inset-0 bg-black/10"></div>
+              <div key={index} className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100">
+                {/* Service Image Header */}
+                <div className={`h-40 ${service.gradient} relative rounded-t-3xl overflow-hidden`}>
+                  <div className="absolute inset-0 bg-black/5"></div>
+                  <div className="relative w-full h-full flex items-center justify-center">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
                 
-                <div className="p-8">
-                  <h2 className="text-2xl font-bold text-foreground mb-4">
+                <div className="p-6">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-3">
                     {service.title}
                   </h2>
                   
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div>
-                      <p className="text-muted-foreground mb-6 leading-relaxed">
-                        {service.description}
-                      </p>
-                      
-                      <div className="flex flex-wrap gap-2 mb-6">
-                        {service.features.map((feature, featureIndex) => (
-                          <Badge key={featureIndex} variant="secondary" className="text-sm">
-                            {feature}
-                          </Badge>
-                        ))}
+                  <p className="text-gray-600 mb-5 leading-relaxed text-sm">
+                    {service.description}
+                  </p>
+                  
+                  <div className="grid grid-cols-2 gap-x-6 gap-y-2 mb-5">
+                    {service.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="bg-gradient-to-r from-gray-100 via-gray-50 to-gray-100 rounded-full px-3 py-3 text-gray-700 text-xs shadow-sm border border-gray-200 font-semibold">
+                        {feature}
                       </div>
-                    </div>
-                    
-                    <div className="flex flex-col justify-between">
-                      <div className="flex -space-x-2 mb-6">
-                        {teamMembers.map((member, memberIndex) => (
-                          <div key={memberIndex} className="w-10 h-10 rounded-full border-2 border-background overflow-hidden">
-                            <img src={member} alt="Team member" className="w-full h-full object-cover" />
-                          </div>
-                        ))}
-                      </div>
-                      
-                      <Button className="self-start">
-                        Learn More
-                      </Button>
+                    ))}
+                  </div>
+                  
+                  <div className="flex justify-center pt-4 pb-4">
+                    <div className="w-auto">
+                      <img src={service.stack} alt="Tech stack" className="h-10 object-contain" />
                     </div>
                   </div>
                 </div>
@@ -124,9 +137,7 @@ const Services = () => {
             ))}
           </div>
         </div>
-      </main>
-      
-      <Footer />
+      </section>
     </div>
   );
 };
