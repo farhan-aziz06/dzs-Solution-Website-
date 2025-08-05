@@ -102,95 +102,25 @@ const ProjectsSection = () => {
 
         {/* Services Section */}
         <div className="mt-24">
-          {/* Services Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">More Than Just Services</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              We go beyond basic services—offering long-term support, flexible payments, expert teams, and scalable 
-              solutions. Everything is designed to meet your business needs, growth, and long-term success.
+          {/* Services Header - Using same styling as Projects header */}
+          <div className="mb-12">
+            <h2 className="text-4xl font-semi-bold text-gray-900 mb-4">More Than Just Services</h2>
+            <p className="text-gray-500 text-lg max-w-4xl">
+             We go beyond basic services—offering long-term support, flexible payments, expert teams, and scalable solutions. Every project is designed with care to ensure value, growth, and lasting impact for our clients.
             </p>
-          </div>
-
-          {/* Service Cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Card 1 */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Affordable Services</h3>
-              <p className="text-gray-600 mb-6">
-                We believe great technology shouldn't come with a hefty price tag. Our pricing is transparent, competitive, 
-                and designed to match your team needs. Whether you're a startup or enterprise, we scale to fit your budget.
-              </p>
-              <div className="relative h-20 flex items-center justify-center">
-                <div className="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center text-white text-2xl font-bold">
-                  $
-                </div>
-              </div>
-            </div>
-
-            {/* Card 2 */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Scalable Solutions</h3>
-              <p className="text-gray-600 mb-6">
-                We don't just build for today—we build for growth. Our designs, workflows, and IT tools are created to scale 
-                with your evolving needs.
-              </p>
-              <div className="relative h-20 flex items-center justify-center">
-                <div className="flex space-x-2">
-                  <div className="w-4 h-4 bg-purple-400 rounded transform rotate-45"></div>
-                  <div className="w-6 h-6 bg-purple-500 rounded transform rotate-45"></div>
-                  <div className="w-8 h-8 bg-purple-600 rounded transform rotate-45"></div>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 3 */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Flexible Payment Plans</h3>
-              <p className="text-gray-600 mb-6">
-                We understand that every business has different cash flow dynamics. Self-payments, 
-                milestone-based billing or subscription models—choose what works best for your business cycle and 
-                budget.
-              </p>
-              <div className="relative h-20 flex items-center justify-center">
-                <div className="w-20 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center text-white font-bold text-sm">
-                  CARD
-                </div>
-              </div>
-            </div>
-
-            {/* Card 4 */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Lifetime Support</h3>
-              <p className="text-gray-600 mb-6">
-                Our relationship doesn't end at project delivery. We offer ongoing support, updates, 
-                and maintenance to keep your software running. Think of us as your trusted technology 
-                partner for life.
-              </p>
-              <div className="relative h-20 flex items-center justify-center">
-                <div className="w-16 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white text-2xl font-bold">
-                  ∞
-                </div>
-              </div>
-            </div>
-
-            {/* Card 5 */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Expert Match</h3>
-              <p className="text-gray-600 mb-6">
-                Get matched with the right experts from our trusted network. Every developer, 
-                designer, or strategist is committed to excellence. We're strict about quality, 
-                so you don't have to be.
-              </p>
-              <div className="relative h-20 flex items-center justify-center">
-                <div className="flex space-x-2">
-                  <div className="w-3 h-16 bg-purple-400 rounded"></div>
-                  <div className="w-3 h-12 bg-purple-500 rounded"></div>
-                  <div className="w-3 h-20 bg-purple-600 rounded"></div>
-                </div>
-              </div>
+            {/* Services Image */}
+            <div className="mt-8">
+              <img
+                src="/ser.svg"
+                alt="Services illustration"
+                className="max-w-6xl h-auto"
+              />
             </div>
           </div>
-        </div>
+
+          
+     
+     </div>
       </div>
     </section>
   );
