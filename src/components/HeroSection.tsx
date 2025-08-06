@@ -13,18 +13,18 @@ const HeroSection = () => {
 
   return (
     <section className="relative overflow-hidden bg-white min-h-screen px-6 py-9">
-      {/* Background with he.svg behind gradient.svg */}
+      {/* Background with he.svg behind gradient.svg - now with rounded corners */}
       <div className="absolute inset-6 rounded-3xl overflow-hidden">
         <img
           src="/he.svg"
           alt=""
-          className="absolute w-full h-full object-cover"
-          style={{ top: "-1.30px", left: "0", right: "0", bottom: "0.20px" }}
+          className="absolute w-full h-full object-cover rounded-3xl"
+          style={{ top: "-2px", left: "0", right: "0", bottom: "0.50px" }}
         />
         <img
           src="/Gradient.svg"
           alt=""
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover rounded-3xl"
         />
       </div>
 
@@ -89,7 +89,7 @@ const HeroSection = () => {
                     Real stories. Real results. Hear what our clients have to say.
                   </p>
                   <a
-                    href="#"
+                    href="/about#client-reviews"
                     className="text-black hover:text-gray-700 text-xs font-semibold transition-colors duration-200 flex items-center space-x-1"
                   >
                     <span>See Reviews</span>

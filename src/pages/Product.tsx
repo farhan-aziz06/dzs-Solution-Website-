@@ -1,8 +1,31 @@
 import Header from '@/components/Header';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Services from '@/pages/Services';
 
 const Products = () => {
-   const projects = [
+  const [isHeaderVisible, setIsHeaderVisible] = useState(false);
+  const [isProjectsVisible, setIsProjectsVisible] = useState(false);
+  const [activeTab, setActiveTab] = useState('Artificial Intelligence');
+
+  useEffect(() => {
+    // Trigger header animation immediately
+    setIsHeaderVisible(true);
+    
+    // Trigger projects animation after header animation
+    const timer = setTimeout(() => {
+      setIsProjectsVisible(true);
+    }, 300);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const tabs = [
+    'Artificial Intelligence',
+    'App Development', 
+    'Web Technology'
+  ];
+
+  const projects = [
     {
       title: "",
       category: "AI Integrated Workflow Product",
@@ -65,8 +88,12 @@ const Products = () => {
         }}
       >
         <div className="relative max-w-5xl mx-auto">
-          {/* Header Content */}
-          <div className="mb-8">
+          {/* Header Content with slide-in from right animation */}
+          <div className={`mb-8 transform transition-all duration-700 ease-out ${
+            isHeaderVisible 
+              ? 'translate-x-0 opacity-100' 
+              : 'translate-x-full opacity-0'
+          }`}>
             <h1 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-2 mt-9">Mobile app development</h1>
             <p className="text-gray-500 text-base max-w-2xl leading-relaxed">
               We craft bold digital solutions that drive growth. From concept to launch,
@@ -75,24 +102,22 @@ const Products = () => {
             
             {/* Filter Tags - Connected Design */}
             <div className="flex flex-wrap mt-6">
- 
-  <div className="flex w-fit overflow-hidden border border-purple-300 rounded-full shadow-md bg-white">
-    
-    
-    <button className="bg-purple-500 text-white px-5 py-2 text-sm font-medium transition-all duration-200">
-      Artificial Intelligence
-    </button>
-    
-  
-    <button className="bg-transparent text-gray-500 px-5 py-2 text-sm font-medium hover:bg-purple-100 transition-all duration-200">
-      App Development
-    </button>
-    
-    <button className="bg-transparent text-gray-500 px-5 py-2 text-sm font-medium hover:bg-purple-100 transition-all duration-200">
-      Web Technology
-    </button>
-  </div>
-</div>
+              <div className="flex bg-white border border-gray-200 rounded-full overflow-hidden">
+                {tabs.map((tab, index) => (
+                  <button
+                    key={tab}
+                    onClick={() => setActiveTab(tab)}
+                    className={`px-5 py-2 text-sm font-medium transition-all duration-200 relative ${
+                      activeTab === tab
+                        ? 'bg-purple-500 text-white rounded-full shadow-md z-10 before:absolute before:inset-0 before:bg-gradient-to-b before:from-white/20 before:to-transparent before:rounded-full before:pointer-events-none'
+                        : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'
+                    }`}
+                  >
+                    {tab}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -100,14 +125,28 @@ const Products = () => {
       {/* Projects Section */}
       <section className="py-8 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          {/* Project Grid - Using ProjectsSection styling */}
-          <section className="pt-4 pb-16 px-6 bg-white rounded-3xl shadow-sm">
+          {/* Project Grid with slide-up animation */}
+          <section className={`pt-4 pb-16 px-6 bg-white rounded-3xl shadow-sm transform transition-all duration-700 ease-out ${
+            isProjectsVisible 
+              ? 'translate-y-0 opacity-100' 
+              : 'translate-y-16 opacity-0'
+          }`}>
             <div className="max-w-6xl mx-auto">
 
               {/* Project Grid with ProjectsSection styling */}
               <div className="grid md:grid-cols-2 gap-6">
                 {projects.map((project, index) => (
-                  <div key={index} className="group cursor-pointer">
+                  <div 
+                    key={index} 
+                    className={`group cursor-pointer transform transition-all duration-500 ease-out ${
+                      isProjectsVisible 
+                        ? 'translate-y-0 opacity-100' 
+                        : 'translate-y-8 opacity-0'
+                    }`}
+                    style={{ 
+                      transitionDelay: isProjectsVisible ? `${index * 100}ms` : '0ms' 
+                    }}
+                  >
                     {/* Image Container with Gradient Background */}
                     <div className={`relative ${project.bgColor} rounded-3xl aspect-[5/3] flex items-center justify-center overflow-hidden mb-4 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1`}>
                       <div className="relative w-full h-full flex items-center justify-center">
@@ -159,6 +198,7 @@ const Products = () => {
           </section>
         </div>
       </section>
+      <Services />
     </div>
   );
 };

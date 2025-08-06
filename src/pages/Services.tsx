@@ -1,9 +1,65 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 const Services = () => {
+  const [isHeaderVisible, setIsHeaderVisible] = useState(false);
+  const [visibleServices, setVisibleServices] = useState(new Set());
+  const headerRef = useRef(null);
+  const serviceRefs = useRef([]);
+
+  useEffect(() => {
+    // Trigger header animation immediately on mount
+    const headerTimer = setTimeout(() => {
+      setIsHeaderVisible(true);
+    }, 100);
+
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '50px'
+    };
+
+    // Header observer (as backup)
+    const headerObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setIsHeaderVisible(true);
+        }
+      });
+    }, observerOptions);
+
+    // Services observer
+    const servicesObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const index = serviceRefs.current.indexOf(entry.target);
+          if (index !== -1) {
+            setVisibleServices(prev => new Set([...prev, index]));
+          }
+        }
+      });
+    }, observerOptions);
+
+    // Observe header
+    if (headerRef.current) {
+      headerObserver.observe(headerRef.current);
+    }
+
+    // Observe service cards
+    serviceRefs.current.forEach((ref) => {
+      if (ref) {
+        servicesObserver.observe(ref);
+      }
+    });
+
+    return () => {
+      clearTimeout(headerTimer);
+      headerObserver.disconnect();
+      servicesObserver.disconnect();
+    };
+  }, []);
+
   const services = [
     {
       title: "Generative Intelligence (AI)",
@@ -81,8 +137,15 @@ const Services = () => {
           }}
         >
           <section className="pt-16 pb-10 max-w-5xl mx-auto">
-            {/* Header Content */}
-            <div className="mb-8 px-4">
+            {/* Header Content with slide-in from right animation */}
+            <div 
+              ref={headerRef}
+              className={`mb-8 px-4 transform transition-all duration-700 ease-out ${
+                isHeaderVisible 
+                  ? 'translate-x-0 opacity-100' 
+                  : 'translate-x-full opacity-0'
+              }`}
+            >
               <h1 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-3">Services</h1>
               <p className="text-gray-500 text-base max-w-2xl leading-relaxed">
                 We offer comprehensive digital solutions to help your business thrive in the modern landscape
@@ -97,7 +160,18 @@ const Services = () => {
         <div className="max-w-6xl mx-auto">
           <div className="space-y-6">
             {services.map((service, index) => (
-              <div key={index} className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100">
+              <div 
+                key={index} 
+                ref={el => serviceRefs.current[index] = el}
+                className={`bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 transform transition-all duration-700 ease-out ${
+                  visibleServices.has(index)
+                    ? 'translate-y-0 opacity-100' 
+                    : 'translate-y-16 opacity-0'
+                }`}
+                style={{ 
+                  transitionDelay: visibleServices.has(index) ? `${index * 150}ms` : '0ms' 
+                }}
+              >
                 {/* Service Image Header */}
                 <div className={`h-40 ${service.gradient} relative rounded-t-3xl overflow-hidden`}>
                   <div className="absolute inset-0 bg-black/5"></div>
@@ -121,13 +195,30 @@ const Services = () => {
                   
                   <div className="grid grid-cols-2 gap-x-6 gap-y-2 mb-5">
                     {service.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="bg-gradient-to-r from-gray-100 via-gray-50 to-gray-100 rounded-full px-3 py-3 text-gray-700 text-xs shadow-sm border border-gray-200 font-semibold">
+                      <div 
+                        key={featureIndex} 
+                        className={`bg-gradient-to-r from-gray-100 via-gray-50 to-gray-100 rounded-full px-3 py-3 text-gray-700 text-xs shadow-sm border border-gray-200 font-semibold transform transition-all duration-500 ease-out ${
+                          visibleServices.has(index)
+                            ? 'translate-y-0 opacity-100' 
+                            : 'translate-y-4 opacity-0'
+                        }`}
+                        style={{ 
+                          transitionDelay: visibleServices.has(index) ? `${(index * 150) + (featureIndex * 50) + 200}ms` : '0ms' 
+                        }}
+                      >
                         {feature}
                       </div>
                     ))}
                   </div>
                   
-                  <div className="flex justify-center pt-4 pb-4">
+                  <div className={`flex justify-center pt-4 pb-4 transform transition-all duration-500 ease-out ${
+                    visibleServices.has(index)
+                      ? 'translate-y-0 opacity-100' 
+                      : 'translate-y-4 opacity-0'
+                  }`}
+                  style={{ 
+                    transitionDelay: visibleServices.has(index) ? `${(index * 150) + 500}ms` : '0ms' 
+                  }}>
                     <div className="w-auto">
                       <img src={service.stack} alt="Tech stack" className="h-10 object-contain" />
                     </div>
