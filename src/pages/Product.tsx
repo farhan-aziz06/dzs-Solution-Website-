@@ -67,7 +67,7 @@ const Products = () => {
         <div className="relative max-w-5xl mx-auto">
           {/* Header Content */}
           <div className="mb-8">
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2 mt-9">Mobile app development</h1>
+            <h1 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-2 mt-9">Mobile app development</h1>
             <p className="text-gray-500 text-base max-w-2xl leading-relaxed">
               We craft bold digital solutions that drive growth. From concept to launch,
               solving real-world problems with precision and creativity.

@@ -83,7 +83,7 @@ const Services = () => {
           <section className="pt-16 pb-10 max-w-5xl mx-auto">
             {/* Header Content */}
             <div className="mb-8 px-4">
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Services</h1>
+              <h1 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-3">Services</h1>
               <p className="text-gray-500 text-base max-w-2xl leading-relaxed">
                 We offer comprehensive digital solutions to help your business thrive in the modern landscape
               </p>

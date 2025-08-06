@@ -42,7 +42,7 @@ const About = () => {
           >
             <section className="pt-16 pb-10 max-w-5xl mx-auto">
               <div className="mb-8 px-4">
-                <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">About us</h1>
+                <h1 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-3">About us</h1>
                 <p className="text-gray-500 text-base max-w-2xl leading-relaxed">
                   We are a dedicated team of software developers, designers, and strategists passionate about creating 
                   digital solutions that make a difference. With years of experience and a commitment to excellence, 

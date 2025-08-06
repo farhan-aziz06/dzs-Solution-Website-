@@ -1,6 +1,54 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const ProjectsSection = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [servicesVisible, setServicesVisible] = useState(false);
+  const sectionRef = useRef(null);
+  const servicesRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      }
+    );
+
+    const servicesObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setServicesVisible(true);
+        }
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    if (servicesRef.current) {
+      servicesObserver.observe(servicesRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+      if (servicesRef.current) {
+        servicesObserver.unobserve(servicesRef.current);
+      }
+    };
+  }, []);
+
   const projects = [
     {
       title: "",
@@ -37,21 +85,39 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section className="pt-10 pb-16 px-6 bg-white">
+    <section ref={sectionRef} className="pt-0 pb-16 px-6 bg-white overflow-hidden">
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="mb-12">
-          <h2 className="text-4xl font-semi-bold text-gray-900 mb-4">Our Projects</h2>
-          <p className="text-gray-500 text-lg max-w-2xl">
+        {/* Header Animation - Slide from left */}
+        <div className={`mb-12 transition-all duration-1000 ease-out ${
+          isVisible 
+            ? 'translate-x-0 opacity-100' 
+            : '-translate-x-20 opacity-0'
+        }`}>
+          <h2 className="text-4xl font-semibold text-gray-900 mb-4 transition-all duration-1000">
+            Our Projects
+          </h2>
+          <p className="text-gray-500 text-lg max-w-2xl transition-all duration-1000">
             We craft bold digital solutions that drive growth. From concept to launch, 
             solving real-world problems with precision and creativity.
           </p>
         </div>
 
-        {/* Project Grid */}
-        <div className="grid md:grid-cols-2 gap-6">
+        {/* Project Grid - Slide from bottom */}
+        <div className={`grid md:grid-cols-2 gap-6 transition-all duration-1000 delay-300 ${
+          isVisible 
+            ? 'translate-y-0 opacity-100' 
+            : 'translate-y-20 opacity-0'
+        }`}>
           {projects.map((project, index) => (
-            <div key={index} className="group cursor-pointer">
+            <div 
+              key={index} 
+              className={`group cursor-pointer transition-all duration-1000 ${
+                isVisible 
+                  ? 'translate-y-0 opacity-100' 
+                  : 'translate-y-20 opacity-0'
+              }`}
+              style={{ transitionDelay: `${400 + (index * 150)}ms` }}
+            >
               {/* Image Container with Gradient Background */}
               <div className={`relative ${project.bgColor} rounded-3xl aspect-[5/3] flex items-center justify-center overflow-hidden mb-4 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1`}>
                 <div className="relative w-full h-full flex items-center justify-center">
@@ -101,26 +167,36 @@ const ProjectsSection = () => {
         </div>
 
         {/* Services Section - Hidden on Mobile */}
-        <div className="hidden sm:block mt-24">
-          {/* Services Header - Using same styling as Projects header */}
-          <div className="mb-12">
-            <h2 className="text-4xl font-semi-bold text-gray-900 mb-4">More Than Just Services</h2>
-            <p className="text-gray-500 text-lg max-w-4xl">
+        <div ref={servicesRef} className="hidden sm:block mt-24">
+          {/* Services Header - Slide from left */}
+          <div className={`mb-12 transition-all duration-1000 ease-out ${
+            servicesVisible 
+              ? 'translate-x-0 opacity-100' 
+              : '-translate-x-20 opacity-0'
+          }`}>
+            <h2 className="text-4xl font-semibold text-gray-900 mb-4 transition-all duration-1000">
+              More Than Just Services
+            </h2>
+            <p className="text-gray-500 text-lg max-w-4xl transition-all duration-1000">
              We go beyond basic services—offering long-term support, flexible payments, expert teams, and scalable solutions. Every project is designed with care to ensure value, growth, and lasting impact for our clients.
             </p>
-            {/* Services Image */}
-            <div className="mt-8">
-              <img
-                src="/ser.svg"
-                alt="Services illustration"
-                className="max-w-6xl h-auto"
-              />
+            
+            {/* Services Image - Slide from bottom */}
+            <div className={`mt-8 transition-all duration-1000 delay-400 ${
+              servicesVisible 
+                ? 'translate-y-0 opacity-100' 
+                : 'translate-y-20 opacity-0'
+            }`}>
+              <div className={`transition-all duration-1000 delay-600`}>
+                <img
+                  src="/ser.svg"
+                  alt="Services illustration"
+                  className="max-w-6xl h-auto transition-all duration-500"
+                />
+              </div>
             </div>
           </div>
-
-          
-     
-     </div>
+        </div>
       </div>
     </section>
   );
