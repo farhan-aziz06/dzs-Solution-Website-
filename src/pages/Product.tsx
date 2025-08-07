@@ -79,8 +79,7 @@ const Products = () => {
   return (
     <div className="min-h-screen">
       {/* Header with Background Image */}
-      {/* Header with Background Image */}
-      <div className="mt-10 px-6">
+      <div className="mt-10 px-4 sm:px-6">
         <div 
           className="rounded-3xl overflow-hidden bg-white"
           style={{
@@ -97,28 +96,50 @@ const Products = () => {
                 ? 'translate-x-0 opacity-100' 
                 : 'translate-x-full opacity-0'
             }`}>
-              <h1 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-2 mt-9">Mobile app development</h1>
-              <p className="text-gray-500 text-base max-w-2xl leading-relaxed">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 mb-2 mt-9">Mobile app development</h1>
+              <p className="text-gray-500 text-sm sm:text-base max-w-2xl leading-relaxed">
                 We craft bold digital solutions that drive growth. From concept to launch,
                 solving real-world problems with precision and creativity.
               </p>
               
-              {/* Filter Tags - Connected Design */}
-              <div className="flex flex-wrap mt-6">
-                <div className="flex bg-white border border-gray-200 rounded-full overflow-hidden">
-                  {tabs.map((tab, index) => (
-                    <button
-                      key={tab}
-                      onClick={() => setActiveTab(tab)}
-                      className={`px-5 py-2 text-sm font-medium transition-all duration-200 relative ${
-                        activeTab === tab
-                          ? 'bg-purple-500 text-white rounded-full shadow-md z-10 before:absolute before:inset-0 before:bg-gradient-to-b before:from-white/20 before:to-transparent before:rounded-full before:pointer-events-none'
-                          : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'
-                      }`}
-                    >
-                      {tab}
-                    </button>
-                  ))}
+              {/* Filter Tags - Mobile Optimized */}
+              <div className="mt-6">
+                {/* Mobile: Stack tabs vertically or use smaller text */}
+                <div className="block sm:hidden">
+                  <div className="flex flex-col gap-2">
+                    {tabs.map((tab, index) => (
+                      <button
+                        key={tab}
+                        onClick={() => setActiveTab(tab)}
+                        className={`w-full px-4 py-2.5 text-sm font-medium transition-all duration-200 rounded-full ${
+                          activeTab === tab
+                            ? 'bg-purple-500 text-white shadow-md'
+                            : 'bg-white border border-gray-200 text-gray-600 hover:text-gray-800 hover:bg-gray-50'
+                        }`}
+                      >
+                        {tab}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Desktop: Original horizontal layout */}
+                <div className="hidden sm:flex">
+                  <div className="flex bg-white border border-gray-200 rounded-full overflow-hidden">
+                    {tabs.map((tab, index) => (
+                      <button
+                        key={tab}
+                        onClick={() => setActiveTab(tab)}
+                        className={`px-5 py-2 text-sm font-medium transition-all duration-200 relative whitespace-nowrap ${
+                          activeTab === tab
+                            ? 'bg-purple-500 text-white rounded-full shadow-md z-10'
+                            : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'
+                        }`}
+                      >
+                        {tab}
+                      </button>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -127,10 +148,10 @@ const Products = () => {
       </div>
 
       {/* Projects Section */}
-      <section className="py-8 px-6 bg-white">
+      <section className="py-8 px-4 sm:px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           {/* Project Grid with slide-up animation */}
-          <section className={`pt-4 pb-16 px-6 bg-white rounded-3xl shadow-sm transform transition-all duration-700 ease-out ${
+          <section className={`pt-4 pb-16 px-4 sm:px-6 bg-white rounded-3xl shadow-sm transform transition-all duration-700 ease-out ${
             isProjectsVisible 
               ? 'translate-y-0 opacity-100' 
               : 'translate-y-16 opacity-0'
@@ -138,7 +159,7 @@ const Products = () => {
             <div className="max-w-6xl mx-auto">
 
               {/* Project Grid with ProjectsSection styling */}
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {projects.map((project, index) => (
                   <div 
                     key={index} 
@@ -162,10 +183,10 @@ const Products = () => {
                       </div>
                     </div>
 
-                    {/* Project Info - Transparent background */}
+                    {/* Project Info - Responsive */}
                     <div className="px-2">
-                      <div className="flex items-center justify-between mb-3">
-                        <div className="flex items-center gap-3">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
+                        <div className="flex items-center gap-3 flex-wrap">
                           <span className="bg-gray-900 text-white px-3 py-1 rounded-full text-xs font-medium shadow-lg">
                             {project.badge}
                           </span>
@@ -173,7 +194,7 @@ const Products = () => {
                             AI Integrated Workflow Product
                           </span>
                         </div>
-                        <div className="flex items-center gap-2 bg-gray-100 px-3 py-1 rounded-full">
+                        <div className="flex items-center gap-2 bg-gray-100 px-3 py-1 rounded-full self-start sm:self-auto">
                           <span className="text-gray-500 text-xs">by Team</span>
                           <div className="flex -space-x-2">
                             {project.team.map((member, i) => (
