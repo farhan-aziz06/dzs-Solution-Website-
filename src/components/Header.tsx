@@ -40,14 +40,13 @@ const Header = () => {
         
         {/* Desktop Contact Button */}
         <a 
-  href="/contact" 
-  className={`hidden md:block bg-gradient-to-r from-purple-500 to-purple-400 text-white hover:from-purple-600 hover:to-purple-500 transition-all duration-1000 rounded-full px-6 py-2.5 font-normal text-[14px] shadow-md hover:shadow-lg hover:scale-105 ${
-    isVisible ? 'opacity-100' : 'opacity-0'
-  }`}
->
-  Get in contact
-</a>
-
+          href="/contact" 
+          className={`hidden md:block bg-gradient-to-r from-purple-500 to-purple-400 text-white hover:from-purple-600 hover:to-purple-500 transition-all duration-1000 rounded-full px-6 py-2.5 font-normal text-[14px] shadow-md hover:shadow-lg hover:scale-105 ${
+            isVisible ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
+          Get in contact
+        </a>
 
         {/* Mobile Menu Button */}
         <button
@@ -91,8 +90,7 @@ const Header = () => {
         <nav className="flex flex-col p-6 space-y-6">
           {[
             { href: "/", text: "Home" },
-            { href: "/product", text: "Product" },
-            { href: "/services", text: "Services" },
+            { href: "/product", text: "Product & Services" },
             { href: "/about", text: "About" }
           ].map((item) => (
             <a 

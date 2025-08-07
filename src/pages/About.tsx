@@ -133,7 +133,7 @@ const About = () => {
             }}
           >
             <section className="pt-16 pb-10 max-w-5xl mx-auto">
-              <div className="mb-8 px-4">
+              <div className="mb-8 px-4 sm:px-8">
                 <div 
                   className={`transform transition-all duration-1000 ease-out ${
                     headerVisible 
@@ -161,7 +161,7 @@ const About = () => {
             ref={setSectionRef('vision')}
             className={`mb-20 mt-16 ${getSectionClasses('vision')}`}
           >
-            <div className="mb-12 -ml-4">
+            <div className="mb-12 px-2 sm:px-0 sm:-ml-4">
               <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-3">
                 From Vision to Value
               </h2>
@@ -172,7 +172,17 @@ const About = () => {
             </div>
 
             <div className="flex justify-center mb-12">
-              <img src="/pro.svg" alt="Professional services illustration" className="max-w-5xl w-full h-auto scale-105" />
+              {/* Show different images based on screen size */}
+              <img 
+                src="/pro.svg" 
+                alt="Professional services illustration" 
+                className="max-w-5xl w-full h-auto scale-105 hidden sm:block" 
+              />
+              <img 
+                src="/mobilemetrics.svg" 
+                alt="Mobile metrics illustration" 
+                className="max-w-xs w-full h-auto block sm:hidden" 
+              />
             </div>
           </div>
 
@@ -182,7 +192,7 @@ const About = () => {
             ref={setSectionRef('stories')}
             className={`mb-20 ${getSectionClasses('stories')}`}
           >
-            <div className="mb-12 -ml-4">
+            <div className="mb-12 px-2 sm:px-0 sm:-ml-4">
               <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-3">
                 See what our clients say.
               </h2>
@@ -268,7 +278,7 @@ const About = () => {
             ref={setSectionRef('team')}
             className={getSectionClasses('team')}
           >
-            <div className="mb-12 -ml-4">
+            <div className="mb-12 px-2 sm:px-0 sm:-ml-4">
               <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-3">
                 Together we build, together we rise.
               </h2>

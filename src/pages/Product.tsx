@@ -79,48 +79,52 @@ const Products = () => {
   return (
     <div className="min-h-screen">
       {/* Header with Background Image */}
-      <section 
-        className="relative pt-12 pb-8 px-6 bg-no-repeat"
-        style={{ 
-          backgroundImage: 'url(/bg.svg)', 
-          backgroundSize: '97%',
-          backgroundPosition: 'center center'
-        }}
-      >
-        <div className="relative max-w-5xl mx-auto">
-          {/* Header Content with slide-in from right animation */}
-          <div className={`mb-8 transform transition-all duration-700 ease-out ${
-            isHeaderVisible 
-              ? 'translate-x-0 opacity-100' 
-              : 'translate-x-full opacity-0'
-          }`}>
-            <h1 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-2 mt-9">Mobile app development</h1>
-            <p className="text-gray-500 text-base max-w-2xl leading-relaxed">
-              We craft bold digital solutions that drive growth. From concept to launch,
-              solving real-world problems with precision and creativity.
-            </p>
-            
-            {/* Filter Tags - Connected Design */}
-            <div className="flex flex-wrap mt-6">
-              <div className="flex bg-white border border-gray-200 rounded-full overflow-hidden">
-                {tabs.map((tab, index) => (
-                  <button
-                    key={tab}
-                    onClick={() => setActiveTab(tab)}
-                    className={`px-5 py-2 text-sm font-medium transition-all duration-200 relative ${
-                      activeTab === tab
-                        ? 'bg-purple-500 text-white rounded-full shadow-md z-10 before:absolute before:inset-0 before:bg-gradient-to-b before:from-white/20 before:to-transparent before:rounded-full before:pointer-events-none'
-                        : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'
-                    }`}
-                  >
-                    {tab}
-                  </button>
-                ))}
+      {/* Header with Background Image */}
+      <div className="mt-10 px-6">
+        <div 
+          className="rounded-3xl overflow-hidden bg-white"
+          style={{
+            backgroundImage: 'url(/bg.svg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        >
+          <section className="pt-12 pb-8 max-w-5xl mx-auto">
+            {/* Header Content with slide-in from right animation */}
+            <div className={`mb-8 px-4 transform transition-all duration-700 ease-out ${
+              isHeaderVisible 
+                ? 'translate-x-0 opacity-100' 
+                : 'translate-x-full opacity-0'
+            }`}>
+              <h1 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-2 mt-9">Mobile app development</h1>
+              <p className="text-gray-500 text-base max-w-2xl leading-relaxed">
+                We craft bold digital solutions that drive growth. From concept to launch,
+                solving real-world problems with precision and creativity.
+              </p>
+              
+              {/* Filter Tags - Connected Design */}
+              <div className="flex flex-wrap mt-6">
+                <div className="flex bg-white border border-gray-200 rounded-full overflow-hidden">
+                  {tabs.map((tab, index) => (
+                    <button
+                      key={tab}
+                      onClick={() => setActiveTab(tab)}
+                      className={`px-5 py-2 text-sm font-medium transition-all duration-200 relative ${
+                        activeTab === tab
+                          ? 'bg-purple-500 text-white rounded-full shadow-md z-10 before:absolute before:inset-0 before:bg-gradient-to-b before:from-white/20 before:to-transparent before:rounded-full before:pointer-events-none'
+                          : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'
+                      }`}
+                    >
+                      {tab}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
+          </section>
         </div>
-      </section>
+      </div>
 
       {/* Projects Section */}
       <section className="py-8 px-6 bg-white">

@@ -12,7 +12,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-white min-h-screen px-6 py-9">
+    <section className="relative bg-white min-h-screen px-6 py-9">
       {/* Background with he.svg behind gradient.svg - now with rounded corners */}
       <div className="absolute inset-6 rounded-3xl overflow-hidden">
         <img
