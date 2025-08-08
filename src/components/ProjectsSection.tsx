@@ -124,7 +124,7 @@ const ProjectsSection = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="max-w-full max-h-full object-contain"
+                    className="max-w-full max-h-full object-contain transition-transform duration-300 group-hover:scale-110"
                   />
                 </div>
               </div>
@@ -133,20 +133,36 @@ const ProjectsSection = () => {
               <div className="px-2">
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-3">
-                    <span className="bg-gray-900 text-white px-3 py-1 rounded-full text-xs font-medium shadow-lg">
+                    <span className={`px-3 py-1 rounded-full text-xs font-medium shadow-lg transition-all duration-300 ${
+                      'group-hover:bg-purple-600 group-hover:text-white bg-gray-900 text-white'
+                    }`}>
                       {project.badge}
                     </span>
                     <span className="text-gray-900 text-xs font-medium">
                       AI Integrated Workflow Product
                     </span>
                   </div>
-                  <div className="flex items-center gap-2 bg-gray-100 px-3 py-1 rounded-full">
-                    <span className="text-gray-500 text-xs">by Team</span>
-                    <div className="flex -space-x-2">
+                  
+                  {/* Team Section with Sliding Pill Effect */}
+                  <div className="relative flex items-center">
+                    {/* Sliding Pill Container */}
+                    <div className="relative overflow-hidden border border-gray-200 bg-gray-100 rounded-full transition-all duration-500 ease-out group-hover:pr-16">
+                      {/* Default state - "by Team" text */}
+                      <div className="px-3 py-1 transition-all duration-500 ease-out">
+                        <span className="text-gray-500 text-xs whitespace-nowrap">by Team</span>
+                      </div>
+                    </div>
+                    
+                    {/* Team member circles - positioned absolutely on the right */}
+                    <div className="absolute right-0 flex -space-x-2 transition-all duration-500 ease-out transform translate-x-8 opacity-0 group-hover:translate-x-0 group-hover:opacity-100">
                       {project.team.map((member, i) => (
                         <div 
                           key={i}
-                          className="w-6 h-6 rounded-full border-2 border-white bg-gray-300 flex items-center justify-center overflow-hidden"
+                          className="w-6 h-6 rounded-full border-2 border-white bg-gray-300 flex items-center justify-center overflow-hidden transition-all duration-300"
+                          style={{ 
+                            transitionDelay: `${i * 100}ms`,
+                            transform: `translateX(${8 - (i * 2)}px)` 
+                          }}
                         >
                           <img
                             src={member}
@@ -198,6 +214,8 @@ const ProjectsSection = () => {
           </div>
         </div>
       </div>
+
+      
     </section>
   );
 };
