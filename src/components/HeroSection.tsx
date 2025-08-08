@@ -72,17 +72,17 @@ const HeroSection = () => {
               }}
             >
               <div className="flex items-center space-x-2.5">
-  <div className="flex -space-x-5">
-    <div className="w-12 h-12 rounded-full shadow-lg overflow-hidden z-30">
-      <img src="/girl1.svg" alt="User" className="w-full h-full object-cover" />
-    </div>
-    <div className="w-12 h-12 rounded-full shadow-lg overflow-hidden z-20">
-      <img src="/boy.svg" alt="User" className="w-full h-full object-cover" />
-    </div>
-    <div className="w-12 h-12 rounded-full shadow-lg overflow-hidden z-10">
-      <img src="/girl.svg" alt="User" className="w-full h-full object-cover" />
-    </div>
-  </div>
+                <div className="flex -space-x-5">
+                  <div className="w-12 h-12 rounded-full shadow-lg overflow-hidden z-30">
+                    <img src="/girl1.svg" alt="User" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="w-12 h-12 rounded-full shadow-lg overflow-hidden z-20">
+                    <img src="/boy.svg" alt="User" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="w-12 h-12 rounded-full shadow-lg overflow-hidden z-10">
+                    <img src="/girl.svg" alt="User" className="w-full h-full object-cover" />
+                  </div>
+                </div>
 
                 <div className="flex-1">
                   <p className="text-gray-400 text-[11px] leading-relaxed mb-1">

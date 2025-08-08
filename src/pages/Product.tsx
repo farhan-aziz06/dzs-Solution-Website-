@@ -96,12 +96,13 @@ const Products = () => {
                 ? 'translate-x-0 opacity-100' 
                 : 'translate-x-full opacity-0'
             }`}>
+              <div className="-ml-12">
               <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 mb-2 mt-9">Mobile app development</h1>
               <p className="text-gray-500 text-sm sm:text-base max-w-2xl leading-relaxed">
                 We craft bold digital solutions that drive growth. From concept to launch,
                 solving real-world problems with precision and creativity.
               </p>
-              
+              </div>
               {/* Filter Tags - Mobile Optimized */}
               <div className="mt-6">
                 {/* Mobile: Stack tabs vertically or use smaller text */}
@@ -178,29 +179,46 @@ const Products = () => {
                         <img
                           src={project.image}
                           alt={project.title}
-                          className="max-w-full max-h-full object-contain"
+                          className="max-w-full max-h-full object-contain transition-transform duration-300 group-hover:scale-110"
                         />
                       </div>
                     </div>
 
-                    {/* Project Info - Responsive */}
+                    {/* Project Info - Updated with ProjectsSection animations */}
                     <div className="px-2">
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
                         <div className="flex items-center gap-3 flex-wrap">
-                          <span className="bg-gray-900 text-white px-3 py-1 rounded-full text-xs font-medium shadow-lg">
-                            {project.badge}
+                          <span className={`px-4 py-1 rounded-full text-xs font-medium shadow-lg transition-all duration-300 ${
+                            'bg-gradient-to-r from-gray-900 via-gray-900 to-gray-900 text-white group-hover:from-purple-600 group-hover:via-purple-500 group-hover:to-purple-600'
+                          } relative overflow-hidden`}>
+                            {/* White gradient overlay */}
+                            <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-white/20 to-white/10 pointer-events-none"></div>
+                            <span className="relative z-10">{project.badge}</span>
                           </span>
                           <span className="text-gray-900 text-xs font-medium">
                             AI Integrated Workflow Product
                           </span>
                         </div>
-                        <div className="flex items-center gap-2 bg-gray-100 px-3 py-1 rounded-full self-start sm:self-auto">
-                          <span className="text-gray-500 text-xs">by Team</span>
-                          <div className="flex -space-x-2">
+                        
+                        {/* Team Section with Sliding Pill Effect - ProjectsSection style */}
+                        <div className="relative flex items-center self-start sm:self-auto">
+                          {/* Sliding Pill Container */}
+                          <div className="relative overflow-hidden border border-gray-200 bg-gray-100 rounded-full transition-all duration-500 ease-out group-hover:pr-14">
+                            {/* Default state - "by Team" text */}
+                            <div className="px-3 py-1 transition-all duration-500 ease-out">
+                              <span className="text-gray-500 text-xs whitespace-nowrap">by Team</span>
+                            </div>
+                          </div>
+                          
+                          {/* Team member circles - perfect fit with no white space */}
+                          <div className="absolute right-1 flex -space-x-1.5 transition-all duration-500 ease-out transform translate-x-6 opacity-0 group-hover:translate-x-0 group-hover:opacity-100">
                             {project.team.map((member, i) => (
                               <div 
                                 key={i}
-                                className="w-6 h-6 rounded-full border-2 border-white bg-gray-300 flex items-center justify-center overflow-hidden"
+                                className="w-6 h-6 rounded-full overflow-hidden transition-all duration-300 shadow-sm"
+                                style={{ 
+                                  transitionDelay: `${i * 80}ms`
+                                }}
                               >
                                 <img
                                   src={member}

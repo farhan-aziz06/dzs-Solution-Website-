@@ -136,7 +136,7 @@ const Services = () => {
             backgroundRepeat: 'no-repeat'
           }}
         >
-          <section className="pt-20 pb-14 max-w-5xl mx-auto">
+          <section className="pt-16 pb-10 max-w-5xl mx-auto">
             {/* Header Content with slide-in from right animation */}
             <div 
               ref={headerRef}
@@ -146,10 +146,12 @@ const Services = () => {
                   : 'translate-x-full opacity-0'
               }`}
             >
+              <div className="-ml-12">
               <h1 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-3">Services</h1>
               <p className="text-gray-500 text-base max-w-2xl leading-relaxed">
                 We offer comprehensive digital solutions to help your business thrive in the modern landscape
               </p>
+              </div>
             </div>
           </section>
         </div>

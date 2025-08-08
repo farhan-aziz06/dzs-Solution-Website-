@@ -45,14 +45,16 @@ const Contact = () => {
           }}
         >
           <section className="pt-16 pb-10 max-w-5xl mx-auto">
-            {/* Header Content - Slides from Right */}
+            {/* Header Content - Slides from Right (unchanged) */}
             <div className={`mb-8 px-4 transform transition-all duration-1000 ease-out ${
               isVisible ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'
             }`}>
+              <div className="-ml-12">
               <h1 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-3">Contact Us</h1>
               <p className="text-gray-500 text-base max-w-2xl leading-relaxed">
-                Have a project in mind or just want to chat? We’d love to hear from you. Reach out and let’s make it happen!
+                We craft bold digital solutions that drive growth. From concept to launch, solving real-world problems with precision and creativity.
               </p>
+              </div>
             </div>
           </section>
         </div>
@@ -60,12 +62,12 @@ const Contact = () => {
 
       <section ref={sectionRef} className="pt-16 pb-12 px-6 bg-white mb-24">
         <div className="max-w-6xl mx-auto">
-          {/* Main Content Grid - Slides from Bottom */}
-          <div className={`grid lg:grid-cols-2 gap-12 transform transition-all duration-1000 ease-out ${
-            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-          }`}>
-            {/* Left Side - Contact Image - Made smaller on mobile */}
-            <div className="flex items-center justify-center">
+          {/* Main Content Grid - Updated with separate animations */}
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Left Side - Contact Image - Slides from Left */}
+            <div className={`flex items-center justify-center transform transition-all duration-1000 ease-out ${
+              isVisible ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'
+            }`} style={{ transitionDelay: '200ms' }}>
               <img
                 src="/cont.svg"
                 alt="Contact illustration"
@@ -73,8 +75,10 @@ const Contact = () => {
               />
             </div>
 
-            {/* Right Side - Contact Form - Made smaller on mobile */}
-            <div className="space-y-4 sm:space-y-6 mt-8 sm:mt-12 lg:mt-16 max-w-md sm:max-w-none mx-auto lg:mx-0">
+            {/* Right Side - Contact Form - Slides from Right */}
+            <div className={`space-y-4 sm:space-y-6 mt-8 sm:mt-12 lg:mt-16 max-w-md sm:max-w-none mx-auto lg:mx-0 transform transition-all duration-1000 ease-out ${
+              isVisible ? 'translate-x-0 opacity-100' : 'translate-x-12 opacity-0'
+            }`} style={{ transitionDelay: '200ms' }}>
               {/* Name Fields */}
               <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 <div>

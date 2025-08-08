@@ -35,7 +35,7 @@ const ContactSection = () => {
   return (
     <section ref={sectionRef} className="pt-6 pb-12 px-6 bg-white mb-24">
       <div className="max-w-6xl mx-auto">
-        {/* Header Section - Slides from Left */}
+        {/* Header Section - Slides from Left (unchanged) */}
         <div className={`mb-16 transform transition-all duration-1000 ease-out ${
           isVisible ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'
         }`}>
@@ -46,12 +46,12 @@ const ContactSection = () => {
           </p>
         </div>
 
-        {/* Main Content Grid - Slides from Bottom */}
-        <div className={`grid lg:grid-cols-2 gap-12 transform transition-all duration-1000 ease-out ${
-          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-        }`}>
-          {/* Left Side - Contact Image - Made smaller on mobile */}
-          <div className="flex items-center justify-center">
+        {/* Main Content Grid - Updated with separate animations */}
+        <div className="grid lg:grid-cols-2 gap-12">
+          {/* Left Side - Contact Image - Slides from Left */}
+          <div className={`flex items-center justify-center transform transition-all duration-1000 ease-out ${
+            isVisible ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'
+          }`} style={{ transitionDelay: '200ms' }}>
             <img
               src="/cont.svg"
               alt="Contact illustration"
@@ -59,8 +59,10 @@ const ContactSection = () => {
             />
           </div>
 
-          {/* Right Side - Contact Form - Made smaller on mobile */}
-          <div className="space-y-4 sm:space-y-6 mt-8 sm:mt-12 lg:mt-16 max-w-md sm:max-w-none mx-auto lg:mx-0">
+          {/* Right Side - Contact Form - Slides from Right */}
+          <div className={`space-y-4 sm:space-y-6 mt-8 sm:mt-12 lg:mt-16 max-w-md sm:max-w-none mx-auto lg:mx-0 transform transition-all duration-1000 ease-out ${
+            isVisible ? 'translate-x-0 opacity-100' : 'translate-x-12 opacity-0'
+          }`} style={{ transitionDelay: '200ms' }}>
             {/* Name Fields */}
             <div className="grid grid-cols-2 gap-3 sm:gap-4">
               <div>

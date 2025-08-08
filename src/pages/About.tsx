@@ -139,15 +139,15 @@ const About = () => {
                       ? "translate-x-0 opacity-100" 
                       : "translate-x-12 opacity-0"
                   }`}
-                >
-                  <h1 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-3 text-left">
-                    About us
-                  </h1>
-                  <p className="text-gray-500 text-base max-w-2xl leading-relaxed text-left">
-                    We are a dedicated team of software developers, designers, and strategists passionate about creating 
-                    digital solutions that make a difference. With years of experience and a commitment to excellence, 
-                    we transform ideas into powerful, user-friendly applications that drive business success.
-                  </p>
+                ><div className="-ml-12">
+  <h1 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-3 mt-4 text-left">
+    About us
+  </h1>
+  <p className="text-gray-500 text-base max-w-2xl leading-relaxed text-left">
+    We craft smart digital solutions with a focus on AI, web, and app development. From idea to launch, we build products that drive growth, solve real problems, and stand out in today’s digital world.
+  </p>
+</div>
+
                 </div>
               </div>
             </section>
