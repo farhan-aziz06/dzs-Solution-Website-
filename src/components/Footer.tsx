@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="relative text-white pt-16 pb-8 px-6 mx-6 mb-6 rounded-3xl overflow-hidden">
+    <footer className="relative text-white pt-16 pb-8 px-6 mx-6 mb-6 mt-16 rounded-3xl overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img src="/Main.svg" alt="Background" className="w-full h-full object-cover rounded-3xl" />
