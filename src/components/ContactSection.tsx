@@ -148,10 +148,16 @@ const ContactSection = () => {
 
             {/* Submit Button and Social Icons */}
             <div className="flex items-center justify-between">
-              <button className="bg-purple-500 text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full hover:bg-purple-600 transition-all duration-300 flex items-center gap-2 hover:shadow-lg text-sm sm:text-base">
-                Send Message 
-                <img src="/arrow3.svg" alt="send" className="w-3 sm:w-4 h-3 sm:h-4" />
-              </button>
+              <button className="relative overflow-hidden bg-gradient-to-r from-purple-500 to-purple-400 hover:from-purple-600 hover:to-purple-500 text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full transition-all duration-300 flex items-center gap-2 hover:scale-105 hover:shadow-lg text-sm sm:text-base font-normal group">
+  {/* White gradient overlay on hover */}
+  <span className="absolute inset-0 bg-gradient-to-r from-white/30 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></span>
+
+  <span className="relative z-10 flex items-center gap-2">
+    Send Message 
+    <img src="/arrow3.svg" alt="send" className="w-3 sm:w-4 h-3 sm:h-4" />
+  </span>
+</button>
+
               
               <div className="flex items-center gap-3 sm:gap-4">
                 <a href="#" className="hover:opacity-80 transition-all duration-300">

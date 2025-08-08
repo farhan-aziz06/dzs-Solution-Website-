@@ -121,19 +121,18 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background">
       <main className="pt-12 pb-16">
-        {/* Header with Background Image */}
+        {/* Header with Background Image - Made slimmer */}
         <div className="px-6">
-          <div
-            className="rounded-3xl overflow-hidden bg-white"
-            style={{
-              backgroundImage: 'url(/bg.svg)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center center',
-              backgroundRepeat: 'no-repeat'
-            }}
-          >
-            <section className="pt-16 pb-10 max-w-5xl mx-auto">
-              <div className="mb-8 px-4 sm:px-8">
+  <div className="max-w-6xl mx-auto rounded-3xl overflow-hidden bg-white"
+       style={{
+         backgroundImage: 'url(/bg.svg)',
+         backgroundSize: 'cover',
+         backgroundPosition: 'center center',
+         backgroundRepeat: 'no-repeat'
+       }}>
+            {/* Even slimmer padding: pt-8 pb-6 */}
+            <section className="pt-8 pb-6 max-w-5xl mx-auto">
+              <div className="mb-6 px-4 sm:px-8">
                 <div 
                   className={`transform transition-all duration-1000 ease-out ${
                     headerVisible 
@@ -156,12 +155,13 @@ const About = () => {
         </div>
 
         <div className="max-w-6xl mx-auto px-6">
-          {/* Vision to Value Section */}
+          {/* Vision to Value Section - Moved left */}
           <div 
             ref={setSectionRef('vision')}
             className={`mb-20 mt-16 ${getSectionClasses('vision')}`}
           >
-            <div className="mb-12 px-2 sm:px-0 sm:-ml-4">
+            {/* Added -ml-8 to move more left */}
+            <div className="mb-12 px-2 sm:px-0 sm:-ml-8">
               <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-3">
                 From Vision to Value
               </h2>
@@ -186,15 +186,16 @@ const About = () => {
             </div>
           </div>
 
-          {/* Client Success Stories - Updated section with id for navigation */}
+          {/* Client Success Stories - Updated section with id for navigation - Moved left */}
           <div 
             id="client-reviews"
             ref={setSectionRef('stories')}
             className={`mb-20 ${getSectionClasses('stories')}`}
           >
-            <div className="mb-12 px-2 sm:px-0 sm:-ml-4">
+            {/* Added -ml-4 to move left */}
+            <div className="mb-12 px-2 sm:px-0 sm:-ml-8">
               <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-3">
-                See what our clients say.
+               Client success stories.
               </h2>
               <p className="text-gray-600 text-base max-w-2xl leading-relaxed">
                 Each client story reflects a journey of collaboration, innovation, and real-world impact—
@@ -205,7 +206,6 @@ const About = () => {
             <div className="relative max-w-3xl mx-auto">
               {/* Left Arrow with Circle */}
               <button className="absolute -left-5 top-[43%] transform -translate-y-1/2 z-10 transition-all duration-200 hover:scale-110">
-
                 <div className="relative">
                   <img src="/circle.svg" alt="Circle background" className="w-8 h-8" />
                   <img src="/left.svg" alt="Previous" className="absolute inset-0 w-4 h-4 translate-x-2 translate-y-1.5" />
@@ -273,26 +273,26 @@ const About = () => {
             </div>
           </div>
 
-          {/* Team Section */}
+          {/* Team Section - Moved left */}
           <div 
             ref={setSectionRef('team')}
             className={getSectionClasses('team')}
           >
-            <div className="mb-12 px-2 sm:px-0 sm:-ml-4">
+            {/* Added -ml-4 to move left */}
+            <div className="mb-12 px-2 sm:px-0 sm:-ml-8">
               <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-3">
                 Together we build, together we rise.
               </h2>
               <p className="text-gray-600 text-base max-w-2xl leading-relaxed">
-                Meet the talented individuals who make our success possible.
-                Our diverse team brings together expertise, creativity, and passion to deliver exceptional results.
+                We believe success is a shared journey. By working closely with our clients and team, we co-create solutions that elevate everyone involved—fostering mutual growth, trust, and long-lasting impact.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-1">
+            <div className="flex flex-wrap justify-center gap-2 md:gap-14 ml-8">
               {teamMembers.map((member, index) => (
                 <div
                   key={index}
-                  className={`bg-white rounded-3xl border border-gray-200 overflow-hidden w-full max-w-[290px] h-[480px] mx-auto transform transition-all duration-700 ease-out ${
+                  className={`bg-white rounded-3xl border border-gray-200 overflow-hidden w-full max-w-[260px] h-[440px] transform transition-all duration-700 ease-out ${
                     visibleSections.has('team')
                       ? `translate-y-0 opacity-100`
                       : `translate-y-12 opacity-0`

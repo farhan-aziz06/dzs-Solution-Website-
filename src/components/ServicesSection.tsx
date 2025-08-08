@@ -37,7 +37,7 @@ const ServicesSection = () => {
     <section ref={sectionRef} className="py-16 px-6 bg-white overflow-hidden">
       <div className="max-w-6xl mx-auto">
         {/* Header Animation - Slide from left with bounce */}
-        <div className={`mb-12 transition-all duration-1000 ease-out ${
+        <div className={`mb-10 transition-all duration-1000 ease-out ${
           isVisible 
             ? 'translate-x-0 opacity-100' 
             : '-translate-x-20 opacity-0'
