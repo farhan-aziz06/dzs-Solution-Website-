@@ -41,8 +41,8 @@ const ContactSection = () => {
         }`}>
           <h2 className="text-4xl font-semibold text-gray-900 mb-4">Contact us</h2>
           <p className="text-gray-500 text-lg max-w-2xl">
-            Have a project in mind or just want to chat? We'd love to hear from you. 
-            Reach out and let's make it happen!
+            Have a project in mind or just want to chat? We'd love to hear from you. Reach out and let's make it happen!
+            
           </p>
         </div>
 
@@ -53,7 +53,7 @@ const ContactSection = () => {
           {/* Left Side - Contact Image - Made smaller on mobile */}
           <div className="flex items-center justify-center">
             <img
-              src="/contact.svg"
+              src="/cont.svg"
               alt="Contact illustration"
               className="max-w-full h-auto w-64 sm:w-80 lg:w-full"
             />
@@ -123,9 +123,9 @@ const ContactSection = () => {
                       key={project}
                       // 4. Update state on click
                       onClick={() => setSelectedProject(project)}
-                      // 5. Apply styles conditionally
+                      // 5. Apply styles conditionally - removed hover:scale-105
                       className={`
-                        px-4 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm transition-all duration-300 hover:scale-105
+                        px-4 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm transition-all duration-300
                         ${selectedProject === project
                           ? 'bg-purple-100 text-purple-500 border border-purple-500' // Active style
                           : 'border border-gray-300 text-gray-600 hover:bg-purple-100 hover:text-purple-500 hover:border-purple-500' // Inactive style with hover that mimics active style
@@ -148,19 +148,19 @@ const ContactSection = () => {
 
             {/* Submit Button and Social Icons */}
             <div className="flex items-center justify-between">
-              <button className="bg-purple-500 text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full hover:bg-purple-600 transition-all duration-300 flex items-center gap-2 hover:scale-105 hover:shadow-lg text-sm sm:text-base">
+              <button className="bg-purple-500 text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full hover:bg-purple-600 transition-all duration-300 flex items-center gap-2 hover:shadow-lg text-sm sm:text-base">
                 Send Message 
                 <img src="/arrow3.svg" alt="send" className="w-3 sm:w-4 h-3 sm:h-4" />
               </button>
               
               <div className="flex items-center gap-3 sm:gap-4">
-                <a href="#" className="hover:opacity-80 transition-all duration-300 hover:scale-110">
+                <a href="#" className="hover:opacity-80 transition-all duration-300">
                   <img src="/twitter.svg" alt="Twitter" className="w-6 sm:w-8 h-6 sm:h-8" />
                 </a>
-                <a href="#" className="hover:opacity-80 transition-all duration-300 hover:scale-110">
+                <a href="#" className="hover:opacity-80 transition-all duration-300">
                   <img src="/instagram.svg" alt="Instagram" className="w-6 sm:w-8 h-6 sm:h-8" />
                 </a>
-                <a href="#" className="hover:opacity-80 transition-all duration-300 hover:scale-110">
+                <a href="#" className="hover:opacity-80 transition-all duration-300">
                   <img src="/discord.svg" alt="Discord" className="w-6 sm:w-8 h-6 sm:h-8" />
                 </a>
               </div>

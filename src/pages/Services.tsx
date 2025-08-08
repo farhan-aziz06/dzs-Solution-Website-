@@ -72,7 +72,7 @@ const Services = () => {
         "Datascience and Predictive Analysis",
         "Natural Language Processing"
       ],
-      image: "/genai.svg",
+      image: "/new.svg",
       stack: "/stack1.svg",
       gradient: "bg-gradient-to-br from-purple-500 via-purple-600 to-indigo-700"
     },
@@ -87,7 +87,7 @@ const Services = () => {
         "Cloud-Connected Mobile Applications",
         "Secure Mobile App Architecture"
       ],
-      image: "/appdev.svg",
+      image: "/new.svg",
       stack: "/stack2.svg",
       gradient: "bg-gradient-to-br from-purple-600 via-indigo-600 to-blue-700"
     },
@@ -102,7 +102,7 @@ const Services = () => {
         "Progressive Web Apps (PWA) Development",
         "AI-Powered Web Interface"
       ],
-      image: "/genai.svg",
+      image: "/new.svg",
       stack: "/stack3.svg",
       gradient: "bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-600"
     },
@@ -117,7 +117,7 @@ const Services = () => {
         "Visual Storytelling & Branding through Design",
         "User Research & Data-Driven UI Decisions"
       ],
-      image: "/ui.svg",
+      image: "/new.svg",
       stack: "/stack4.svg",
       gradient: "bg-gradient-to-br from-purple-500 via-pink-500 to-rose-600"
     }
@@ -136,7 +136,7 @@ const Services = () => {
             backgroundRepeat: 'no-repeat'
           }}
         >
-          <section className="pt-16 pb-10 max-w-5xl mx-auto">
+          <section className="pt-20 pb-14 max-w-5xl mx-auto">
             {/* Header Content with slide-in from right animation */}
             <div 
               ref={headerRef}
@@ -173,7 +173,7 @@ const Services = () => {
                 }}
               >
                 {/* Service Image Header */}
-                <div className={`h-40 ${service.gradient} relative rounded-t-3xl overflow-hidden`}>
+                <div className={`h-56 ${service.gradient} relative rounded-t-3xl overflow-hidden`}>
                   <div className="absolute inset-0 bg-black/5"></div>
                   <div className="relative w-full h-full flex items-center justify-center">
                     <img
@@ -185,7 +185,7 @@ const Services = () => {
                 </div>
                 
                 <div className="p-6">
-                  <h2 className="text-2xl font-bold text-gray-900 mb-3">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-3 mt-7">
                     {service.title}
                   </h2>
                   
@@ -219,7 +219,7 @@ const Services = () => {
                   style={{ 
                     transitionDelay: visibleServices.has(index) ? `${(index * 150) + 500}ms` : '0ms' 
                   }}>
-                    <div className="w-auto">
+                    <div className="w-auto mb-6">
                       <img src={service.stack} alt="Tech stack" className="h-10 object-contain" />
                     </div>
                   </div>

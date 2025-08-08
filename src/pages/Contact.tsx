@@ -51,7 +51,7 @@ const Contact = () => {
             }`}>
               <h1 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-3">Contact Us</h1>
               <p className="text-gray-500 text-base max-w-2xl leading-relaxed">
-                We craft bold digital solutions that drive growth. From concept to launch, solving real-world problems with precision and creativity.
+                Have a project in mind or just want to chat? We’d love to hear from you. Reach out and let’s make it happen!
               </p>
             </div>
           </section>
@@ -67,7 +67,7 @@ const Contact = () => {
             {/* Left Side - Contact Image - Made smaller on mobile */}
             <div className="flex items-center justify-center">
               <img
-                src="/contact.svg"
+                src="/cont.svg"
                 alt="Contact illustration"
                 className="max-w-full h-auto w-64 sm:w-80 lg:w-full"
               />
