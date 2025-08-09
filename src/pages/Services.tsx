@@ -125,10 +125,10 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header with Background Image - Responsive spacing */}
-      <div className="mt-4 sm:mt-6 lg:mt-10 px-3 sm:px-4 lg:px-6">
+      {/* Header with Background Image */}
+       <div className="mt-4 sm:mt-6 lg:mt-10 px-2 sm:px-4 lg:px-6">
         <div 
-          className="rounded-2xl sm:rounded-3xl overflow-hidden bg-white"
+          className="rounded-3xl overflow-hidden bg-white"
           style={{
             backgroundImage: 'url(/bg.svg)',
             backgroundSize: 'cover',
@@ -136,101 +136,106 @@ const Services = () => {
             backgroundRepeat: 'no-repeat'
           }}
         >
-          <section className="pt-8 sm:pt-12 lg:pt-16 pb-6 sm:pb-8 lg:pb-10 max-w-5xl mx-auto">
-            {/* Header Content with slide-in from right animation */}
+          <section className="pt-6 sm:pt-8 lg:pt-12 pb-4 sm:pb-6 lg:pb-8">
+            {/* Header Content with slide-in from right animation - Aligned with services */}
             <div 
               ref={headerRef}
-              className={`mb-4 sm:mb-6 lg:mb-8 px-3 sm:px-4 transform transition-all duration-700 ease-out ${
+              className={`mb-4 sm:mb-6 lg:mb-8 max-w-6xl mx-auto px-4 sm:px-6 lg:px-6 transform transition-all duration-700 ease-out ${
                 isHeaderVisible 
                   ? 'translate-x-0 opacity-100' 
                   : 'translate-x-full opacity-0'
               }`}
             >
-              <div className="-ml-6 sm:-ml-8 lg:-ml-12">
-              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 mb-2 sm:mb-3">Services</h1>
-              <p className="text-gray-500 text-sm sm:text-base max-w-xl lg:max-w-2xl leading-relaxed">
-                We offer comprehensive digital solutions to help your business thrive in the modern landscape
-              </p>
+              <div className="w-full text-left">
+                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 mb-2 mt-4 sm:mt-6 lg:mt-9">Services</h1>
+                <p className="text-gray-500 text-xs sm:text-sm lg:text-base max-w-xl lg:max-w-2xl leading-relaxed">
+                  We offer comprehensive digital solutions to help your business thrive in the modern landscape
+                </p>
               </div>
             </div>
           </section>
         </div>
       </div>
 
-      {/* Services Section - Responsive spacing */}
-      <section className="py-4 sm:py-6 lg:py-8 px-3 sm:px-4 lg:px-6 bg-white pb-8 sm:pb-12 lg:pb-16 pt-8 sm:pt-12 lg:pt-16">
-        <div className="max-w-6xl mx-auto">
-          <div className="space-y-4 sm:space-y-5 lg:space-y-6">
-            {services.map((service, index) => (
-              <div 
-                key={index} 
-                ref={el => serviceRefs.current[index] = el}
-                className={`bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-gray-100 transform transition-all duration-700 ease-out ${
-                  visibleServices.has(index)
-                    ? 'translate-y-0 opacity-100' 
-                    : 'translate-y-16 opacity-0'
-                }`}
-                style={{ 
-                  transitionDelay: visibleServices.has(index) ? `${index * 150}ms` : '0ms' 
-                }}
-              >
-                {/* Service Image Header - Responsive height */}
-                <div className={`h-32 sm:h-40 lg:h-56 ${service.gradient} relative rounded-t-2xl sm:rounded-t-3xl overflow-hidden`}>
-                  <div className="absolute inset-0 bg-black/5"></div>
-                  <div className="relative w-full h-full flex items-center justify-center">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-                
-                <div className="p-3 sm:p-4 lg:p-6">
-                  <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-2 sm:mb-3 mt-3 sm:mt-5 lg:mt-7">
-                    {service.title}
-                  </h2>
-                  
-                  <p className="text-gray-600 mb-3 sm:mb-4 lg:mb-5 leading-relaxed text-xs sm:text-sm">
-                    {service.description}
-                  </p>
-                  
-                  {/* Features Grid - Responsive columns */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-3 sm:gap-x-4 lg:gap-x-6 gap-y-2 mb-3 sm:mb-4 lg:mb-5">
-                    {service.features.map((feature, featureIndex) => (
-                      <div 
-                        key={featureIndex} 
-                        className={`bg-gradient-to-r from-gray-100 via-gray-50 to-gray-100 rounded-full px-2 sm:px-3 py-2 sm:py-3 text-gray-700 text-xs shadow-sm border border-gray-200 font-semibold transform transition-all duration-500 ease-out ${
-                          visibleServices.has(index)
-                            ? 'translate-y-0 opacity-100' 
-                            : 'translate-y-4 opacity-0'
-                        }`}
-                        style={{ 
-                          transitionDelay: visibleServices.has(index) ? `${(index * 150) + (featureIndex * 50) + 200}ms` : '0ms' 
-                        }}
-                      >
-                        {feature}
+      {/* Services Section */}
+      <section className="py-4 sm:py-6 lg:py-8 px-2 sm:px-4 lg:px-6 bg-white pb-8 sm:pb-12 lg:pb-16 pt-8 sm:pt-12 lg:pt-16">
+        <div className="max-w-7xl mx-auto">
+          {/* Services Grid with slide-up animation */}
+          <section className="pt-2 sm:pt-3 lg:pt-4 pb-8 sm:pb-12 lg:pb-16 px-2 sm:px-4 lg:px-6 bg-white rounded-3xl shadow-sm">
+            <div className="max-w-6xl mx-auto">
+              <div className="space-y-4 sm:space-y-5 lg:space-y-6">
+                {services.map((service, index) => (
+                  <div 
+                    key={index} 
+                    ref={el => serviceRefs.current[index] = el}
+                    className={`bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-gray-100 transform transition-all duration-700 ease-out ${
+                      visibleServices.has(index)
+                        ? 'translate-y-0 opacity-100' 
+                        : 'translate-y-16 opacity-0'
+                    }`}
+                    style={{ 
+                      transitionDelay: visibleServices.has(index) ? `${index * 150}ms` : '0ms' 
+                    }}
+                  >
+                    {/* Service Image Header - Responsive height */}
+                    <div className={`h-32 sm:h-40 lg:h-56 ${service.gradient} relative rounded-t-2xl sm:rounded-t-3xl overflow-hidden`}>
+                      <div className="absolute inset-0 bg-black/5"></div>
+                      <div className="relative w-full h-full flex items-center justify-center">
+                        <img
+                          src={service.image}
+                          alt={service.title}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
-                    ))}
-                  </div>
-                  
-                  {/* Tech Stack - Responsive sizing */}
-                  <div className={`flex justify-center pt-2 sm:pt-3 lg:pt-4 pb-2 sm:pb-3 lg:pb-4 transform transition-all duration-500 ease-out ${
-                    visibleServices.has(index)
-                      ? 'translate-y-0 opacity-100' 
-                      : 'translate-y-4 opacity-0'
-                  }`}
-                  style={{ 
-                    transitionDelay: visibleServices.has(index) ? `${(index * 150) + 500}ms` : '0ms' 
-                  }}>
-                    <div className="w-auto mb-3 sm:mb-4 lg:mb-6">
-                      <img src={service.stack} alt="Tech stack" className="h-8 sm:h-9 lg:h-10 object-contain" />
+                    </div>
+                    
+                    <div className="p-3 sm:p-4 lg:p-6">
+                      <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-2 sm:mb-3 mt-3 sm:mt-5 lg:mt-7">
+                        {service.title}
+                      </h2>
+                      
+                      <p className="text-gray-600 mb-3 sm:mb-4 lg:mb-5 leading-relaxed text-xs sm:text-sm">
+                        {service.description}
+                      </p>
+                      
+                      {/* Features Grid - Responsive columns */}
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-3 sm:gap-x-4 lg:gap-x-6 gap-y-2 mb-3 sm:mb-4 lg:mb-5">
+                        {service.features.map((feature, featureIndex) => (
+                          <div 
+                            key={featureIndex} 
+                            className={`bg-gradient-to-r from-gray-100 via-gray-50 to-gray-100 rounded-full px-2 sm:px-3 py-2 sm:py-3 text-gray-700 text-xs shadow-sm border border-gray-200 font-semibold transform transition-all duration-500 ease-out ${
+                              visibleServices.has(index)
+                                ? 'translate-y-0 opacity-100' 
+                                : 'translate-y-4 opacity-0'
+                            }`}
+                            style={{ 
+                              transitionDelay: visibleServices.has(index) ? `${(index * 150) + (featureIndex * 50) + 200}ms` : '0ms' 
+                            }}
+                          >
+                            {feature}
+                          </div>
+                        ))}
+                      </div>
+                      
+                      {/* Tech Stack - Responsive sizing */}
+                      <div className={`flex justify-center pt-2 sm:pt-3 lg:pt-4 pb-2 sm:pb-3 lg:pb-4 transform transition-all duration-500 ease-out ${
+                        visibleServices.has(index)
+                          ? 'translate-y-0 opacity-100' 
+                          : 'translate-y-4 opacity-0'
+                      }`}
+                      style={{ 
+                        transitionDelay: visibleServices.has(index) ? `${(index * 150) + 500}ms` : '0ms' 
+                      }}>
+                        <div className="w-auto mb-3 sm:mb-4 lg:mb-6">
+                          <img src={service.stack} alt="Tech stack" className="h-8 sm:h-9 lg:h-10 object-contain" />
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          </section>
         </div>
       </section>
     </div>

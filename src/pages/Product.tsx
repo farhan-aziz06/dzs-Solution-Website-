@@ -89,19 +89,20 @@ const Products = () => {
             backgroundRepeat: 'no-repeat'
           }}
         >
-          <section className="pt-6 sm:pt-8 lg:pt-12 pb-4 sm:pb-6 lg:pb-8 max-w-5xl mx-auto">
-            {/* Header Content with slide-in from right animation */}
-            <div className={`mb-4 sm:mb-6 lg:mb-8 px-2 sm:px-4 transform transition-all duration-700 ease-out ${
+          <section className="pt-6 sm:pt-8 lg:pt-12 pb-4 sm:pb-6 lg:pb-8">
+            {/* Header Content with slide-in from right animation - Aligned with projects */}
+            <div className={`mb-4 sm:mb-6 lg:mb-8 max-w-6xl mx-auto px-4 sm:px-6 lg:px-6 transform transition-all duration-700 ease-out ${
               isHeaderVisible 
                 ? 'translate-x-0 opacity-100' 
                 : 'translate-x-full opacity-0'
             }`}>
-              <div className="-ml-6 sm:-ml-8 lg:-ml-12">
-              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 mb-2 mt-4 sm:mt-6 lg:mt-9">Mobile app development</h1>
-              <p className="text-gray-500 text-xs sm:text-sm lg:text-base max-w-xl lg:max-w-2xl leading-relaxed">
-                We craft bold digital solutions that drive growth. From concept to launch,
-                solving real-world problems with precision and creativity.
-              </p>
+              {/* Simple container with no positioning tricks */}
+              <div className="w-full text-left">
+                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 mb-2 mt-4 sm:mt-6 lg:mt-9">Mobile app development</h1>
+                <p className="text-gray-500 text-xs sm:text-sm lg:text-base max-w-xl lg:max-w-2xl leading-relaxed">
+                  We craft bold digital solutions that drive growth. From concept to launch,
+                  solving real-world problems with precision and creativity.
+                </p>
               </div>
               {/* Filter Tags - Mobile Optimized */}
               <div className="mt-4 sm:mt-5 lg:mt-6">
