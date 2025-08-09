@@ -10,7 +10,7 @@ const Header = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(true);
-    }, 500); // 1 second delay
+    }, 500);
     return () => clearTimeout(timer);
   }, []);
 
@@ -20,9 +20,10 @@ const Header = () => {
 
   return (
     <>
-      <header className={`w-full pt-4 pb-0 px-6 flex items-center justify-between bg-white relative z-50 transition-opacity duration-1000 ease-out ${
+      <header className={`w-full py-4 px-4 sm:px-6 lg:px-8 xl:px-12 flex items-center justify-between bg-white relative z-50 transition-opacity duration-1000 ease-out ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}>
+        {/* Logo */}
         <div className={`flex items-center transition-opacity duration-1000 ease-out ${
           isVisible ? 'opacity-100' : 'opacity-0'
         }`}>

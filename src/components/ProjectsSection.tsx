@@ -102,8 +102,8 @@ const ProjectsSection = () => {
           </p>
         </div>
 
-        {/* Project Grid - Slide from bottom */}
-        <div className={`grid md:grid-cols-2 gap-6 transition-all duration-1000 delay-300 ${
+        {/* Project Grid - Responsive grid layout */}
+        <div className={`grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 transition-all duration-1000 delay-300 ${
           isVisible 
             ? 'translate-y-0 opacity-100' 
             : 'translate-y-20 opacity-0'
@@ -118,9 +118,9 @@ const ProjectsSection = () => {
               }`}
               style={{ transitionDelay: `${400 + (index * 150)}ms` }}
             >
-              {/* Image Container with Gradient Background */}
-              <div className={`relative ${project.bgColor} rounded-3xl aspect-[5/3] flex items-center justify-center overflow-hidden mb-4 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1`}>
-                <div className="relative w-full h-full flex items-center justify-center">
+              {/* Image Container with Gradient Background - Consistent aspect ratio */}
+              <div className={`relative ${project.bgColor} rounded-2xl sm:rounded-3xl aspect-[5/3] flex items-center justify-center overflow-hidden mb-3 sm:mb-4 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1`}>
+                <div className="relative w-full h-full flex items-center justify-center p-4 sm:p-6 lg:p-8">
                   <img
                     src={project.image}
                     alt={project.title}
@@ -129,38 +129,42 @@ const ProjectsSection = () => {
                 </div>
               </div>
 
-              {/* Project Info - Transparent background */}
-              <div className="px-2">
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center gap-3">
-                    <span className={`px-4 py-1 rounded-full text-xs font-medium shadow-lg transition-all duration-300 ${
+              {/* Project Info - Responsive spacing */}
+              <div className="px-1 sm:px-2">
+                <div className="flex items-center justify-between mb-2 sm:mb-3">
+                  <div className="flex items-center gap-2 sm:gap-3 flex-wrap sm:flex-nowrap">
+                    <span className={`px-3 sm:px-4 py-1 rounded-full text-xs sm:text-xs font-medium shadow-lg transition-all duration-300 ${
                       'bg-gradient-to-r from-gray-900 via-gray-900 to-gray-900 text-white group-hover:from-purple-600 group-hover:via-purple-500 group-hover:to-purple-600'
                     } relative overflow-hidden`}>
                       {/* White gradient overlay */}
                       <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-white/20 to-white/10 pointer-events-none"></div>
                       <span className="relative z-10">{project.badge}</span>
                     </span>
-                    <span className="text-gray-900 text-xs font-medium">
+                    <span className="text-gray-900 text-xs sm:text-xs font-medium hidden sm:block">
                       AI Integrated Workflow Product
+                    </span>
+                    {/* Mobile version - shortened text */}
+                    <span className="text-gray-900 text-xs font-medium block sm:hidden">
+                      AI Product
                     </span>
                   </div>
                   
-                  {/* Team Section with Sliding Pill Effect - Improved positioning */}
+                  {/* Team Section with Sliding Pill Effect - Responsive sizing */}
                   <div className="relative flex items-center">
                     {/* Sliding Pill Container */}
-                    <div className="relative overflow-hidden border border-gray-200 bg-gray-100 rounded-full transition-all duration-500 ease-out group-hover:pr-14">
+                    <div className="relative overflow-hidden border border-gray-200 bg-gray-100 rounded-full transition-all duration-500 ease-out group-hover:pr-12 sm:group-hover:pr-14">
                       {/* Default state - "by Team" text */}
-                      <div className="px-3 py-1 transition-all duration-500 ease-out">
+                      <div className="px-2 sm:px-3 py-1 transition-all duration-500 ease-out">
                         <span className="text-gray-500 text-xs whitespace-nowrap">by Team</span>
                       </div>
                     </div>
                     
-                    {/* Team member circles - perfect fit with no white space */}
-                    <div className="absolute right-1 flex -space-x-1.5 transition-all duration-500 ease-out transform translate-x-6 opacity-0 group-hover:translate-x-0 group-hover:opacity-100">
+                    {/* Team member circles - Responsive sizing */}
+                    <div className="absolute right-1 flex -space-x-1 sm:-space-x-1.5 transition-all duration-500 ease-out transform translate-x-5 sm:translate-x-6 opacity-0 group-hover:translate-x-0 group-hover:opacity-100">
                       {project.team.map((member, i) => (
                         <div 
                           key={i}
-                          className="w-6 h-6 rounded-full overflow-hidden transition-all duration-300 shadow-sm"
+                          className="w-5 h-5 sm:w-6 sm:h-6 rounded-full overflow-hidden transition-all duration-300 shadow-sm"
                           style={{ 
                             transitionDelay: `${i * 80}ms`
                           }}
@@ -183,8 +187,8 @@ const ProjectsSection = () => {
           ))}
         </div>
 
-        {/* Services Section - Hidden on Mobile */}
-        <div ref={servicesRef} className="hidden sm:block mt-24">
+        {/* Services Section - Responsive visibility */}
+        <div ref={servicesRef} className="hidden md:block mt-16 lg:mt-24">
           {/* Services Header - Slide from left */}
           <div className={`mb-12 transition-all duration-1000 ease-out ${
             servicesVisible 
@@ -199,7 +203,7 @@ const ProjectsSection = () => {
             </p>
             
             {/* Services Image - Slide from bottom */}
-            <div className={`mt-8 transition-all duration-1000 delay-400 ${
+            <div className={`mt-6 sm:mt-8 transition-all duration-1000 delay-400 ${
               servicesVisible 
                 ? 'translate-y-0 opacity-100' 
                 : 'translate-y-20 opacity-0'
@@ -208,15 +212,13 @@ const ProjectsSection = () => {
                 <img
                   src="/ser.svg"
                   alt="Services illustration"
-                  className="max-w-6xl h-auto transition-all duration-500"
+                  className="w-full max-w-6xl h-auto transition-all duration-500"
                 />
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      
     </section>
   );
 };
