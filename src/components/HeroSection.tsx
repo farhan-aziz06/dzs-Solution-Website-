@@ -56,7 +56,7 @@ const HeroSection = () => {
           </p>
           <a
             href="/contact"
-            className="inline-flex items-center bg-white hover:bg-gray-50 text-gray-900 font-medium px-[clamp(1rem,2vw,1.5rem)] py-[clamp(0.5rem,1vw,0.75rem)] rounded-full mt-[clamp(1rem,2vw,1.5rem)] shadow-md hover:shadow-lg transition-all duration-200"
+            className="inline-flex items-center bg-white hover:bg-gray-50 text-gray-900 font-medium px-[clamp(1rem,2vw,1.5rem)] py-[clamp(0.15rem,0.3vw,0.25rem)] rounded-full mt-[clamp(1rem,2vw,1.5rem)] shadow-md hover:shadow-lg transition-all duration-200"
             style={{ fontSize: "clamp(0.85rem, 1vw + 0.5rem, 1rem)" }}
           >
             Get in contact
@@ -65,8 +65,8 @@ const HeroSection = () => {
               alt="Arrow"
               className="ml-2"
               style={{
-                width: "clamp(1.2rem, 1.5vw, 1.5rem)",
-                height: "clamp(1.2rem, 1.5vw, 1.5rem)",
+                width: "clamp(2.5rem, 3vw, 3rem)",
+                height: "clamp(2.5rem, 3vw, 3rem)",
               }}
             />
           </a>
