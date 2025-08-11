@@ -31,7 +31,7 @@ const HeroSection = () => {
             ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}
             sm:left-[clamp(0.75rem,2vw,2.5rem)]
             sm:bottom-[clamp(1rem,3vw,3rem)]
-            sm:max-w-[clamp(250px,50%,600px)]
+            sm:max-w-[clamp(250px,45%,550px)]
             flex flex-col
             sm:items-start sm:text-left
             max-sm:inset-0 max-sm:flex max-sm:items-center max-sm:justify-center max-sm:text-center max-sm:px-4`}
@@ -39,7 +39,8 @@ const HeroSection = () => {
           <h1
             className="text-white font-semibold leading-tight tracking-tight"
             style={{
-              fontSize: "clamp(1.5rem, 2.5vw + 1rem, 3.2rem)",
+              fontSize: "clamp(1.3rem, 2.2vw + 0.8rem, 2.8rem)",
+              lineHeight: "1.15",
             }}
           >
             Your trusted partner for guaranteed software delivery
@@ -47,12 +48,11 @@ const HeroSection = () => {
           <p
             className="text-white/90 mt-[clamp(0.75rem,1.5vw,1.25rem)] leading-relaxed"
             style={{
-              fontSize: "clamp(0.85rem, 1vw + 0.6rem, 1.2rem)",
+              fontSize: "clamp(0.75rem, 0.8vw + 0.5rem, 1rem)",
+              lineHeight: "1.4",
             }}
           >
-            Combining advanced technology and decades of industry insight, we
-            design and develop bespoke full-cycle solutions tailored to deliver
-            your unique software vision.
+            Combining advanced technology and decades of industry insight, we design and develop bespoke full-cycle solutions tailored to deliver your unique software vision.
           </p>
           <a
             href="/contact"
@@ -93,9 +93,10 @@ const HeroSection = () => {
                   className="text-gray-400 leading-relaxed"
                   style={{
                     fontSize: "clamp(0.65rem, 0.8vw, 0.75rem)",
+                    lineHeight: "1.3",
                   }}
                 >
-                  Real stories. Real results. Hear what our clients have to say.
+                  Real stories. Real results. Hear what our clients say.
                 </p>
                 <a
                   href="/about#client-reviews"
@@ -126,13 +127,13 @@ const HeroSection = () => {
           ${isLoaded ? "translate-x-0 opacity-100" : "translate-x-8 opacity-0"}`}
         style={{
           bottom: "clamp(1rem, 2vw, 2rem)",
-          right: "max(5%, 2rem)",
+          right: "max(4%, 2rem)",
         }}
       >
         <div
           className="bg-white rounded-2xl shadow-xl p-[clamp(0.5rem,1vw,0.75rem)] flex items-center space-x-3"
           style={{
-            width: "clamp(260px, 25vw, 420px)",
+            width: "clamp(300px, 30vw, 500px)",
           }}
         >
           <div className="flex -space-x-3 flex-shrink-0">
@@ -154,9 +155,10 @@ const HeroSection = () => {
               className="text-gray-400 leading-relaxed"
               style={{
                 fontSize: "clamp(0.65rem, 0.8vw, 0.75rem)",
+                lineHeight: "1.3",
               }}
             >
-              Real stories. Real results. Hear what our clients have to say.
+              Real stories. Real results. Hear what our clients say.
             </p>
             <a
               href="/about#client-reviews"
