@@ -62,8 +62,8 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Review card for mobile - enhanced responsive sizing */}
-          <div className="mt-6 xs:mt-8 w-full px-2">
+          {/* Review card for mobile - moved down slightly */}
+          <div className="mt-8 xs:mt-10 w-full px-2">
             <div
               className={`bg-white rounded-xl xs:rounded-2xl p-1.5 xs:p-2 w-full max-w-[260px] xs:max-w-[280px] mx-auto transform transition-all duration-1000 ease-out delay-300 ${
                 isLoaded ? "translate-x-0 opacity-100" : "translate-x-16 opacity-0"
@@ -74,25 +74,27 @@ const HeroSection = () => {
               }}
             >
               <div className="flex items-center space-x-1.5 xs:space-x-2">
-                <div className="flex -space-x-2 xs:-space-x-3">
-                  <div className="w-7 h-7 xs:w-8 xs:h-8 rounded-full shadow-lg overflow-hidden z-30">
+                {/* MODIFIED: Increased avatar size and negative margin */}
+                <div className="flex -space-x-3 xs:-space-x-4">
+                  <div className="w-8 h-8 xs:w-9 xs:h-9 rounded-full shadow-lg overflow-hidden z-30">
                     <img src="/girl1.svg" alt="User" className="w-full h-full object-cover" />
                   </div>
-                  <div className="w-7 h-7 xs:w-8 xs:h-8 rounded-full shadow-lg overflow-hidden z-20">
+                  <div className="w-8 h-8 xs:w-9 xs:h-9 rounded-full shadow-lg overflow-hidden z-20">
                     <img src="/boy.svg" alt="User" className="w-full h-full object-cover" />
                   </div>
-                  <div className="w-7 h-7 xs:w-8 xs:h-8 rounded-full shadow-lg overflow-hidden z-10">
+                  <div className="w-8 h-8 xs:w-9 xs:h-9 rounded-full shadow-lg overflow-hidden z-10">
                     <img src="/girl.svg" alt="User" className="w-full h-full object-cover" />
                   </div>
                 </div>
 
                 <div className="flex-1 min-w-0">
-                  <p className="text-gray-400 text-xs leading-relaxed mb-0.5 xs:mb-1">
+                  {/* MODIFIED: Decreased text size */}
+                  <p className="text-gray-400 text-[11px] xs:text-xs leading-relaxed mb-0.5 xs:mb-1">
                     Real stories. Real results. Hear what our clients have to say.
                   </p>
                   <a
                     href="/about#client-reviews"
-                    className="text-black hover:text-gray-700 text-xs font-semibold transition-colors duration-200 flex items-center space-x-1"
+                    className="text-black hover:text-gray-700 text-[11px] xs:text-xs font-semibold transition-colors duration-200 flex items-center space-x-1"
                   >
                     <span>See Reviews</span>
                     <img src="/arrow2.svg" alt="" className="w-1.5 h-1.5 flex-shrink-0" />
@@ -136,7 +138,7 @@ const HeroSection = () => {
               </div>
             </div>
 
-            {/* Reviews card - Desktop positioning with enhanced fluid sizing */}
+            {/* Reviews card - Desktop positioning moved left */}
             <div className="hidden lg:block">
               <div
                 className={`absolute transform transition-all duration-1000 ease-out delay-300 ${
@@ -144,37 +146,39 @@ const HeroSection = () => {
                 }`}
                 style={{
                   bottom: '-135px',
-                  right: 'clamp(-40px, -3vw, -25px)',
+                  right: 'clamp(-18px, -3vw, -20px)'
                 }}
               >
                 <div
                   className="bg-white rounded-2xl lg:rounded-3xl p-2 lg:p-2.5 xl:p-3 2xl:p-4 shadow-xl"
                   style={{
-                    width: 'clamp(300px, 25vw + 20px, 480px)',
+                    width: 'clamp(320px, 25vw + 20px, 480px)', // Slightly increased min-width
                     boxShadow:
                       "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
                   }}
                 >
                   <div className="flex items-center space-x-2 lg:space-x-2.5 xl:space-x-3 2xl:space-x-4">
-                    <div className="flex -space-x-2 lg:-space-x-3 xl:-space-x-4 2xl:-space-x-5">
-                      <div className="w-[clamp(40px,3.5vw,56px)] h-[clamp(40px,3.5vw,56px)] rounded-full shadow-lg overflow-hidden z-30">
+                    {/* MODIFIED: Increased avatar size and negative margin with clamp */}
+                    <div className="flex -space-x-4 lg:-space-x-5 xl:-space-x-6">
+                      <div className="w-[clamp(48px,4.5vw,64px)] h-[clamp(48px,4.5vw,64px)] rounded-full shadow-lg overflow-hidden z-30">
                         <img src="/girl1.svg" alt="User" className="w-full h-full object-cover" />
                       </div>
-                      <div className="w-[clamp(40px,3.5vw,56px)] h-[clamp(40px,3.5vw,56px)] rounded-full shadow-lg overflow-hidden z-20">
+                      <div className="w-[clamp(48px,4.5vw,64px)] h-[clamp(48px,4.5vw,64px)] rounded-full shadow-lg overflow-hidden z-20">
                         <img src="/boy.svg" alt="User" className="w-full h-full object-cover" />
                       </div>
-                      <div className="w-[clamp(40px,3.5vw,56px)] h-[clamp(40px,3.5vw,56px)] rounded-full shadow-lg overflow-hidden z-10">
+                      <div className="w-[clamp(48px,4.5vw,64px)] h-[clamp(48px,4.5vw,64px)] rounded-full shadow-lg overflow-hidden z-10">
                         <img src="/girl.svg" alt="User" className="w-full h-full object-cover" />
                       </div>
                     </div>
 
                     <div className="flex-1 min-w-0">
-                      <p className="text-gray-400 text-[clamp(12px,1.2vw,16px)] leading-relaxed mb-1">
+                      {/* MODIFIED: Decreased text size with clamp */}
+                      <p className="text-gray-400 text-[clamp(11px,1.0vw,14px)] leading-relaxed mb-1">
                         Real stories. Real results. Hear what our clients have to say.
                       </p>
                       <a
                         href="/about#client-reviews"
-                        className="text-black hover:text-gray-700 text-[clamp(12px,1.2vw,16px)] font-semibold transition-colors duration-200 flex items-center space-x-1"
+                        className="text-black hover:text-gray-700 text-[clamp(11px,1.0vw,14px)] font-semibold transition-colors duration-200 flex items-center space-x-1"
                       >
                         <span>See Reviews</span>
                         <img src="/arrow2.svg" alt="" className="w-[clamp(6px,0.6vw,8px)] h-[clamp(6px,0.6vw,8px)] flex-shrink-0" />
@@ -186,8 +190,8 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Tablet version - enhanced responsive sizing */}
-          <div className="sm:block md:block lg:hidden mt-8 sm:mt-12 md:mt-16">
+          {/* Tablet version - moved down slightly */}
+          <div className="sm:block md:block lg:hidden mt-10 sm:mt-14 md:mt-18">
             <div
               className={`bg-white rounded-2xl sm:rounded-3xl p-2 sm:p-2.5 w-[min(90vw,400px)] sm:w-[min(85vw,420px)] md:w-[min(80vw,450px)] mx-auto transform transition-all duration-1000 ease-out delay-300 ${
                 isLoaded ? "translate-x-0 opacity-100" : "translate-x-16 opacity-0"
@@ -198,25 +202,27 @@ const HeroSection = () => {
               }}
             >
               <div className="flex items-center space-x-2 sm:space-x-2.5 md:space-x-3">
-                <div className="flex -space-x-2 sm:-space-x-3 md:-space-x-4">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full shadow-lg overflow-hidden z-30">
+                {/* MODIFIED: Increased avatar size and negative margin */}
+                <div className="flex -space-x-3 sm:-space-x-4 md:-space-x-5">
+                  <div className="w-9 h-9 sm:w-11 sm:h-11 md:w-14 md:h-14 rounded-full shadow-lg overflow-hidden z-30">
                     <img src="/girl1.svg" alt="User" className="w-full h-full object-cover" />
                   </div>
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full shadow-lg overflow-hidden z-20">
+                  <div className="w-9 h-9 sm:w-11 sm:h-11 md:w-14 md:h-14 rounded-full shadow-lg overflow-hidden z-20">
                     <img src="/boy.svg" alt="User" className="w-full h-full object-cover" />
                   </div>
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full shadow-lg overflow-hidden z-10">
+                  <div className="w-9 h-9 sm:w-11 sm:h-11 md:w-14 md:h-14 rounded-full shadow-lg overflow-hidden z-10">
                     <img src="/girl.svg" alt="User" className="w-full h-full object-cover" />
                   </div>
                 </div>
 
                 <div className="flex-1 min-w-0">
-                  <p className="text-gray-400 text-xs sm:text-sm md:text-base leading-relaxed mb-1">
+                  {/* MODIFIED: Decreased text size */}
+                  <p className="text-gray-400 text-[11px] sm:text-xs md:text-sm leading-relaxed mb-1">
                     Real stories. Real results. Hear what our clients have to say.
                   </p>
                   <a
                     href="/about#client-reviews"
-                    className="text-black hover:text-gray-700 text-xs sm:text-sm md:text-base font-semibold transition-colors duration-200 flex items-center space-x-1"
+                    className="text-black hover:text-gray-700 text-[11px] sm:text-xs md:text-sm font-semibold transition-colors duration-200 flex items-center space-x-1"
                   >
                     <span>See Reviews</span>
                     <img src="/arrow2.svg" alt="" className="w-1.5 h-1.5 sm:w-2 sm:h-2 flex-shrink-0" />
