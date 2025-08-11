@@ -160,23 +160,21 @@ const Projects = () => {
           }`}>
             <div className="max-w-6xl mx-auto">
 
-              {/* Project Grid with ProjectsSection styling - ORIGINAL LAYOUT PRESERVED */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 lg:gap-6">
+              {/* Project Grid - EXACT SAME AS PROJECTSSECTION */}
+              <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
                 {projects.map((project, index) => (
                   <div 
                     key={index} 
-                    className={`group cursor-pointer transform transition-all duration-500 ease-out ${
+                    className={`group cursor-pointer transition-all duration-1000 ${
                       isProjectsVisible 
                         ? 'translate-y-0 opacity-100' 
-                        : 'translate-y-8 opacity-0'
+                        : 'translate-y-20 opacity-0'
                     }`}
-                    style={{ 
-                      transitionDelay: isProjectsVisible ? `${index * 100}ms` : '0ms' 
-                    }}
+                    style={{ transitionDelay: `${400 + (index * 150)}ms` }}
                   >
-                    {/* Image Container with Gradient Background */}
-                    <div className={`relative ${project.bgColor} rounded-2xl sm:rounded-3xl aspect-[5/3] flex items-center justify-center overflow-hidden mb-2 sm:mb-3 lg:mb-4 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1`}>
-                      <div className="relative w-full h-full flex items-center justify-center">
+                    {/* Image Container with Gradient Background - Consistent aspect ratio */}
+                    <div className={`relative ${project.bgColor} rounded-2xl sm:rounded-3xl aspect-[5/3] flex items-center justify-center overflow-hidden mb-3 sm:mb-4 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1`}>
+                      <div className="relative w-full h-full flex items-center justify-center p-4 sm:p-6 lg:p-8">
                         <img
                           src={project.image}
                           alt={project.title}
@@ -185,34 +183,38 @@ const Projects = () => {
                       </div>
                     </div>
 
-                    {/* Project Info - Updated with ProjectsSection animations */}
+                    {/* Project Info - Responsive spacing - EXACT SAME AS PROJECTSSECTION */}
                     <div className="px-1 sm:px-2">
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-3 mb-2 sm:mb-3">
-                        <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
-                          <span className={`px-3 sm:px-4 py-1 rounded-full text-xs font-medium shadow-lg transition-all duration-300 ${
+                      <div className="flex items-center justify-between mb-2 sm:mb-3">
+                        <div className="flex items-center gap-2 sm:gap-3 flex-wrap sm:flex-nowrap">
+                          <span className={`px-3 sm:px-4 py-1 rounded-full text-xs sm:text-xs font-medium shadow-lg transition-all duration-300 ${
                             'bg-gradient-to-r from-gray-900 via-gray-900 to-gray-900 text-white group-hover:from-purple-600 group-hover:via-purple-500 group-hover:to-purple-600'
                           } relative overflow-hidden`}>
                             {/* White gradient overlay */}
                             <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-white/20 to-white/10 pointer-events-none"></div>
                             <span className="relative z-10">{project.badge}</span>
                           </span>
-                          <span className="text-gray-900 text-xs font-medium">
+                          <span className="text-gray-900 text-xs sm:text-xs font-medium hidden sm:block">
                             AI Integrated Workflow Product
+                          </span>
+                          {/* Mobile version - shortened text */}
+                          <span className="text-gray-900 text-xs font-medium block sm:hidden">
+                            AI Product
                           </span>
                         </div>
                         
-                        {/* Team Section with Sliding Pill Effect - ProjectsSection style */}
-                        <div className="relative flex items-center self-start sm:self-auto">
+                        {/* Team Section with Sliding Pill Effect - Responsive sizing */}
+                        <div className="relative flex items-center">
                           {/* Sliding Pill Container */}
-                          <div className="relative overflow-hidden border border-gray-200 bg-gray-100 rounded-full transition-all duration-500 ease-out group-hover:pr-10 sm:group-hover:pr-12 lg:group-hover:pr-14">
+                          <div className="relative overflow-hidden border border-gray-200 bg-gray-100 rounded-full transition-all duration-500 ease-out group-hover:pr-12 sm:group-hover:pr-14">
                             {/* Default state - "by Team" text */}
                             <div className="px-2 sm:px-3 py-1 transition-all duration-500 ease-out">
                               <span className="text-gray-500 text-xs whitespace-nowrap">by Team</span>
                             </div>
                           </div>
                           
-                          {/* Team member circles - perfect fit with no white space */}
-                          <div className="absolute right-1 flex -space-x-1 sm:-space-x-1.5 transition-all duration-500 ease-out transform translate-x-4 sm:translate-x-6 opacity-0 group-hover:translate-x-0 group-hover:opacity-100">
+                          {/* Team member circles - Responsive sizing */}
+                          <div className="absolute right-1 flex -space-x-1 sm:-space-x-1.5 transition-all duration-500 ease-out transform translate-x-5 sm:translate-x-6 opacity-0 group-hover:translate-x-0 group-hover:opacity-100">
                             {project.team.map((member, i) => (
                               <div 
                                 key={i}
@@ -231,7 +233,7 @@ const Projects = () => {
                           </div>
                         </div>
                       </div>
-                      <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-gray-900 leading-tight">
+                      <h3 className="text-lg font-semibold text-gray-900 leading-tight">
                         {project.title}
                       </h3>
                     </div>

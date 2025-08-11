@@ -30,7 +30,81 @@ const HeroSection = () => {
 
       {/* Main content container with relative positioning for consistent layout */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-20 md:py-32 lg:py-46 relative z-10">
-        <div className="relative min-h-[70vh] sm:min-h-[75vh] lg:min-h-[80vh] pt-8 sm:pt-20 md:pt-32 lg:pt-40">
+        {/* Mobile/Phone layout - centered content */}
+        <div className="sm:hidden relative min-h-[70vh] flex flex-col items-center justify-center text-center space-y-6">
+          {/* Text content */}
+          <div
+            className={`max-w-xs space-y-4 transform transition-all duration-1000 ease-out ${
+              isLoaded ? "translate-y-0 opacity-100" : "translate-y-16 opacity-0"
+            }`}
+          >
+            <h1 className="text-xl font-semibold text-white leading-tight">
+              Your trusted partner for guaranteed software delivery
+            </h1>
+
+            <p className="text-xs font-normal text-white/90 leading-relaxed">
+              Combining advanced technology and decades of industry insight, we design and develop
+              bespoke full-cycle solutions tailored to deliver your unique software vision.
+            </p>
+
+            <div className="pt-2">
+              <a
+                href="/contact"
+                className="group bg-white hover:bg-gray-50 text-gray-900 font-medium text-xs px-3 py-1.5 rounded-full flex items-center justify-between w-40 transition-all duration-200 shadow-md hover:shadow-lg mx-auto"
+              >
+                <span className="flex-grow text-left ml-2">Get in contact</span>
+                <img
+                  src="/arrow.svg"
+                  alt="Arrow"
+                  className="w-6 h-6 group-hover:translate-x-1 transition-transform"
+                />
+              </a>
+            </div>
+          </div>
+
+          {/* Review card for mobile - centered and lower */}
+          <div className="mt-8">
+            <div
+              className={`bg-white rounded-2xl p-2 w-full max-w-[280px] mx-auto transform transition-all duration-1000 ease-out delay-300 ${
+                isLoaded ? "translate-x-0 opacity-100" : "translate-x-16 opacity-0"
+              }`}
+              style={{
+                boxShadow:
+                  "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+              }}
+            >
+              <div className="flex items-center space-x-2">
+                <div className="flex -space-x-3">
+                  <div className="w-8 h-8 rounded-full shadow-lg overflow-hidden z-30">
+                    <img src="/girl1.svg" alt="User" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="w-8 h-8 rounded-full shadow-lg overflow-hidden z-20">
+                    <img src="/boy.svg" alt="User" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="w-8 h-8 rounded-full shadow-lg overflow-hidden z-10">
+                    <img src="/girl.svg" alt="User" className="w-full h-full object-cover" />
+                  </div>
+                </div>
+
+                <div className="flex-1">
+                  <p className="text-gray-400 text-xs leading-relaxed mb-1">
+                    Real stories. Real results. Hear what our clients have to say.
+                  </p>
+                  <a
+                    href="/about#client-reviews"
+                    className="text-black hover:text-gray-700 text-xs font-semibold transition-colors duration-200 flex items-center space-x-1"
+                  >
+                    <span>See Reviews</span>
+                    <img src="/arrow2.svg" alt="" className="w-1.5 h-1.5" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Tablet and larger screens layout */}
+        <div className="hidden sm:block relative min-h-[70vh] sm:min-h-[75vh] lg:min-h-[80vh] pt-8 sm:pt-20 md:pt-32 lg:pt-40">
           {/* Content wrapper to maintain consistent spacing ratios */}
           <div className="relative w-full h-full flex flex-col justify-between">
             {/* Left side - Text content with slide up animation */}
@@ -113,8 +187,8 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Mobile and Tablet version of review card (below lg) */}
-          <div className="lg:hidden mt-8 sm:mt-12 md:mt-16">
+          {/* Mobile and Tablet version of review card (sm to md screens only) - moved down */}
+          <div className="sm:block md:block lg:hidden mt-12 sm:mt-16 md:mt-20">
             <div
               className={`bg-white rounded-2xl sm:rounded-3xl p-2 sm:p-2.5 w-full max-w-[280px] sm:max-w-[350px] md:max-w-[400px] mx-auto transform transition-all duration-1000 ease-out delay-300 ${
                 isLoaded ? "translate-x-0 opacity-100" : "translate-x-16 opacity-0"
