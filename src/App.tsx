@@ -7,6 +7,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import Layout from "@/components/Layout"; // Make sure the path is correct
+import Projects from "@/pages/Project"; // Adjust the import based on your file structure
 
 // Lazy-loaded pages
 const Index = lazy(() => import("./pages/Index"));
@@ -14,7 +15,7 @@ const Services = lazy(() => import("./pages/Services"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
 const NotFound = lazy(() => import("./pages/NotFound"));
-const Products = lazy(() => import("./pages/Product"));
+const Products = lazy(() => import("./pages/Project"));
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ const App = () => (
             <Route path="/" element={<Layout />}>
               <Route index element={<Index />} />
               <Route path="services" element={<Services />} />
+              <Route path="project" element={<Projects />} />
               <Route path="product" element={<Products />} />
               <Route path="about" element={<About />} />
               <Route path="contact" element={<Contact />} />

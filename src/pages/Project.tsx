@@ -2,7 +2,7 @@ import Header from '@/components/Header';
 import React, { useEffect, useState } from 'react';
 import Services from '@/pages/Services';
 
-const Products = () => {
+const Projects = () => {
   const [isHeaderVisible, setIsHeaderVisible] = useState(false);
   const [isProjectsVisible, setIsProjectsVisible] = useState(false);
   const [activeTab, setActiveTab] = useState('Artificial Intelligence');
@@ -242,9 +242,8 @@ const Products = () => {
           </section>
         </div>
       </section>
-      <Services />
     </div>
   );
 };
 
-export default Products;
+export default Projects;
