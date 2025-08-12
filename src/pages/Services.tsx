@@ -146,8 +146,7 @@ const Services = () => {
                   Services
                 </h1>
                 <p className="text-gray-500 text-sm sm:text-base lg:text-lg max-w-5xl leading-relaxed">
-                  We offer comprehensive digital solutions to help your business thrive in the modern landscape
-                </p>
+                  We craft bold digital solutions that drive growth. From concept to launch, solving real-world problems with precision and creativity.
               </div>
             </div>
           </section>
