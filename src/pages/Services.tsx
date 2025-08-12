@@ -146,7 +146,7 @@ const Services = () => {
                   Services
                 </h1>
                 <p className="text-gray-500 text-sm sm:text-base lg:text-lg max-w-5xl leading-relaxed">
-                  We craft bold digital solutions that drive growth. From concept to launch, solving real-world problems with precision and creativity.
+                  We craft bold digital solutions that drive growth. From concept to launch, solving real-world problems with precision and creativity.</p>
               </div>
             </div>
           </section>
