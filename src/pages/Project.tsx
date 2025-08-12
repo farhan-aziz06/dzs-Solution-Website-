@@ -168,17 +168,19 @@ const Projects = () => {
                     style={{ transitionDelay: `${400 + index * 150}ms` }}
                   >
                     {/* Card Image */}
-                    <div
-                      className={`relative ${project.bgColor} rounded-2xl sm:rounded-3xl aspect-[5/3] flex items-center justify-center overflow-hidden mb-3 sm:mb-4 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1`}
-                    >
-                      <div className="relative w-full h-full flex items-center justify-center p-4 sm:p-6 lg:p-8">
-                        <img
-                          src={project.image}
-                          alt={project.title}
-                          className="max-w-full max-h-full object-contain transition-transform duration-300 group-hover:scale-110"
-                        />
-                      </div>
-                    </div>
+                    {/* Card Image */}
+<div
+  className={`relative rounded-2xl sm:rounded-3xl aspect-[5/3] flex items-center justify-center overflow-hidden mb-3 sm:mb-4 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1`}
+>
+  <div className="relative w-full h-full">
+    <img
+      src={project.image}
+      alt={project.title}
+      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+    />
+  </div>
+</div>
+
 
                     {/* Card Info */}
                     <div className="px-1 sm:px-2">
