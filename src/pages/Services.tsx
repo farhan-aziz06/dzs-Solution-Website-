@@ -142,10 +142,10 @@ const Services = () => {
               }`}
             >
               <div className="text-left">
-                <h1 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-gray-900 mb-2 mt-4 sm:mt-6 lg:mt-10">
+                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 mb-1 mt-2 sm:mt-6 lg:mt-9">
                   Services
                 </h1>
-                <p className="text-gray-500 text-sm sm:text-base lg:text-lg max-w-5xl leading-relaxed">
+                <p className="text-gray-500 text-xs sm:text-sm lg:text-base max-w-xl lg:max-w-2xl leading-relaxed">
                   We craft bold digital solutions that drive growth. From concept to launch, solving real-world problems with precision and creativity.</p>
               </div>
             </div>
