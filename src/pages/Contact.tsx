@@ -4,7 +4,7 @@ const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
-  // 1. State to track the selected project type
+  // State to track the selected project type
   const [selectedProject, setSelectedProject] = useState('Web Development');
 
   useEffect(() => {
@@ -28,12 +28,12 @@ const Contact = () => {
     return () => observer.disconnect();
   }, []);
 
-  // 2. An array to hold the project types for easy mapping
+  // Project types for easy mapping
   const projectTypes = ['Web Development', 'Mobile App', 'AI Integration'];
 
   return (
     <>
-      {/* Header with Background Image - Same structure as Products page */}
+      {/* Header with Background Image */}
       <div className="mt-4 sm:mt-6 lg:mt-10 px-2 sm:px-4 lg:px-6">
         <div 
           className="rounded-3xl overflow-hidden bg-white"
@@ -45,13 +45,14 @@ const Contact = () => {
           }}
         >
           <section className="pt-6 sm:pt-8 lg:pt-12 pb-4 sm:pb-6 lg:pb-8">
-            {/* Header Content - Aligned with products page structure */}
-            <div className={`mb-4 sm:mb-6 lg:mb-8 max-w-6xl mx-auto px-4 sm:px-6 lg:px-6 transform transition-all duration-1000 ease-out ${
+            {/* Header Content */}
+            <div className={`mb-4 sm:mb-6 lg:mb-8 max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 transform transition-all duration-1000 ease-out ${
               isVisible ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'
             }`}>
-              {/* Simple container with proper alignment - no negative margins */}
               <div className="w-full text-left">
-                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 mb-2 mt-4 sm:mt-6 lg:mt-9">Contact Us</h1>
+                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 mb-2 mt-4 sm:mt-6 lg:mt-9">
+                  Contact Us
+                </h1>
                 <p className="text-gray-500 text-xs sm:text-sm lg:text-base max-w-xl lg:max-w-2xl leading-relaxed">
                   We craft bold digital solutions that drive growth. From concept to launch, solving real-world problems with precision and creativity.
                 </p>
@@ -61,12 +62,14 @@ const Contact = () => {
         </div>
       </div>
 
-      <section ref={sectionRef} className="pt-8 sm:pt-12 lg:pt-16 pb-6 sm:pb-8 lg:pb-12 px-3 sm:px-4 lg:px-6 bg-white mb-12 sm:mb-18 lg:mb-24">
-        <div className="max-w-6xl mx-auto">
-          {/* Main Content Grid - Responsive layout */}
-          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
-            {/* Left Side - Contact Image - Responsive sizing */}
-            <div className={`flex items-center justify-center transform transition-all duration-1000 ease-out ${
+      {/* Main Contact Section */}
+      <section ref={sectionRef} className="pt-12 sm:pt-16 lg:pt-20 pb-12 sm:pb-16 lg:pb-20 px-3 sm:px-4 lg:px-8 xl:px-12 bg-white mb-12 sm:mb-18 lg:mb-24">
+        <div className="w-full">
+          {/* Main Content Grid */}
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 xl:gap-16 items-start lg:items-center">
+            
+            {/* Left Side - Contact Image */}
+            <div className={`flex items-center justify-center lg:justify-start transform transition-all duration-1000 ease-out ${
               isVisible ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'
             }`} style={{ transitionDelay: '200ms' }}>
               <img
@@ -76,14 +79,17 @@ const Contact = () => {
               />
             </div>
 
-            {/* Right Side - Contact Form - Responsive spacing */}
-            <div className={`space-y-3 sm:space-y-4 lg:space-y-6 mt-4 sm:mt-6 lg:mt-16 max-w-md sm:max-w-none mx-auto lg:mx-0 transform transition-all duration-1000 ease-out ${
+            {/* Right Side - Contact Form */}
+            <div className={`space-y-3 sm:space-y-4 lg:space-y-6 mt-4 sm:mt-6 lg:mt-0 w-full transform transition-all duration-1000 ease-out ${
               isVisible ? 'translate-x-0 opacity-100' : 'translate-x-12 opacity-0'
             }`} style={{ transitionDelay: '200ms' }}>
-              {/* Name Fields - Responsive spacing */}
+              
+              {/* Name Fields */}
               <div className="grid grid-cols-2 gap-2 sm:gap-3 lg:gap-4">
                 <div>
-                  <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">First Name</label>
+                  <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">
+                    First Name
+                  </label>
                   <input 
                     type="text" 
                     placeholder="Enter your First Name" 
@@ -91,7 +97,9 @@ const Contact = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">Last Name</label>
+                  <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">
+                    Last Name
+                  </label>
                   <input 
                     type="text" 
                     placeholder="Enter your Last Name" 
@@ -100,9 +108,11 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Email Field - Responsive sizing */}
+              {/* Email Field */}
               <div>
-                <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">Email</label>
+                <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">
+                  Email
+                </label>
                 <input 
                   type="email" 
                   placeholder="Email" 
@@ -110,9 +120,11 @@ const Contact = () => {
                 />
               </div>
 
-              {/* Phone Field - Responsive layout */}
+              {/* Phone Field */}
               <div>
-                <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">Phone</label>
+                <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">
+                  Phone
+                </label>
                 <div className="flex gap-2">
                   <div className="relative">
                     <select className="px-2 sm:px-3 lg:px-4 py-2 sm:py-2.5 lg:py-3 pr-6 sm:pr-8 lg:pr-10 border border-gray-300 rounded-full bg-white text-xs sm:text-sm text-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 min-w-[80px] sm:min-w-[100px] lg:min-w-[140px] appearance-none transition-all duration-300">
@@ -132,11 +144,12 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Project Type - Responsive buttons */}
+              {/* Project Type */}
               <div>
-                <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">Tell us about your project</label>
+                <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">
+                  Tell us about your project
+                </label>
                 <div className="flex flex-wrap gap-1.5 sm:gap-2 lg:gap-3 mb-3 sm:mb-4">
-                  {/* Map over the array to render buttons dynamically */}
                   {projectTypes.map((project) => (
                     <button
                       key={project}
@@ -155,7 +168,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Message Field - Responsive sizing */}
+              {/* Message Field */}
               <div>
                 <textarea 
                   placeholder="Enter message"
@@ -163,7 +176,7 @@ const Contact = () => {
                 ></textarea>
               </div>
 
-              {/* Submit Button and Social Icons - Responsive layout */}
+              {/* Submit Button and Social Icons */}
               <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-0">
                 <button className="relative overflow-hidden bg-gradient-to-r from-purple-500 to-purple-400 hover:from-purple-600 hover:to-purple-500 text-white px-4 sm:px-6 lg:px-8 py-2 sm:py-2.5 lg:py-3 rounded-full transition-all duration-300 flex items-center gap-2 hover:scale-105 hover:shadow-lg text-xs sm:text-sm lg:text-base font-normal group w-full sm:w-auto">
                   {/* White gradient overlay on hover */}
@@ -175,7 +188,7 @@ const Contact = () => {
                   </span>
                 </button>
 
-                {/* Social Icons - Responsive sizing */}
+                {/* Social Icons */}
                 <div className="flex items-center gap-2 sm:gap-3 lg:gap-4">
                   <a href="#" className="hover:opacity-80 transition-all duration-300 hover:scale-110">
                     <img src="/twitter.svg" alt="Twitter" className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
