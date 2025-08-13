@@ -139,7 +139,7 @@ const About = () => {
                   <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 mb-1 mt-2 sm:mt-6 lg:mt-9">
                     About us
                   </h1>
-                  <p className="text-gray-500 text-xs sm:text-sm lg:text-base max-w-xl lg:max-w-2xl leading-relaxed">
+                  <p className="text-gray-400 text-xs sm:text-sm lg:text-base max-w-xl lg:max-w-2xl leading-relaxed">
                     We craft smart digital solutions with a focus on AI, web,
                     and app development. From idea to launch, we build products
                     that drive growth, solve real problems, and stand out in

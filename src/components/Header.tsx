@@ -35,7 +35,7 @@ const Header = () => {
           isVisible ? 'opacity-100' : 'opacity-0'
         }`}>
           <a href="/" className="text-gray-700 hover:text-gray-900 transition-colors font-medium hover:scale-105 duration-200">Home</a>
-          <a href="/services" className="text-gray-700 hover:text-gray-900 transition-colors font-medium hover:scale-105 duration-200">Product & Services</a>
+          <a href="/services" className="text-gray-700 hover:text-gray-900 transition-colors font-medium hover:scale-105 duration-200">Services</a>
           <a href="/project" className="text-gray-700 hover:text-gray-900 transition-colors font-medium hover:scale-105 duration-200">Projects</a>
           <a href="/about" className="text-gray-700 hover:text-gray-900 transition-colors font-medium hover:scale-105 duration-200">About</a>
         </nav>
@@ -102,7 +102,7 @@ const Header = () => {
         <nav className="flex flex-col p-6 space-y-6">
           {[
             { href: "/", text: "Home" },
-            { href: "/services", text: "Product & Services" },
+            { href: "/services", text: "Services" },
             { href: "/project", text: "Projects" },
             { href: "/about", text: "About" }
 

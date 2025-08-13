@@ -22,7 +22,7 @@ const Projects = () => {
       title: "",
       category: "AI Integrated Workflow Product",
       team: ["/girl.svg", "/girl1.svg", "/boy.svg"],
-      image: "/fig1.svg",
+      image: "/pi1.png",
       bgColor: "bg-gradient-to-br from-blue-400 to-blue-600",
       badge: "AI"
     },
@@ -46,7 +46,7 @@ const Projects = () => {
       title: "",
       category: "AI Integrated Workflow Product",
       team: ["/girl1.svg", "/girl.svg", "/boy.svg"],
-      image: "/fig4.svg",
+      image: "/pi1.png",
       bgColor: "bg-gradient-to-br from-blue-900 to-blue-950",
       badge: "AI"
     },
@@ -54,7 +54,7 @@ const Projects = () => {
       title: "",
       category: "AI Integrated Workflow Product",
       team: ["/girl.svg", "/girl1.svg", "/boy.svg"],
-      image: "/fig1.svg",
+      image: "/pi1.png",
       bgColor: "bg-gradient-to-br from-blue-400 to-blue-600",
       badge: "AI"
     },
@@ -94,7 +94,7 @@ const Projects = () => {
                 <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 mb-1 mt-2 sm:mt-6 lg:mt-9">
                   Mobile app development
                 </h1>
-                <p className="text-gray-500 text-xs sm:text-sm lg:text-base max-w-xl lg:max-w-2xl leading-relaxed">
+                <p className="text-gray-400 text-xs sm:text-sm lg:text-base max-w-xl lg:max-w-2xl leading-relaxed">
                   We craft bold digital solutions that drive growth. From concept to launch,
                   solving real-world problems with precision and creativity.
                 </p>
@@ -109,13 +109,16 @@ const Projects = () => {
                       <button
                         key={tab}
                         onClick={() => setActiveTab(tab)}
-                        className={`w-full px-3 py-2 text-xs font-medium transition-all duration-200 rounded-full ${
+                        className={`w-full px-3 py-2 text-xs font-medium transition-all duration-200 rounded-full relative overflow-hidden ${
                           activeTab === tab
-                            ? 'bg-purple-500 text-white shadow-md'
-                            : 'bg-white border border-gray-200 text-gray-600 hover:text-gray-800 hover:bg-gray-50'
+                            ? 'bg-gradient-to-b from-[#C3A5E9] to-[#A16FFF] text-white shadow-md'
+                            : 'bg-white border border-gray-200 text-gray-400 hover:text-gray-800 hover:bg-gray-50'
                         }`}
                       >
-                        {tab}
+                        {activeTab === tab && (
+                          <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-white/10 to-transparent pointer-events-none rounded-full"></div>
+                        )}
+                        <span className="relative z-10">{tab}</span>
                       </button>
                     ))}
                   </div>
@@ -128,13 +131,16 @@ const Projects = () => {
                       <button
                         key={tab}
                         onClick={() => setActiveTab(tab)}
-                        className={`px-4 lg:px-6 py-2 text-xs sm:text-sm font-medium transition-all duration-200 relative whitespace-nowrap ${
+                        className={`px-4 lg:px-6 py-2 text-xs sm:text-sm font-medium transition-all duration-200 relative whitespace-nowrap overflow-hidden ${
                           activeTab === tab
-                            ? 'bg-purple-500 text-white rounded-full shadow-md z-10'
-                            : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'
+                            ? 'bg-gradient-to-b from-[#C3A5E9] to-[#A16FFF] text-white rounded-full shadow-md z-10'
+                            : 'text-gray-500 hover:text-gray-400 hover:bg-gray-50'
                         }`}
                       >
-                        {tab}
+                        {activeTab === tab && (
+                          <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-white/5 to-transparent pointer-events-none rounded-full"></div>
+                        )}
+                        <span className="relative z-10">{tab}</span>
                       </button>
                     ))}
                   </div>
@@ -168,19 +174,17 @@ const Projects = () => {
                     style={{ transitionDelay: `${400 + index * 150}ms` }}
                   >
                     {/* Card Image */}
-                    {/* Card Image */}
-<div
-  className={`relative rounded-2xl sm:rounded-3xl aspect-[5/3] flex items-center justify-center overflow-hidden mb-3 sm:mb-4 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1`}
->
-  <div className="relative w-full h-full">
-    <img
-      src={project.image}
-      alt={project.title}
-      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-    />
-  </div>
-</div>
-
+                    <div
+                      className={`relative rounded-2xl sm:rounded-3xl aspect-[5/3] flex items-center justify-center overflow-hidden mb-3 sm:mb-4 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1`}
+                    >
+                      <div className="relative w-full h-full">
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                        />
+                      </div>
+                    </div>
 
                     {/* Card Info */}
                     <div className="px-1 sm:px-2">

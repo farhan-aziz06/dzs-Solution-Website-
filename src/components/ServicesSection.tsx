@@ -50,9 +50,9 @@ const ServicesSection = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 mb-1 transition-all duration-1000 delay-100">
               Our Services
             </h2>
-            <p className="text-gray-500 text-xs sm:text-sm lg:text-base max-w-xl lg:max-w-2xl leading-relaxed transition-all duration-1000 delay-200">
+            <p className="text-gray-400 text-xs sm:text-sm lg:text-base max-w-xl lg:max-w-2xl leading-relaxed transition-all duration-1000 delay-200">
               We craft bold digital solutions that drive growth. From concept to
-              launch, solving real-world problems with precision and creativity.
+              launch, <br/>solving real-world problems with precision and creativity.
             </p>
           </div>
         </div>
@@ -65,10 +65,10 @@ const ServicesSection = () => {
               : 'translate-y-20 opacity-0'
           }`}
         >
-          <div className="transition-all duration-1000 delay-300 w-full">
+          <div className="transition-all duration-1000 delay-300 w-full mt-12">
             {/* Desktop Image - Natural scaling */}
             <img
-              src="/services.svg"
+              src="/servicesimage.svg"
               alt="Our Services"
               className="hidden sm:block w-full h-auto object-contain"
             />
@@ -76,7 +76,7 @@ const ServicesSection = () => {
             {/* Mobile Image - Natural scaling with centering */}
             <div className="block sm:hidden flex justify-center">
               <img
-                src="/phoneservices.svg"
+                src="/servicesmobile.svg"
                 alt="Our Services - Mobile"
                 className="w-full h-auto object-contain max-w-md"
               />

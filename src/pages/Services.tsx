@@ -145,7 +145,7 @@ const Services = () => {
                 <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 mb-1 mt-2 sm:mt-6 lg:mt-9">
                   Services
                 </h1>
-                <p className="text-gray-500 text-xs sm:text-sm lg:text-base max-w-xl lg:max-w-2xl leading-relaxed">
+                <p className="text-gray-400 text-xs sm:text-sm lg:text-base max-w-xl lg:max-w-2xl leading-relaxed">
                   We craft bold digital solutions that drive growth. From concept to launch, solving real-world problems with precision and creativity.</p>
               </div>
             </div>
@@ -198,7 +198,7 @@ const Services = () => {
                       {service.features.map((feature, featureIndex) => (
                         <div 
                           key={featureIndex} 
-                          className={`bg-gradient-to-r from-gray-100 via-gray-50 to-gray-100 rounded-full px-3 sm:px-4 py-2 sm:py-3 text-gray-700 text-xs sm:text-sm shadow-sm border border-gray-200 font-semibold transform transition-all duration-500 ease-out ${
+                          className={`bg-gradient-to-r from-gray-100 via-white to-gray-100 rounded-full px-3 sm:px-4 py-2 sm:py-3 text-gray-700 text-xs sm:text-sm shadow-sm border border-gray-200 font-semibold transform transition-all duration-500 ease-out ${
                             visibleServices.has(index)
                               ? 'translate-y-0 opacity-100' 
                               : 'translate-y-4 opacity-0'
