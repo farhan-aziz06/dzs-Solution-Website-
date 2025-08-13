@@ -133,8 +133,11 @@ const Header = () => {
                 className="w-6 h-6"
                 style={{ filter: 'brightness(0) invert(1)' }}
                 onError={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.nextElementSibling.style.display = 'block';
+                  (e.target as HTMLImageElement).style.display = 'none';
+                  const nextSibling = (e.target as HTMLImageElement).nextElementSibling as HTMLElement | null;
+                  if (nextSibling) {
+                    nextSibling.style.display = 'block';
+                  }
                 }}
               />
               <span className="text-sm font-medium hidden">Contact</span>
