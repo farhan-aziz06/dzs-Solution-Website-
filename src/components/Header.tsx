@@ -51,7 +51,8 @@ const Header = () => {
           <img 
             src="/contactbutton.svg" 
             alt="Contact" 
-            className="h-12 w-auto"
+            className="w-40 h-auto"
+            style={{ minHeight: '36px' }}
             onError={(e) => {
               console.log('SVG failed to load from /contactbutton.svg');
             }}
@@ -119,30 +120,30 @@ const Header = () => {
           ))}
           
           {/* Mobile Contact Button with SVG */}
-          <div className={`pt-4 transition-opacity duration-300 ease-out ${
-            isMobileMenuOpen ? 'opacity-100' : 'opacity-0'
-          }`}>
-            <a 
-              href="/contact" 
-              className="flex items-center justify-center bg-gradient-to-r from-purple-500 to-purple-400 text-white hover:from-purple-600 hover:to-purple-500 transition-all duration-200 rounded-full px-6 py-3 font-medium shadow-md hover:shadow-lg hover:scale-105"
-              onClick={toggleMobileMenu}
-            >
-              <img 
-                src="/contactbutton.svg" 
-                alt="Contact" 
-                className="w-6 h-6"
-                style={{ filter: 'brightness(0) invert(1)' }}
-                onError={(e) => {
-                  (e.target as HTMLImageElement).style.display = 'none';
-                  const nextSibling = (e.target as HTMLImageElement).nextElementSibling as HTMLElement | null;
-                  if (nextSibling) {
-                    nextSibling.style.display = 'block';
-                  }
-                }}
-              />
-              <span className="text-sm font-medium hidden">Contact</span>
-            </a>
-          </div>
+<div
+  className={`pt-4 transition-opacity duration-300 ease-out ${
+    isMobileMenuOpen ? 'opacity-100' : 'opacity-0'
+  }`}
+>
+  <a
+    href="/contact"
+    onClick={toggleMobileMenu}
+    className="flex items-center justify-center"
+    title="Get in contact"
+  >
+    <img
+      src="/contactbutton.svg"
+      alt="Contact"
+      className="w-40 h-auto"
+      style={{ minHeight: '36px' }}
+      onError={(e) => {
+        console.log('SVG failed to load from /contactbutton.svg');
+      }}
+      onLoad={() => console.log('SVG loaded successfully')}
+    />
+  </a>
+</div>
+
         </nav>
       </div>
     </>
