@@ -45,24 +45,27 @@ const ContactSection = () => {
           </p>
         </div>
 
-        {/* Main Content Container with Shadow */}
-        <section className="pt-8 sm:pt-12 lg:pt-16 pb-8 sm:pb-12 lg:pb-16 px-4 sm:px-6 lg:px-10 bg-white rounded-3xl shadow-sm border border-gray-100">
-          {/* Main Content Grid - Responsive layout */}
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-start">
+        {/* Main Content Container with Shadow - Single Symmetric Div */}
+        <div className="pt-8 sm:pt-12 lg:pt-16 pb-8 sm:pb-12 lg:pb-16 px-4 sm:px-6 lg:px-10 bg-white rounded-3xl shadow-sm border border-gray-100">
+          
+          {/* Symmetric Content Grid */}
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center min-h-[500px] lg:min-h-[600px]">
             
-            {/* Left Side - Contact Image - Responsive sizing */}
-            <div className={`flex items-center justify-center lg:justify-start transform transition-all duration-1000 ease-out ${
+            {/* Left Side - Contact Image */}
+            <div className={`flex items-center justify-center h-full transform transition-all duration-1000 ease-out ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'
             }`} style={{ transitionDelay: '200ms' }}>
-              <img
-                src="/cont.svg"
-                alt="Contact illustration"
-                className="max-w-full h-auto w-64 sm:w-80 lg:w-full"
-              />
+              <div className="w-full max-w-md lg:max-w-lg xl:max-w-xl flex items-center justify-center">
+                <img
+                  src="/cont.svg"
+                  alt="Contact illustration"
+                  className="max-w-full h-auto w-full object-contain"
+                />
+              </div>
             </div>
 
-            {/* Right Side - Contact Form - Responsive spacing and sizing */}
-            <div className={`space-y-4 lg:space-y-6 w-full transform transition-all duration-1000 ease-out ${
+            {/* Right Side - Contact Form */}
+            <div className={`h-full flex flex-col justify-center space-y-4 lg:space-y-6 w-full transform transition-all duration-1000 ease-out ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'
             }`} style={{ transitionDelay: '350ms' }}>
               
@@ -73,7 +76,7 @@ const ContactSection = () => {
                   <input 
                     type="text" 
                     placeholder="Enter your First Name" 
-                    className="w-full px-4 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 text-sm lg:text-base"
+                    className="w-full px-4 py-2.5 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 text-sm lg:text-base"
                   />
                 </div>
                 <div>
@@ -81,7 +84,7 @@ const ContactSection = () => {
                   <input 
                     type="text" 
                     placeholder="Enter your Last Name" 
-                    className="w-full px-4 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 text-sm lg:text-base"
+                    className="w-full px-4 py-2.5 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 text-sm lg:text-base"
                   />
                 </div>
               </div>
@@ -92,7 +95,7 @@ const ContactSection = () => {
                 <input 
                   type="email" 
                   placeholder="Email" 
-                  className="w-full px-4 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 text-sm lg:text-base"
+                  className="w-full px-4 py-2.5 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 text-sm lg:text-base"
                 />
               </div>
 
@@ -101,7 +104,7 @@ const ContactSection = () => {
                 <label className="block text-sm lg:text-base font-medium text-gray-700 mb-2">Phone</label>
                 <div className="flex gap-2">
                   <div className="relative">
-                    <select className="px-4 py-3 pr-10 border border-gray-300 rounded-full bg-white text-sm lg:text-base text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 min-w-[120px] appearance-none transition-all duration-300">
+                    <select className="px-4 py-2.5 pr-10 border border-gray-300 rounded-full bg-white text-sm lg:text-base text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 min-w-[120px] appearance-none transition-all duration-300">
                       <option>+92 (PAK)</option>
                     </select>
                     <img 
@@ -113,7 +116,7 @@ const ContactSection = () => {
                   <input 
                     type="tel" 
                     placeholder="Phone" 
-                    className="flex-1 px-4 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 text-sm lg:text-base"
+                    className="flex-1 px-4 py-2.5 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 text-sm lg:text-base"
                   />
                 </div>
               </div>
@@ -127,7 +130,7 @@ const ContactSection = () => {
                       key={project}
                       onClick={() => setSelectedProject(project)}
                       className={`
-                        px-4 lg:px-6 py-2 lg:py-3 rounded-full text-sm lg:text-base transition-all duration-300 hover:scale-105
+                        px-4 lg:px-6 py-1.5 lg:py-2 rounded-full text-sm lg:text-base transition-all duration-300 hover:scale-105
                         ${selectedProject === project
                           ? 'bg-purple-100 text-purple-600 border border-purple-500 font-semibold'
                           : 'border border-gray-300 text-gray-600 hover:bg-purple-100 hover:text-purple-600 hover:border-purple-500'
@@ -145,21 +148,21 @@ const ContactSection = () => {
                 <textarea 
                   placeholder="Enter message"
                   rows={1}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-3xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none transition-all duration-300 text-sm lg:text-base"
+                  className="w-full px-4 py-2.5 border border-gray-300 rounded-3xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none transition-all duration-300 text-sm lg:text-base"
                 ></textarea>
               </div>
 
               {/* Submit Button and Social Icons - Responsive layout */}
               <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
-                <button className="relative overflow-hidden bg-gradient-to-r from-purple-500 to-purple-400 hover:from-purple-600 hover:to-purple-500 text-white px-8 py-3 rounded-full transition-all duration-300 flex items-center gap-2 hover:scale-105 hover:shadow-lg text-base font-medium group w-full sm:w-auto">
-                  {/* White gradient overlay on hover */}
-                  <span className="absolute inset-0 bg-gradient-to-r from-white/30 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></span>
-
-                  <span className="relative z-10 flex items-center justify-center gap-2 w-full">
-                    Send Message 
-                    <img src="/arrow3.svg" alt="send" className="w-4 h-4" />
-                  </span>
-                </button>
+                <img 
+                  src="/sendmessage.svg" 
+                  alt="Send Message" 
+                  className="cursor-pointer hover:scale-105 transition-all duration-300 hover:opacity-80 w-full sm:w-auto max-w-[200px] h-auto"
+                  onClick={() => {
+                    // Handle send message click
+                    console.log('Send message clicked');
+                  }}
+                />
 
                 {/* Social Icons - Responsive sizing */}
                 <div className="flex items-center gap-4">
@@ -176,7 +179,7 @@ const ContactSection = () => {
               </div>
             </div>
           </div>
-        </section>
+        </div>
       </div>
     </section>
   );

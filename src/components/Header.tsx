@@ -40,14 +40,23 @@ const Header = () => {
           <a href="/about" className="text-gray-700 hover:text-gray-900 transition-colors font-medium hover:scale-105 duration-200">About</a>
         </nav>
         
-        {/* Desktop Contact Button */}
+        {/* Desktop Contact Button with SVG */}
         <a 
           href="/contact" 
-          className={`hidden md:block bg-gradient-to-r from-purple-500 to-purple-400 text-white hover:from-purple-600 hover:to-purple-500 transition-all duration-1000 rounded-full px-6 py-2.5 font-normal text-[14px] shadow-md hover:shadow-lg hover:scale-105 ${
+          className={`hidden md:block transition-all duration-1000 hover:scale-105 ${
             isVisible ? 'opacity-100' : 'opacity-0'
           }`}
+          title="Get in contact"
         >
-          Get in contact
+          <img 
+            src="/contactbutton.svg" 
+            alt="Contact" 
+            className="h-12 w-auto"
+            onError={(e) => {
+              console.log('SVG failed to load from /contactbutton.svg');
+            }}
+            onLoad={() => console.log('SVG loaded successfully')}
+          />
         </a>
 
         {/* Mobile Menu Button */}
@@ -109,16 +118,26 @@ const Header = () => {
             </a>
           ))}
           
-          {/* Mobile Contact Button */}
+          {/* Mobile Contact Button with SVG */}
           <div className={`pt-4 transition-opacity duration-300 ease-out ${
             isMobileMenuOpen ? 'opacity-100' : 'opacity-0'
           }`}>
             <a 
               href="/contact" 
-              className="block text-center bg-gradient-to-r from-purple-500 to-purple-400 text-white hover:from-purple-600 hover:to-purple-500 transition-all duration-200 rounded-full px-6 py-3 font-medium shadow-md hover:shadow-lg hover:scale-105"
+              className="flex items-center justify-center bg-gradient-to-r from-purple-500 to-purple-400 text-white hover:from-purple-600 hover:to-purple-500 transition-all duration-200 rounded-full px-6 py-3 font-medium shadow-md hover:shadow-lg hover:scale-105"
               onClick={toggleMobileMenu}
             >
-              Get in contact
+              <img 
+                src="/contactbutton.svg" 
+                alt="Contact" 
+                className="w-6 h-6"
+                style={{ filter: 'brightness(0) invert(1)' }}
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  e.target.nextElementSibling.style.display = 'block';
+                }}
+              />
+              <span className="text-sm font-medium hidden">Contact</span>
             </a>
           </div>
         </nav>
