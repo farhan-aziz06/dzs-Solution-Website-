@@ -35,48 +35,52 @@ const ServicesSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-16 px-6 bg-white overflow-hidden sm:py-16 sm:px-6 lg:py-16 lg:px-6"
+      className="py-4 sm:py-6 lg:py-8 px-4 sm:px-6 lg:px-10 bg-white overflow-hidden pb-8 sm:pb-12 lg:pb-16 pt-8 sm:pt-12 lg:pt-16"
     >
-      <div className="max-w-6xl mx-auto">
-        {/* Header Animation */}
+      <div className="w-full">
+        {/* Header Animation - Matching Services page alignment */}
         <div
-          className={`mb-10 transition-all duration-1000 ease-out ${
+          className={`mb-4 sm:mb-6 lg:mb-8 transition-all duration-1000 ease-out ${
             isVisible
               ? 'translate-x-0 opacity-100'
               : '-translate-x-20 opacity-0'
           }`}
         >
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 mb-4 transition-all duration-1000 delay-100">
-            Our Services
-          </h2>
-          <p className="text-gray-500 text-base sm:text-lg max-w-2xl transition-all duration-1000 delay-200">
-            We craft bold digital solutions that drive growth. From concept to
-            launch, solving real-world problems with precision and creativity.
-          </p>
+          <div className="text-left">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 mb-1 transition-all duration-1000 delay-100">
+              Our Services
+            </h2>
+            <p className="text-gray-500 text-xs sm:text-sm lg:text-base max-w-xl lg:max-w-2xl leading-relaxed transition-all duration-1000 delay-200">
+              We craft bold digital solutions that drive growth. From concept to
+              launch, solving real-world problems with precision and creativity.
+            </p>
+          </div>
         </div>
 
-        {/* Services Image - Centered and Bigger */}
+        {/* Services Image - Natural responsive scaling like project cards */}
         <div
-          className={`flex justify-center transition-all duration-1000 ${
+          className={`transition-all duration-1000 ${
             isVisible
               ? 'translate-y-0 opacity-100'
               : 'translate-y-20 opacity-0'
           }`}
         >
-          <div className="transition-all duration-1000 delay-300 w-full max-w-4xl">
-            {/* Desktop Image */}
+          <div className="transition-all duration-1000 delay-300 w-full">
+            {/* Desktop Image - Natural scaling */}
             <img
               src="/services.svg"
               alt="Our Services"
-              className="hidden sm:block w-full h-auto object-contain mx-auto"
+              className="hidden sm:block w-full h-auto object-contain"
             />
             
-            {/* Mobile Image */}
-            <img
-              src="/phoneservices.svg"
-              alt="Our Services - Mobile"
-              className="block sm:hidden w-full h-auto object-contain mx-auto max-w-md"
-            />
+            {/* Mobile Image - Natural scaling with centering */}
+            <div className="block sm:hidden flex justify-center">
+              <img
+                src="/phoneservices.svg"
+                alt="Our Services - Mobile"
+                className="w-full h-auto object-contain max-w-md"
+              />
+            </div>
           </div>
         </div>
       </div>
