@@ -301,12 +301,11 @@ const About = () => {
                    We believe success is a shared journey. By working closely with our clients and team, we co-create solutions that elevate everyone involved—fostering mutual growth, trust, and long-lasting impact.
                   </p>
                 </div>
-                {/* Updated team cards grid - responsive like project cards */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
+                <div className="flex flex-wrap justify-center gap-2 sm:gap-6 md:gap-8 lg:gap-14">
                   {teamMembers.map((member, index) => (
                     <div
                       key={index}
-                      className={`group cursor-pointer bg-white rounded-2xl sm:rounded-3xl border border-gray-200 overflow-hidden transition-all duration-1000 ease-out hover:shadow-lg hover:-translate-y-1 ${
+                      className={`bg-white rounded-2xl sm:rounded-3xl border border-gray-200 overflow-hidden w-full max-w-[200px] sm:max-w-[230px] lg:max-w-[260px] h-[320px] sm:h-[380px] lg:h-[440px] transform transition-all duration-700 ease-out ${
                         visibleSections.has("team")
                           ? "translate-y-0 opacity-100"
                           : "translate-y-12 opacity-0"
@@ -317,28 +316,26 @@ const About = () => {
                           : "0ms",
                       }}
                     >
-                      {/* Image container with consistent aspect ratio */}
-                      <div className="relative w-full aspect-[4/5] overflow-hidden">
+                      <div className="relative w-full h-64 sm:h-72 lg:h-84 rounded-t-2xl sm:rounded-t-3xl overflow-hidden">
                         <img
                           src="/back.svg"
                           alt="Background"
-                          className="absolute inset-0 w-full h-full object-cover"
+                          className="w-full h-full object-cover rounded-t-2xl sm:rounded-t-3xl"
                         />
                         <img
                           src="/person.svg"
                           alt={member.name}
-                          className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                          className="absolute inset-0 w-full h-full object-cover rounded-t-2xl sm:rounded-t-3xl"
                         />
                       </div>
-                      {/* Content area with consistent padding */}
-                      <div className="p-4 sm:p-5 lg:p-6 text-center">
-                        <h3 className="text-sm sm:text-base lg:text-lg font-bold text-gray-900 mb-1 sm:mb-2">
+                      <div className="px-3 sm:px-4 py-3 sm:py-4 lg:py-5 text-center">
+                        <h3 className="text-sm sm:text-base font-bold text-gray-900 mb-1">
                           {member.name}
                         </h3>
-                        <p className="text-gray-400 text-xs sm:text-sm mb-2 sm:mb-3">
+                        <p className="text-gray-400 text-xs mb-2 sm:mb-3">
                           {member.role}
                         </p>
-                        <p className="text-gray-500 text-xs sm:text-sm leading-relaxed">
+                        <p className="text-gray-500 text-xs leading-snug line-clamp-2">
                           {member.description}
                         </p>
                       </div>
