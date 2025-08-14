@@ -91,7 +91,7 @@ const Projects = () => {
               }`}
             >
               <div className="w-full text-left">
-                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 mb-1 mt-2 sm:mt-6 lg:mt-9">
+                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 mb-0 mt-0 sm:mt-0 lg:mt-0">
                   Mobile app development
                 </h1>
                 <p className="text-gray-400 text-xs sm:text-sm lg:text-base max-w-xl lg:max-w-2xl leading-relaxed">
@@ -138,7 +138,7 @@ const Projects = () => {
                         }`}
                       >
                         {activeTab === tab && (
-                          <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-white/5 to-transparent pointer-events-none rounded-full"></div>
+                          <div className="absolute inset-0 bg-gradient-to-b from-white/5 via-white/5 to-transparent pointer-events-none rounded-full"></div>
                         )}
                         <span className="relative z-10">{tab}</span>
                       </button>

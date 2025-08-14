@@ -66,7 +66,7 @@ const Contact = () => {
               backgroundRepeat: "no-repeat",
             }}
           >
-            <section className="pt-6 sm:pt-8 lg:pt-12 pb-4 sm:pb-6 lg:pb-8">
+            <section className="pt-4 sm:pt-4 lg:pt-8 pb-2 sm:pb-4 lg:pb-4">
               <div
                 className={`mb-4 sm:mb-6 lg:mb-8 px-4 sm:px-6 lg:px-6 transform transition-all duration-700 ease-out ${
                   isHeaderVisible
@@ -75,10 +75,11 @@ const Contact = () => {
                 }`}
               >
                 <div className="w-full text-left">
-                  <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 mb-1 mt-2 sm:mt-6 lg:mt-9">
-                    Contact Us
-                  </h1>
-                  <p className="text-gray-400 text-xs sm:text-sm lg:text-base max-w-xl lg:max-w-2xl leading-relaxed">
+                  <h1 className=" ml-2 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 mb-1 mt-4 sm:mt-4 lg:mt-4">
+  Contact Us
+</h1>
+
+                  <p className="ml-2 text-gray-400 text-xs sm:text-sm lg:text-base max-w-xl lg:max-w-2xl leading-relaxed">
                    We craft bold digital solutions that drive growth. From concept to launch, solving real-world problems with precision and creativity.
                   </p>
                 </div>

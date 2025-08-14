@@ -142,7 +142,7 @@ const Services = () => {
               }`}
             >
               <div className="text-left">
-                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 mb-1 mt-2 sm:mt-6 lg:mt-9">
+<h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 mb-1 mt-0 sm:mt-0 lg:mt-0">
                   Services
                 </h1>
                 <p className="text-gray-400 text-xs sm:text-sm lg:text-base max-w-xl lg:max-w-2xl leading-relaxed">
