@@ -88,36 +88,40 @@ const Contact = () => {
           </div>
         </div>
 
-      {/* Main Contact Section - UPDATED to match ContactSection exactly */}
-      <section ref={formSectionRef} className="py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-10 bg-white mb-12 sm:mb-18 lg:mb-24 overflow-x-hidden">
+      {/* Main Contact Section - Updated to match ContactSection */}
+      <section ref={formSectionRef} className="py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-10 bg-white mb-4 sm:mb-6 lg:mb-8  overflow-x-hidden">
         <div className="w-full">
-          {/* Main Content Container - Changed to match ContactSection (removed border, changed padding) */}
+          {/* Main Content Container */}
           <div className="rounded-3xl pt-8 sm:pt-10 lg:pt-16 pb-8 sm:pb-10 lg:pb-16 px-6 sm:px-10 lg:px-16 bg-white">
             
-            {/* Content Grid - Updated spacing and layout to match ContactSection */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-4 items-center min-h-[500px] lg:min-h-[600px] -mt-6 sm:-mt-8">
+            {/* Content Grid - Updated to match ContactSection layout */}
+            <div className="
+  grid grid-cols-1 xl:grid-cols-2 
+  gap-8 lg:gap-8 xl:gap-6 
+  items-center min-h-[500px] xl:min-h-[600px] 
+  max-w-[1250px] 2xl:max-w-[1200px] mx-auto 
+  -mt-6 sm:-mt-8
+">
               
-              {/* Left Side - Contact Image - Updated positioning to match ContactSection */}
-              <div className={`flex items-center justify-center lg:justify-start h-full transform transition-all duration-1000 ease-out ${
+              {/* Left Side - Contact Image */}
+              <div className={`flex items-center justify-center xl:justify-start h-full transform transition-all duration-1000 ease-out ${
                 isFormVisible ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'
               }`} style={{ transitionDelay: '200ms' }}>
                 <img
                   src="/cont.svg"
                   alt="Contact illustration"
-                  className="h-auto object-contain lg:-ml-14 w-[85%] sm:w-auto"
-                  style={{ maxHeight: '800px' }}
+                  className="h-auto object-contain w-full sm:w-auto max-h-[600px] xl:max-h-[700px]"
                 />
               </div>
 
-              {/* Right Side - Contact Form - Updated to match ContactSection exactly */}
-              <div className={`h-full flex flex-col justify-center items-center lg:items-start space-y-4 sm:space-y-6 lg:space-y-8 w-full transform transition-all duration-1000 ease-out lg:-ml-8 ${
-                isFormVisible ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'
-              }`} style={{ transitionDelay: '350ms' }}>
+              {/* Right Side - Contact Form */}
+              <div className={`h-full flex flex-col justify-center items-center xl:items-start space-y-2 sm:space-y-3 xl:space-y-4 w-full transform transition-all duration-1000 ease-out
+              ${isFormVisible ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'}`} style={{ transitionDelay: '350ms' }}>
                 
-                {/* Name Fields - Updated spacing and responsive classes to match ContactSection */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 w-full">
+                {/* Name Fields */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 w-full">
                   <div>
-                    <label className="block text-sm lg:text-base font-medium text-gray-700 mb-1 sm:mb-2">First Name</label>
+                    <label className="block text-sm lg:text-base font-medium text-gray-700 mb-1">First Name</label>
                     <input 
                       type="text" 
                       placeholder="Enter your First Name" 
@@ -125,7 +129,7 @@ const Contact = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm lg:text-base font-medium text-gray-700 mb-1 sm:mb-2">Last Name</label>
+                    <label className="block text-sm lg:text-base font-medium text-gray-700 mb-1">Last Name</label>
                     <input 
                       type="text" 
                       placeholder="Enter your Last Name" 
@@ -134,9 +138,9 @@ const Contact = () => {
                   </div>
                 </div>
 
-                {/* Email Field - Updated to match ContactSection */}
+                {/* Email Field */}
                 <div className="w-full">
-                  <label className="block text-sm lg:text-base font-medium text-gray-700 mb-1 sm:mb-2">Email</label>
+                  <label className="block text-sm lg:text-base font-medium text-gray-700 mb-1">Email</label>
                   <input 
                     type="email" 
                     placeholder="Email" 
@@ -144,9 +148,9 @@ const Contact = () => {
                   />
                 </div>
 
-                {/* Phone Field - Updated to match ContactSection exactly */}
+                {/* Phone Field */}
                 <div className="w-full">
-                  <label className="block text-sm lg:text-base font-medium text-gray-700 mb-1 sm:mb-2">Phone</label>
+                  <label className="block text-sm lg:text-base font-medium text-gray-700 mb-1">Phone</label>
                   <div className="flex gap-2">
                     <div className="relative">
                       <select className="px-3 sm:px-4 py-2.5 sm:py-3 pr-8 sm:pr-10 border border-gray-300 rounded-full bg-white text-sm lg:text-base text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 min-w-[100px] sm:min-w-[120px] appearance-none">
@@ -166,9 +170,9 @@ const Contact = () => {
                   </div>
                 </div>
 
-                {/* Project Type - Updated to match ContactSection exactly */}
+                {/* Project Type */}
                 <div className="w-full">
-                  <label className="block text-sm lg:text-base font-medium text-gray-700 mb-1 sm:mb-2">Tell us about your project</label>
+                  <label className="block text-sm lg:text-base font-medium text-gray-700 mb-1">Tell us about your project</label>
                   <div className="flex flex-wrap gap-2 lg:gap-3">
                     {projectTypes.map((project) => (
                       <button
@@ -187,8 +191,8 @@ const Contact = () => {
                   </div>
                 </div>
 
-                {/* Message Field - Updated to match ContactSection exactly */}
-                <div className="-mt-8 sm:-mt-10 w-full">
+                {/* Message Field */}
+                <div className="w-full">
                   <textarea 
                     placeholder="Enter message"
                     rows={1}
@@ -196,7 +200,7 @@ const Contact = () => {
                   ></textarea>
                 </div>
 
-                {/* Submit Button and Social Icons - Updated to match ContactSection exactly */}
+                {/* Submit Button and Social Icons */}
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2 w-full">
                   <img 
                     src="/sendmessage.svg" 
@@ -207,7 +211,7 @@ const Contact = () => {
                     }}
                   />
 
-                  {/* Social Icons - Updated positioning to match ContactSection */}
+                  {/* Social Icons */}
                   <div className="flex items-center gap-3 sm:gap-4 -ml-1 sm:-ml-2">
                     <a href="#" className="hover:opacity-80 transition-all duration-300 hover:scale-110">
                       <img src="/twitter.svg" alt="Twitter" className="w-7 sm:w-8 h-7 sm:h-8" />
