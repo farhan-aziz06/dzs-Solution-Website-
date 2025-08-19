@@ -88,34 +88,34 @@ const Contact = () => {
           </div>
         </div>
 
-      {/* Main Contact Section - Updated to match ContactSection */}
-      <section ref={formSectionRef} className="py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-10 bg-white mb-4 sm:mb-6 lg:mb-8  overflow-x-hidden">
+      {/* Main Contact Section - Updated with ContactSection changes */}
+      <section ref={formSectionRef} className="py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-10 bg-white mb-12 sm:mb-18 lg:mb-24 overflow-x-hidden">
         <div className="w-full">
           {/* Main Content Container */}
           <div className="rounded-3xl pt-8 sm:pt-10 lg:pt-16 pb-8 sm:pb-10 lg:pb-16 px-6 sm:px-10 lg:px-16 bg-white">
             
-            {/* Content Grid - Updated to match ContactSection layout */}
+            {/* Content Grid - Updated layout */}
             <div className="
-  grid grid-cols-1 xl:grid-cols-2 
-  gap-8 lg:gap-8 xl:gap-6 
-  items-center min-h-[500px] xl:min-h-[600px] 
+  grid grid-cols-1 lg:grid-cols-2 
+  gap-8 lg:gap-6 
+  items-center min-h-[500px] lg:min-h-[600px] 
   max-w-[1250px] 2xl:max-w-[1200px] mx-auto 
   -mt-6 sm:-mt-8
 ">
               
               {/* Left Side - Contact Image */}
-              <div className={`flex items-center justify-center xl:justify-start h-full transform transition-all duration-1000 ease-out ${
+              <div className={`flex items-center justify-center lg:justify-start h-full transform transition-all duration-1000 ease-out ${
                 isFormVisible ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'
               }`} style={{ transitionDelay: '200ms' }}>
                 <img
                   src="/cont.svg"
                   alt="Contact illustration"
-                  className="h-auto object-contain w-full sm:w-auto max-h-[600px] xl:max-h-[700px]"
+                  className="h-auto object-contain w-full sm:w-auto max-h-[600px] lg:max-h-[700px]"
                 />
               </div>
 
               {/* Right Side - Contact Form */}
-              <div className={`h-full flex flex-col justify-center items-center xl:items-start space-y-2 sm:space-y-3 xl:space-y-4 w-full transform transition-all duration-1000 ease-out
+              <div className={`h-full flex flex-col justify-center items-center lg:items-start space-y-2 sm:space-y-3 lg:space-y-4 w-full transform transition-all duration-1000 ease-out
               ${isFormVisible ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'}`} style={{ transitionDelay: '350ms' }}>
                 
                 {/* Name Fields */}
@@ -151,21 +151,21 @@ const Contact = () => {
                 {/* Phone Field */}
                 <div className="w-full">
                   <label className="block text-sm lg:text-base font-medium text-gray-700 mb-1">Phone</label>
-                  <div className="flex gap-2">
+                  <div className="flex gap-1 xs:gap-2">
                     <div className="relative">
-                      <select className="px-3 sm:px-4 py-2.5 sm:py-3 pr-8 sm:pr-10 border border-gray-300 rounded-full bg-white text-sm lg:text-base text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 min-w-[100px] sm:min-w-[120px] appearance-none">
+                      <select className="px-2 xs:px-3 sm:px-4 py-2.5 sm:py-3 pr-6 xs:pr-8 sm:pr-10 border border-gray-300 rounded-full bg-white text-xs xs:text-sm lg:text-base text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 min-w-[80px] xs:min-w-[100px] sm:min-w-[120px] appearance-none">
                         <option>+92 (PAK)</option>
                       </select>
                       <img 
                         src="/drop.svg" 
                         alt="dropdown" 
-                        className="absolute right-2 sm:right-3 top-1/2 transform -translate-y-1/2 w-3.5 sm:w-4 h-3.5 sm:h-4 pointer-events-none"
+                        className="absolute right-1 xs:right-2 sm:right-3 top-1/2 transform -translate-y-1/2 w-3 xs:w-3.5 sm:w-4 h-3 xs:h-3.5 sm:h-4 pointer-events-none"
                       />
                     </div>
                     <input 
                       type="tel" 
                       placeholder="Phone" 
-                      className="flex-1 px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm lg:text-base"
+                      className="flex-1 px-2 xs:px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 text-xs xs:text-sm lg:text-base min-w-0"
                     />
                   </div>
                 </div>
@@ -201,7 +201,7 @@ const Contact = () => {
                 </div>
 
                 {/* Submit Button and Social Icons */}
-                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2 w-full">
+                <div className="flex flex-col items-center justify-center gap-4 pt-2 w-full lg:flex-row lg:items-center lg:justify-between">
                   <img 
                     src="/sendmessage.svg" 
                     alt="Send Message" 
@@ -212,7 +212,7 @@ const Contact = () => {
                   />
 
                   {/* Social Icons */}
-                  <div className="flex items-center gap-3 sm:gap-4 -ml-1 sm:-ml-2">
+                  <div className="flex items-center gap-3 sm:gap-4">
                     <a href="#" className="hover:opacity-80 transition-all duration-300 hover:scale-110">
                       <img src="/twitter.svg" alt="Twitter" className="w-7 sm:w-8 h-7 sm:h-8" />
                     </a>

@@ -188,7 +188,16 @@ const Projects = () => {
 
                     {/* Card Info */}
                     <div className="px-1 sm:px-2">
+                      {/* Category - Full width on small screens */}
+                      <div className="mb-2 sm:hidden">
+                        <span className="text-gray-900 text-xs font-medium">
+                          {project.category}
+                        </span>
+                      </div>
+                      
+                      {/* Badge and Team - Second line on small screens */}
                       <div className="flex items-center justify-between mb-2 sm:mb-3">
+                        {/* Badge and Category container for larger screens */}
                         <div className="flex items-center gap-2 sm:gap-3 flex-wrap sm:flex-nowrap">
                           <span
                             className={`px-3 sm:px-4 py-1 rounded-full text-xs sm:text-xs font-medium shadow-lg transition-all duration-300 bg-gradient-to-r from-gray-900 via-gray-900 to-gray-900 text-white group-hover:from-purple-600 group-hover:via-purple-500 group-hover:to-purple-600 relative overflow-hidden`}
@@ -196,11 +205,9 @@ const Projects = () => {
                             <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-white/20 to-white/10 pointer-events-none"></div>
                             <span className="relative z-10">{project.badge}</span>
                           </span>
+                          {/* Category only visible on larger screens */}
                           <span className="text-gray-900 text-xs sm:text-xs font-medium hidden sm:block">
-                            AI Integrated Workflow Product
-                          </span>
-                          <span className="text-gray-900 text-xs font-medium block sm:hidden">
-                            AI Product
+                            {project.category}
                           </span>
                         </div>
 
