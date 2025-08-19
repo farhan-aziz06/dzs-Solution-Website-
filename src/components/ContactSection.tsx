@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
+// Make sure to update this path to where your drop.svg file is located
+import dropArrow from "/drop.svg"; 
 
 const ContactSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -22,7 +24,6 @@ const ContactSection = () => {
     return () => observer.disconnect();
   }, []);
 
-  
   return (
     <div className="">
       <div className="lg:w-[400px] xl:w-[100%] gap-12 rounded-lg p-4 md:p-8 border border-[#D9D9D9]">
@@ -48,7 +49,7 @@ const ContactSection = () => {
             <input
               type="text"
               placeholder="Enter name"
-              className="w-full px-3 py-2 my-2 border border-[#D9D9D9] rounded-lg placeholder-[#B3B3B3]  placeholder:text-[12px] md:placeholder:text-[16px]"
+              className="w-full px-3 py-2 my-2 border border-[#D9D9D9] rounded-lg placeholder-[#B3B3B3]  placeholder:text-[12px] md:placeholder:text-[16px]"
               required
             />
           </div>
@@ -86,7 +87,8 @@ const ContactSection = () => {
                   <option>UK</option>
                 </select>
                 <div className="absolute inset-y-0 right-2 flex items-center pointer-events-none">
-                  {/* {dropArrow} */}
+                  {/* Replaced comment with img tag */}
+                  <img src={dropArrow} alt="dropdown arrow" />
                 </div>
               </div>
               <input
@@ -109,7 +111,8 @@ const ContactSection = () => {
               <option>AI Solutions</option>
             </select>
             <div className="absolute inset-y-0 right-2 top-5 flex items-center pointer-events-none">
-              {/* {dropArrow} */}d55548185c3e76fc13ffea2b2719a1795499895
+              {/* Replaced comment with img tag */}
+              <img src={dropArrow} alt="dropdown arrow" />
             </div>
           </div>
 
