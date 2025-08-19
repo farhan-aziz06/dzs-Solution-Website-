@@ -21,7 +21,7 @@ const Footer = () => {
                   <div className="text-3xl font-bold">LOGO</div>
                 </div>
                 <div className="flex justify-center space-x-4">
-                  <a href="#" className="hover:opacity-80">
+                  {/* <a href="#" className="hover:opacity-80">
                     <img src="/fb.svg" alt="Facebook"
                          className="w-6 h-6 max-[770px]:w-5 max-[770px]:h-5 min-[1280px]:w-5 min-[1280px]:h-5" />
                   </a>
@@ -32,7 +32,7 @@ const Footer = () => {
                   <a href="#" className="hover:opacity-80">
                     <img src="/ins.svg" alt="Instagram"
                          className="w-6 h-6 max-[770px]:w-5 max-[770px]:h-5 min-[1280px]:w-5 min-[1280px]:h-5" />
-                  </a>
+                  </a> */}
                   <a href="#" className="hover:opacity-80">
                     <img src="/fiver.svg" alt="Fiverr"
                          className="w-5 h-5 max-[770px]:w-4 max-[770px]:h-4 min-[1280px]:w-4 min-[1280px]:h-4" />
