@@ -7,6 +7,7 @@ import ContactForm from "@/components/ContactSection";
 import Info from "@/components/Info";
 import Footer from "@/components/Footer";
 import { useEffect, useState } from "react";
+import CountryClientsMap from "@/components/ClientsMap";
 
 const Index = () => {
   const rotatingPhrases = ["Flutter", "Website", "UI/UX", "AI Solutions"];
@@ -18,6 +19,14 @@ const Index = () => {
     }, 3000);
     return () => clearInterval(intervalId);
   }, []);
+  const data = [
+    { country: "Pakistan", clients: 5 },
+    { country: "Israel", clients: 1 },
+    { country: "UK", clients: 4 },
+    { country: "USA", clients: 5 },
+    { country: "Germany", clients: 3 }
+  ];
+  
 
   return (
     <div className="min-h-screen bg-background">
@@ -42,6 +51,12 @@ const Index = () => {
             ctaHref="#"/>
             <ContactForm />
         </div>
+
+      </div>
+      <div>
+      <div>
+          <CountryClientsMap data={data} />
+      </div>
       </div>
     </div>
   );

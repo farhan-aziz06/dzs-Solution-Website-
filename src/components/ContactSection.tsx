@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 // Make sure to update this path to where your drop.svg file is located
 import dropArrow from "/drop.svg"; 
+import CountryClientsMap from "./ClientsMap";
 
 const ContactSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -23,6 +24,14 @@ const ContactSection = () => {
 
     return () => observer.disconnect();
   }, []);
+  const data = [
+    { country: "Pakistan", clients: 5 },
+    { country: "Israel", clients: 1 },
+    { country: "UK", clients: 4 },
+    { country: "USA", clients: 5 },
+    { country: "Germany", clients: 3 }
+  ];
+  
 
   return (
     <div className="">
@@ -161,7 +170,9 @@ const ContactSection = () => {
           {/* <span>{arrow}</span> */}
         </div>
       </div>
+     
     </div>
+    
   );
 };
 

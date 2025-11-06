@@ -45,17 +45,84 @@ const VisionSection = () => {
         </p>
       </div>
       <div className="transition-all duration-1000 delay-400">
-        <div className="w-full">
-          <img
-            src="/pro.svg"
-            alt="Professional services"
-            className="w-full h-auto object-contain transition-all duration-500 hidden sm:block"
-          />
-          <img
-            src="/mobilemetrics.svg"
-            alt="Mobile metrics"
-            className="w-full h-auto object-contain transition-all duration-500 block sm:hidden"
-          />
+        {/* Aesthetic dual-card layout replacing static images */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* Left: Delivery snapshot for tech services */}
+          <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-5 sm:p-6">
+            <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-1">
+              What we've shipped
+            </h3>
+            <p className="text-gray-500 text-sm mb-4">
+              A snapshot of our delivery across web, mobile, cloud and AI.
+            </p>
+            <div className="rounded-2xl bg-gray-50/70 border border-gray-200 p-4">
+              <div className="grid grid-cols-2 gap-4 mb-4">
+                {/* metric tiles */}
+                <div className="rounded-xl bg-white border border-gray-200 overflow-hidden p-4">
+                  <div className="text-3xl font-semibold text-gray-900">15+</div>
+                  <div className="text-xs text-gray-600 mt-1">Tech products launched</div>
+                </div>
+                <div className="rounded-xl bg-white border border-gray-200 overflow-hidden p-4">
+                  <div className="text-3xl font-semibold text-gray-900">45+</div>
+                  <div className="text-xs text-gray-600 mt-1">Apps & APIs delivered</div>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <div className="text-xs text-gray-500 mb-1">Currently</div>
+                  <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-teal-50 text-teal-700 text-xs border border-teal-200">
+                    <span className="inline-block w-1.5 h-1.5 rounded-full bg-teal-500" /> 5 active projects
+                  </div>
+                </div>
+                <div>
+                  <div className="text-xs text-gray-500 mb-1">Stacks</div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-2.5 py-1 rounded-full bg-sky-50 text-sky-700 text-xs border border-sky-200">React</span>
+                    <span className="px-2.5 py-1 rounded-full bg-gray-50 text-gray-700 text-xs border border-gray-200">Next.js</span>
+                    <span className="px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs border border-emerald-200">Node</span>
+                    <span className="px-2.5 py-1 rounded-full bg-amber-50 text-amber-700 text-xs border border-amber-200">Python</span>
+                    <span className="px-2.5 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs border border-indigo-200">AWS</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right: Clients & engagement metrics */}
+          <div className="rounded-3xl border border-gray-200 bg-white shadow-sm p-5 sm:p-6">
+            <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-1">
+              Who we partner with
+            </h3>
+            <p className="text-gray-500 text-sm mb-4">
+              Product teams and founders who value speed, quality and outcomes.
+            </p>
+            <div className="rounded-2xl bg-gray-50/70 border border-gray-200 p-4">
+              <div className="flex items-center justify-between gap-3 mb-4">
+                <div className="flex -space-x-2">
+                  <span className="w-7 h-7 rounded-full bg-sky-400/90 border-2 border-white" />
+                  <span className="w-7 h-7 rounded-full bg-indigo-400/90 border-2 border-white" />
+                  <span className="w-7 h-7 rounded-full bg-emerald-400/90 border-2 border-white" />
+                </div>
+                <span className="text-xs text-gray-700 font-medium">Clients</span>
+              </div>
+              <div className="grid grid-cols-2 gap-3 mb-3">
+                <div className="rounded-xl bg-white border border-gray-200 px-3 py-2 text-xs text-gray-700">
+                  12 retainer clients
+                </div>
+                <div className="rounded-xl bg-white border border-gray-200 px-3 py-2 text-xs text-gray-700">
+                  95% on‑time delivery
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-3">
+                <div className="rounded-xl bg-white border border-gray-200 px-3 py-2 text-xs text-gray-700">
+                  4 current projects
+                </div>
+                <div className="rounded-xl bg-white border border-gray-200 px-3 py-2 text-xs text-gray-700">
+                  99.9% uptime SLAs
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
