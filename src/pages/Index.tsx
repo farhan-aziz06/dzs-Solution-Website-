@@ -43,7 +43,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <HeroSection />
-      <Suspense fallback={<LoadingFallback message="Loading sections..." />}>
+      <Suspense fallback={<LoadingFallback />}>
         <ServicesSection />
         <ProjectsSection />
       </Suspense>
@@ -57,7 +57,7 @@ const Index = () => {
           </h1>
         </div>
         <div className="flex flex-col lg:flex-row gap-6 md:gap-4 xl:gap-0 w-full justify-center">
-          <Suspense fallback={<LoadingFallback message="Loading contact..." />}>
+          <Suspense fallback={<LoadingFallback />}>
             <Info
               name="Farhan"
               role="Solution Specialist"
@@ -71,7 +71,7 @@ const Index = () => {
 
       </div>
       <div>
-        <Suspense fallback={<LoadingFallback message="Loading map..." />}>
+        <Suspense fallback={<LoadingFallback />}>
           <CountryClientsMap data={data} />
         </Suspense>
       </div>

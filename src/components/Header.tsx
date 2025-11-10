@@ -27,7 +27,8 @@ const Header = () => {
         <div className={`flex items-center transition-opacity duration-1000 ease-out ${
           isVisible ? 'opacity-100' : 'opacity-0'
         }`}>
-          <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-gray-800">Logo</div>
+          {/* Replace text logo with image placed at public/logo-dzs.png */}
+          <img src="/logo-dzs-updated.png" alt="DZS Solutions" loading="lazy" className="w-28 sm:w-32 md:w-36 lg:w-40 h-auto object-contain" />
         </div>
         
         {/* Desktop Navigation - Responsive spacing and font sizes */}
@@ -88,7 +89,7 @@ const Header = () => {
         <div className={`flex items-center justify-between p-4 sm:p-6 border-b border-gray-200 transition-opacity duration-300 ease-out ${
           isMobileMenuOpen ? 'opacity-100' : 'opacity-0'
         }`}>
-          <div className="text-lg sm:text-xl font-semibold text-gray-800">Logo</div>
+          <img src="/logo-dzs.png" alt="DZS Solutions" loading="lazy" className="w-24 sm:w-28 h-auto object-contain" />
           <button
             onClick={toggleMobileMenu}
             className="p-1.5 sm:p-2 rounded-lg hover:bg-gray-100 transition-all duration-200 hover:scale-110 hover:rotate-90"
