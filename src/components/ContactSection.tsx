@@ -97,7 +97,7 @@ const ContactSection = () => {
                 </select>
                 <div className="absolute inset-y-0 right-2 flex items-center pointer-events-none">
                   {/* Replaced comment with img tag */}
-                  <img src={dropArrow} alt="dropdown arrow" />
+                  <img src={dropArrow} alt="dropdown arrow" loading="lazy" />
                 </div>
               </div>
               <input
@@ -121,7 +121,7 @@ const ContactSection = () => {
             </select>
             <div className="absolute inset-y-0 right-2 top-5 flex items-center pointer-events-none">
               {/* Replaced comment with img tag */}
-              <img src={dropArrow} alt="dropdown arrow" />
+              <img src={dropArrow} alt="dropdown arrow" loading="lazy" />
             </div>
           </div>
 

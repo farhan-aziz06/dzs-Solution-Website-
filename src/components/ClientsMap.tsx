@@ -28,6 +28,7 @@ const CountryClientsMap = ({ data }) => {
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/World_map_-_low_resolution.svg/2000px-World_map_-_low_resolution.svg.png"
         alt="World Map"
+        loading="lazy"
         className="w-full h-full object-cover opacity-30"
       />
 

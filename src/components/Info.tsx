@@ -18,14 +18,16 @@ const NameInfo: React.FC<NameInfoProps> = ({
   arrow,
 }) => {
   const arrowElement =
-    arrow ?? <img src="/arrow.svg" alt="Arrow" className="inline-block w-5 h-5" />;
+    arrow ?? (
+      <img src="/arrow.svg" alt="Arrow" loading="lazy" className="inline-block w-5 h-5" />
+    );
 
   return (
     <div className="flex lg:flex-col flex-col items-center md:items-start">
       <div className="md:flex lg:block gap-20">
         <div className="relative flex items-center gap-4">
           <div className="relative h-40 w-40 md:h-52 md:w-52 overflow-hidden rounded-2xl">
-            <img src={profileImage} alt="Profile" className="absolute inset-0 w-full h-full object-cover" />
+            <img src={profileImage} alt="Profile" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
           </div>
           <div className="absolute top-[120px] md:top-[170px] lg:top-[164px]  left-[60px] lg:left-[110px] w-[180px] md:w-[205px] h-[80px] md:h-[102px] gap-1.5 p-4 md:p-6 rounded-xl bg-white/10 shadow-[3px_12px_20px_0px_#00000012] backdrop-blur-[20px]">
             <h2 className="text-md md:text-lg font-bold text-gray-900">{name}</h2>
