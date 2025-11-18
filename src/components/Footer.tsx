@@ -31,8 +31,8 @@ const Footer = () => {
             <div>
               <h4 className="font-bold text-white mb-4 text-sm">The Good</h4>
               <ul className="space-y-3 text-gray-300 text-sm">
-                <li><a href="#" className="hover:text-white transition-colors">Home</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Contact Us</a></li>
+                <li><a href="/" className="hover:text-white transition-colors">Home</a></li>
+                <li><a href="/contact" className="hover:text-white transition-colors">Contact Us</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Automations</a></li>
               </ul>
             </div>
@@ -41,9 +41,9 @@ const Footer = () => {
             <div>
               <h4 className="font-bold text-white mb-4 text-sm">The Boring</h4>
               <ul className="space-y-3 text-gray-300 text-sm">
-                <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Services</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Projects</a></li>
+                <li><a href="/about" className="hover:text-white transition-colors">About Us</a></li>
+                <li><a href="/services" className="hover:text-white transition-colors">Services</a></li>
+                <li><a href="/project" className="hover:text-white transition-colors">Projects</a></li>
               </ul>
             </div>
 
@@ -51,10 +51,10 @@ const Footer = () => {
             <div>
               <h4 className="font-bold text-white mb-4 text-sm">The Cool</h4>
               <ul className="space-y-3 text-gray-300 text-sm">
-                <li><a href="#" className="hover:text-white transition-colors">Fiverr</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">LinkedIn</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">YouTube</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Upwork</a></li>
+                {/* <li><a href="#" className="hover:text-white transition-colors">Fiverr</a></li> */}
+                <li><a href="https://www.linkedin.com/in/farhan-aziz-921337240/" className="hover:text-white transition-colors">LinkedIn</a></li>
+                {/* <li><a href="#" className="hover:text-white transition-colors">YouTube</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Upwork</a></li> */}
               </ul>
             </div>
           </div>

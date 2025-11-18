@@ -49,39 +49,24 @@ const ProjectsSection = () => {
     };
   }, []);
 
+
   const projects = [
-    {
-      title: "",
-      category: "AI Integrated Workflow Product",
-      team: ["/girl.svg", "/girl1.svg", "/boy.svg"],
-      image: "/pi1.png",
-      bgColor: "bg-gradient-to-br from-blue-400 to-blue-600",
-      badge: "AI"
-    },
-    {
-      title: "",
-      category: "AI Integrated Workflow Product", 
-      team: ["/girl1.svg", "/boy.svg", "/girl.svg"],
-      image: "/fig2.svg",
-      bgColor: "bg-gradient-to-br from-gray-800 to-gray-900",
-      badge: "Web"
-    },
-    {
-      title: "",
-      category: "AI Integrated Workflow Product",
-      team: ["/boy.svg", "/girl.svg", "/girl1.svg"],
-      image: "/fig3.svg",
-      bgColor: "bg-gradient-to-br from-gray-900 to-black",
-      badge: "App"
-    },
-    {
-      title: "", 
-      category: "AI Integrated Workflow Product",
-      team: ["/girl1.svg", "/girl.svg", "/boy.svg"],
-      image: "/fig4.svg",
-      bgColor: "bg-gradient-to-br from-blue-900 to-blue-950",
-      badge: "AI"
-    }
+  {
+    title: "Deal Taxi Platform",
+    category: "Full-Stack Mobile & Admin Panel",
+    team: ["/arrij.jpeg", "/user.png", "/Farhan1.png"],
+    image: "/taxiapp.png",
+    bgColor: "bg-gradient-to-br from-blue-900 to-blue-950",
+    badge: "App"
+  },
+  {
+    title: "Dome Water",
+    category: "Mobile App, Admin Panel & Backend",
+    team: ["/umar1.webp","/arrij.jpeg", "/user.png", "/Farhan1.png"],
+    image: "/dome.png",
+    bgColor: "bg-gradient-to-br from-gray-900 to-black",
+    badge: "App"
+  },
   ];
 
   return (
@@ -94,9 +79,15 @@ const ProjectsSection = () => {
             : '-translate-x-20 opacity-0'
         }`}>
           <div className="text-left">
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 mb-1 transition-all duration-1000">
-              Our Projects
-            </h2>
+            <a href="/project" className="group inline-block focus:outline-none">
+              <h2
+                id="projects-section"
+                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 mb-1 transition-all duration-1000 cursor-pointer group-hover:text-purple-600"
+                tabIndex={0}
+              >
+                Our Projects
+              </h2>
+            </a>
             <p className="text-gray-400 text-xs sm:text-sm lg:text-base max-w-xl lg:max-w-2xl leading-relaxed transition-all duration-1000">
               We craft bold digital solutions that drive growth. From concept to launch, <br/>
               solving real-world problems with precision and creativity.
@@ -127,6 +118,8 @@ const ProjectsSection = () => {
                     <img
                       src={project.image}
                       alt={project.title}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                     />
                   </div>
@@ -176,6 +169,8 @@ const ProjectsSection = () => {
                             <img
                               src={member}
                               alt={`Team member ${i + 1}`}
+                              loading="lazy"
+                              decoding="async"
                               className="w-full h-full object-cover"
                             />
                           </div>
@@ -190,7 +185,9 @@ const ProjectsSection = () => {
               </div>
             ))}
           </div>
+         
         </div>
+
 
         {/* Services Section - Dark theme with floating cards and three columns */}
         <div ref={servicesRef} className="mt-8 sm:mt-12 lg:mt-16">
@@ -311,4 +308,5 @@ const ProjectsSection = () => {
   );
 };
 
-export default ProjectsSection;
+// Memoize to avoid re-renders when parent updates without changing props
+export default React.memo(ProjectsSection);

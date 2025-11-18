@@ -1,6 +1,6 @@
-import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import Footer from "@/components/Footer";
+// Header and Footer are intentionally not imported here to avoid bundling them
+// on the initial home page chunk if they aren't used. Keep them in layout if needed.
 import React, { useEffect, useState, lazy, Suspense } from "react";
 import LoadingFallback from "@/components/LoadingFallback";
 

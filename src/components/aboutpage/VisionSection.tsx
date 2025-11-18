@@ -59,12 +59,12 @@ const VisionSection = () => {
               <div className="grid grid-cols-2 gap-4 mb-4">
                 {/* metric tiles */}
                 <div className="rounded-xl bg-white border border-gray-200 overflow-hidden p-4">
-                  <div className="text-3xl font-semibold text-gray-900">15+</div>
-                  <div className="text-xs text-gray-600 mt-1">Tech products launched</div>
+                  <div className="text-3xl font-semibold text-gray-900">Prep Genius</div>
+                  <div className="text-xs text-gray-600 mt-1">Our tech products launched</div>
                 </div>
                 <div className="rounded-xl bg-white border border-gray-200 overflow-hidden p-4">
-                  <div className="text-3xl font-semibold text-gray-900">45+</div>
-                  <div className="text-xs text-gray-600 mt-1">Apps & APIs delivered</div>
+                  <div className="text-3xl font-semibold text-gray-900">7+</div>
+                  <div className="text-xs text-gray-600 mt-1">Apps, Websites, Admin Panel & Automations delivered</div>
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
@@ -78,10 +78,14 @@ const VisionSection = () => {
                   <div className="text-xs text-gray-500 mb-1">Stacks</div>
                   <div className="flex flex-wrap gap-2">
                     <span className="px-2.5 py-1 rounded-full bg-sky-50 text-sky-700 text-xs border border-sky-200">React</span>
+                    
+                    <span className="px-2.5 py-1 rounded-full bg-sky-50 text-sky-700 text-xs border border-sky-200">React Native</span>
                     <span className="px-2.5 py-1 rounded-full bg-gray-50 text-gray-700 text-xs border border-gray-200">Next.js</span>
                     <span className="px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs border border-emerald-200">Node</span>
                     <span className="px-2.5 py-1 rounded-full bg-amber-50 text-amber-700 text-xs border border-amber-200">Python</span>
                     <span className="px-2.5 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs border border-indigo-200">AWS</span>
+                    <span className="px-2.5 py-1 rounded-full bg-gray-50 text-gray-700 text-xs border border-gray-200">Flutter</span>
+                    <span className="px-2.5 py-1 rounded-full bg-amber-50 text-amber-700 text-xs border border-amber-200">n8n</span>
                   </div>
                 </div>
               </div>
@@ -107,7 +111,7 @@ const VisionSection = () => {
               </div>
               <div className="grid grid-cols-2 gap-3 mb-3">
                 <div className="rounded-xl bg-white border border-gray-200 px-3 py-2 text-xs text-gray-700">
-                  12 retainer clients
+                  2 retainer clients
                 </div>
                 <div className="rounded-xl bg-white border border-gray-200 px-3 py-2 text-xs text-gray-700">
                   95% on‑time delivery
@@ -115,7 +119,7 @@ const VisionSection = () => {
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <div className="rounded-xl bg-white border border-gray-200 px-3 py-2 text-xs text-gray-700">
-                  4 current projects
+                  5 current projects
                 </div>
                 <div className="rounded-xl bg-white border border-gray-200 px-3 py-2 text-xs text-gray-700">
                   99.9% uptime SLAs

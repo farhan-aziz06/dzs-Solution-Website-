@@ -17,56 +17,58 @@ const Projects = () => {
 
   const tabs = ['Artificial Intelligence', 'App Development', 'Web Technology'];
 
-  const projects = [
-    {
-      title: "",
-      category: "AI Integrated Workflow Product",
-      team: ["/girl.svg", "/girl1.svg", "/boy.svg"],
-      image: "/pi1.png",
-      bgColor: "bg-gradient-to-br from-blue-400 to-blue-600",
-      badge: "AI"
-    },
-    {
-      title: "",
-      category: "AI Integrated Workflow Product",
-      team: ["/girl1.svg", "/boy.svg", "/girl.svg"],
-      image: "/fig2.svg",
-      bgColor: "bg-gradient-to-br from-gray-800 to-gray-900",
-      badge: "Web"
-    },
-    {
-      title: "",
-      category: "AI Integrated Workflow Product",
-      team: ["/boy.svg", "/girl.svg", "/girl1.svg"],
-      image: "/fig3.svg",
-      bgColor: "bg-gradient-to-br from-gray-900 to-black",
-      badge: "App"
-    },
-    {
-      title: "",
-      category: "AI Integrated Workflow Product",
-      team: ["/girl1.svg", "/girl.svg", "/boy.svg"],
-      image: "/pi1.png",
-      bgColor: "bg-gradient-to-br from-blue-900 to-blue-950",
-      badge: "AI"
-    },
-    {
-      title: "",
-      category: "AI Integrated Workflow Product",
-      team: ["/girl.svg", "/girl1.svg", "/boy.svg"],
-      image: "/pi1.png",
-      bgColor: "bg-gradient-to-br from-blue-400 to-blue-600",
-      badge: "AI"
-    },
-    {
-      title: "",
-      category: "AI Integrated Workflow Product",
-      team: ["/girl1.svg", "/boy.svg", "/girl.svg"],
-      image: "/fig2.svg",
-      bgColor: "bg-gradient-to-br from-gray-800 to-gray-900",
-      badge: "Web"
-    },
-  ];
+const projects = [
+  {
+    title: "Deal Taxi Platform",
+    category: "Full-Stack Mobile & Admin Panel",
+    team: ["/arrij.jpeg", "/user.png", "/Farhan1.png"],
+    image: "/taxiapp.png",
+    bgColor: "bg-gradient-to-br from-blue-900 to-blue-950",
+    badge: "App"
+  },
+  {
+    title: "NY Caffeine End-to-End System",
+    category: "Mobile App & Admin Dashboard",
+    team: ["/arrij.jpeg", "/user.png"],
+    image: "/fig2.svg",
+    bgColor: "bg-gradient-to-br from-blue-400 to-blue-600",
+    badge: "App"
+  },
+  {
+    title: "AI-Powered Lead Generation",
+    category: "AI Automation & CRM Integration",
+    team: ["/umar1.webp", "/user.png", "/Farhan1.png"],
+    image: "/fig2.svg",
+    bgColor: "bg-gradient-to-br from-gray-800 to-gray-900",
+    badge: "AI"
+  },
+  {
+    title: "Dome Water",
+    category: "Mobile App, Admin Panel & Backend",
+    team: ["/umar1.webp","/arrij.jpeg", "/user.png", "/Farhan1.png"],
+    image: "/dome.png",
+    bgColor: "bg-gradient-to-br from-gray-900 to-black",
+    badge: "App & Admin Panel"
+  },
+    // {
+    //   title: "SaaS Workflow Automation",
+    //   category: "Web Platform & AI Integration",
+    //   team: ["/girl.svg", "/girl1.svg", "/boy.svg"],
+    //   image: "/saas_workflow.png",
+    //   bgColor: "bg-gradient-to-br from-blue-400 to-blue-600",
+    //   badge: "Web"
+    // },
+  {
+    title: "Microservices Taxi Backend",
+    category: "Backend Optimization & Redis Cache",
+    team: ["/arrij.jpeg", "/user.png", "/farhan.png","farhan-2.png"],
+    image: "/taxi-2.png",
+    bgColor: "bg-gradient-to-br from-gray-800 to-gray-900",
+    badge: "Backend"
+  },
+];
+
+  
 
   return (
     <div className="min-h-screen">
@@ -92,7 +94,7 @@ const Projects = () => {
             >
               <div className="w-full text-left">
                 <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 mb-0 mt-0 sm:mt-0 lg:mt-0">
-                  Mobile app development
+                  From Idea to Production: End-to-End Apps, AI Systems, and Scalable Platforms
                 </h1>
                 <p className="text-gray-400 text-xs sm:text-sm lg:text-base max-w-xl lg:max-w-2xl leading-relaxed">
                   We craft bold digital solutions that drive growth. From concept to launch,

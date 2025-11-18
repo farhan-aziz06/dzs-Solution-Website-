@@ -5,46 +5,34 @@ const TeamSection = () => {
   const sectionRef = useRef(null);
 
   const founder = {
-    name: "Elena Vallin",
+    name: "Farhan Aziz",
     role: "Founder & CEO",
     image:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=640&h=640&fit=crop&crop=faces",
+      "/Farhan1.png",
     quote:
       "Building human-centered AI that turns complex data into simple decisions.",
     bio:
-      "Ex-CTO turned founder with 15+ years in cloud, ML ops and product. Led teams shipping secure, scalable platforms used by millions.",
-  };
+      "Founder & tech entrepreneur specializing in mobile apps, web platforms, SaaS MVPs, and AI automation."};
 
   const teamMembers = [
     {
-      name: "Fergal Reid",
-      role: "Chief AI Officer",
+      name: "Umar Nauman",
+      role: "Head Of Gen AI & ML",
       image:
-        "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=640&h=640&fit=crop&crop=faces",
+        "/umar1.webp",
     },
     {
-      name: "Brian McDonnell",
-      role: "Director, Engineering",
+      name: "Hajirah Sultan",
+      role: "Designs Head",
       image:
-        "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=640&h=640&fit=crop&crop=faces",
+        "/user.png",
     },
+   
     {
-      name: "Mario Kostelac",
-      role: "Principal ML Engineer",
+      name: "Areeba Aziz",
+      role: "Sales & Marketing",
       image:
-        "https://images.unsplash.com/photo-1541534401786-2077eed87a72?w=640&h=640&fit=crop&crop=faces",
-    },
-    {
-      name: "Alexey Tarasov",
-      role: "Senior Manager, ML Engineering",
-      image:
-        "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=640&h=640&fit=crop&crop=faces",
-    },
-    {
-      name: "Fedor Parfenov",
-      role: "Staff Machine Learning Scientist",
-      image:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=640&h=640&fit=crop&crop=faces",
+        "/user.png",
     },
   ];
 
@@ -85,7 +73,7 @@ const TeamSection = () => {
           Together we build, together we rise.
         </h2>
         <p className="text-gray-400 text-sm sm:text-base max-w-xl lg:max-w-3xl leading-relaxed">
-          We believe success is a shared journey. By working closely with our clients and team, we co-create solutions that elevate everyone involved—fostering mutual growth, trust, and long-lasting impact.
+          We believe success is a shared journey. By working closely with our clients and team, we co-create solutions that elevate everyone involved fostering mutual growth, trust, and long-lasting impact.
         </p>
       </div>
       {/* Founder / CEO Section */}
@@ -110,9 +98,9 @@ const TeamSection = () => {
             </h3>
             <p className="text-gray-600 text-sm sm:text-base max-w-2xl">{founder.bio}</p>
             <div className="pt-1 sm:pt-2 flex flex-wrap gap-2">
-              <span className="px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">Kubernetes • Cloud</span>
-              <span className="px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">Applied ML • MLOps</span>
-              <span className="px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">Security by Design</span>
+              <span className="px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">SaaS • App Development • Web Development</span>
+              <span className="px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">AI • Ai Automation • Gen Ai</span>
+              <span className="px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">Sales & Marketing</span>
             </div>
             <div className="pt-3 sm:pt-4">
               <p className="text-gray-900 font-semibold text-sm sm:text-base">{founder.name}</p>
@@ -128,21 +116,21 @@ const TeamSection = () => {
             Built by
           </h2>
           <h2 className="text-3xl sm:text-4xl lg:text-6xl font-light text-gray-900 leading-none">
-            a world-class team of AI experts
+            a world-class team of experts
           </h2>
         </div>
         <div className="mt-4 sm:mt-6 max-w-3xl">
           <div className="flex items-start gap-3">
             <span className="text-gray-400 text-xs font-semibold tracking-widest">01</span>
             <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-              Building models of this quality is only possible thanks to our
-              50-person-strong, world-class AI group and our decade-long
+              Building projects of this quality is only possible thanks to our
+              strong, world-class team and our
               experience in building customer service software.
             </p>
           </div>
         </div>
         <p className="mt-6 text-[10px] sm:text-xs tracking-widest text-gray-500">
-          AI GROUP LEADERSHIP
+          LEADERSHIP
         </p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">

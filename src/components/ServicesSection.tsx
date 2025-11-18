@@ -125,4 +125,5 @@ const ServicesSection = () => {
   );
 };
 
-export default ServicesSection;
+// Memoize to avoid re-renders when parent updates without changing props
+export default React.memo(ServicesSection);

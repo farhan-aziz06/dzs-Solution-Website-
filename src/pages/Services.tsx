@@ -68,7 +68,7 @@ const Services = () => {
         "Natural Language Processing"
       ],
       image: "/new.svg",
-      stack: "/stack1.svg",
+      stack: ["/stack1.svg"],
       gradient: "bg-gradient-to-br from-purple-500 via-purple-600 to-indigo-700"
     },
     {
@@ -83,7 +83,7 @@ const Services = () => {
         "Secure Mobile App Architecture"
       ],
       image: "/new.svg",
-      stack: "/stack2.svg",
+      stack: ["/stack2.svg"],
       gradient: "bg-gradient-to-br from-purple-600 via-indigo-600 to-blue-700"
     },
     {
@@ -98,7 +98,7 @@ const Services = () => {
         "AI-Powered Web Interface"
       ],
       image: "/new.svg",
-      stack: "/stack3.svg",
+      stack: ["/stack3.svg"],
       gradient: "bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-600"
     },
     {
@@ -113,8 +113,40 @@ const Services = () => {
         "User Research & Data-Driven UI Decisions"
       ],
       image: "/new.svg",
-      stack: "/stack4.svg",
+      stack: ["/stack4.svg"],
       gradient: "bg-gradient-to-br from-purple-500 via-pink-500 to-rose-600"
+    },
+    // New Service: SaaS
+    {
+      title: "SaaS Solutions",
+      description: "We design, build, and scale robust Software-as-a-Service (SaaS) platforms tailored to your business needs. Our SaaS solutions are secure, scalable, and user-friendly, enabling you to deliver value to your customers with minimal hassle.",
+      features: [
+        "Multi-Tenant Cloud Architecture",
+        "Subscription & Billing Integration",
+        "Customizable User Dashboards",
+        "Role-Based Access Control",
+        "Automated Scaling & Monitoring",
+        "Seamless Third-Party Integrations"
+      ],
+      image: "/new.svg",
+        stack: ["/stack3.svg"], // Use web/app icon for SaaS
+      gradient: "bg-gradient-to-br from-blue-500 via-cyan-500 to-teal-500"
+    },
+    // New Service: AI Automation
+    {
+      title: "AI Automation",
+      description: "We empower businesses to automate repetitive tasks and complex workflows using advanced AI and machine learning. Our AI automation services help you boost efficiency, reduce costs, and unlock new opportunities for growth.",
+      features: [
+        "Intelligent Process Automation (IPA)",
+        "Robotic Process Automation (RPA)",
+        "AI-Powered Chatbots & Virtual Assistants",
+        "Predictive Analytics for Operations",
+        "Automated Data Extraction & Processing",
+        "Workflow Orchestration with AI"
+      ],
+      image: "/new.svg",
+        stack: ["/n8n.webp", "/zapier.webp"], // Use attached n8n-like icon for AI Automation
+      gradient: "bg-gradient-to-br from-green-500 via-emerald-500 to-lime-500"
     }
   ];
 
@@ -222,9 +254,24 @@ const Services = () => {
                     style={{ 
                       transitionDelay: visibleServices.has(index) ? `${(index * 150) + 500}ms` : '0ms' 
                     }}>
-                      <div className="w-auto mb-3 sm:mb-4 lg:mb-6">
-                        <img src={service.stack} alt="Tech stack" className="h-8 sm:h-9 lg:h-10 object-contain" />
-                      </div>
+                        <div className="flex gap-2 w-auto mb-3 sm:mb-4 lg:mb-6 justify-center items-center">
+                          {Array.isArray(service.stack)
+                            ? service.stack.map((icon, i) => (
+                                <img
+                                  key={i}
+                                  src={icon}
+                                  alt="Tech stack"
+                                  className="h-8 sm:h-9 lg:h-10 object-contain"
+                                />
+                              ))
+                            : (
+                                <img
+                                  src={service.stack}
+                                  alt="Tech stack"
+                                  className="h-8 sm:h-9 lg:h-10 object-contain"
+                                />
+                              )}
+                        </div>
                     </div>
                   </div>
                 </div>

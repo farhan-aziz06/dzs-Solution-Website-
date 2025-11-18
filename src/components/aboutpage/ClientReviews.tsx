@@ -11,28 +11,30 @@ const ClientReviews = () => {
   const reviews = [
     {
       title: "From Idea to Reality in Weeks",
-      content: "The team truly understood our vision and transformed it into a seamless, user-friendly mobile app. The process was smooth, and the final result went beyond what we imagined. Our Communication was smooth, & the final product exceeded expectations. Their collaboration style and quality of work with your team improved our delivery by 60%. It felt more like working with a true partner than just a service provider.",
-      author: "Ronald Richard",
-      position: "Co-Founder & CEO",
-      initials: "RR",
-      image: "/client.svg"
+      content: "Working with this team on our taxi app was an outstanding experience. They understood our vision clearly and turned it into a complete, smooth, and user-friendly platform. The driver app, passenger app, and admin panel all worked together perfectly. Communication during the entire project was fast and transparent, and the final delivery went far beyond what we expected. Our operational efficiency improved by almost 60 percent after launching the system. It genuinely felt like working with a true partner rather than a typical software vendor.",
+      author: "Sheemon & Eden",
+      position: "Co-Founder & CTO",
+      initials: "S&E",
+      image: "/user.png"
     },
     {
-      title: "Exceptional AI Integration Results",
-      content: "Working with this team on our AI-powered platform was transformative. They didn't just deliver code—they delivered intelligence. The machine learning models they implemented increased our efficiency by 75% and provided insights we never thought possible. Their expertise in both technical execution and business strategy made all the difference.",
-      author: "Sarah Johnson",
-      position: "CTO & Head of Innovation",
-      initials: "SJ",
-      image: "/g1.jpg"
+      title: "Exceptional AI Automation and Lead Generation Results",
+      content: "Working with this team on our AI-powered lead generation system was a game changer. They did not just build automation. They built a smart engine that identifies, scores, and nurtures quality leads with impressive accuracy. The workflows they designed increased our lead conversion rate by more than 70 percent and eliminated hours of manual work every week. Their technical expertise and understanding of real business processes made the entire experience highly impactful.",
+      author: "Michael Harrington",
+      position: "Head of Sales",
+      initials: "MH",
+      image: "/user.png"
     },
     {
-      title: "Digital Transformation Done Right",
-      content: "Our legacy systems were holding us back until we partnered with this incredible team. They modernized our entire infrastructure while ensuring zero downtime. The new web application they built handles 10x our previous traffic and the user experience is phenomenal. Their attention to detail and commitment to excellence is unmatched.",
-      author: "Zoe Johnson",
-      position: "VP of Digital Strategy",
-      initials: "ZJ",
-      image: "/g2.jpg"
-    }
+    title: "End-to-End Cafe Platform Delivered Perfectly",
+    content: "Our team worked with them to build the complete NY Caffeine platform, including the mobile app and the full admin panel. The entire system was delivered with smooth functionality, clean design, and reliable performance. Order handling, menu updates, inventory tracking, delivery flow, and daily analytics were all integrated in one place. This improved our operational efficiency by more than 65 percent and allowed us to manage everything in real time. Their professionalism and ability to turn our idea into a polished, end-to-end product was truly impressive.",
+    author: "Johnathan Doe",
+    position: "CEO",
+    initials: "JD",
+    image: "/user.png"
+  }
+
+   
   ];
 
   useEffect(() => {
@@ -177,41 +179,21 @@ const ClientReviews = () => {
           ref={sliderRef}
           className="flex gap-5 sm:gap-6 mt-10 overflow-hidden no-scrollbar py-1"
         >
-          {([...reviews, ...reviews] as typeof reviews).map((item, idx) => {
-            const isMedia = idx % 3 === 1; // alternate media cards
-            return (
-              <div key={idx} className={`snap-start flex-shrink-0 ${isMedia ? 'w-[520px] sm:w-[620px] md:w-[720px]' : 'w-[280px] sm:w-[320px] md:w-[360px]'}`}>
-                {isMedia ? (
-                  <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-sm relative h-64 sm:h-72 md:h-80">
-                    {String(item.image || '').endsWith('.mp4') ? (
-                      <video src={String(item.image)} controls className="w-full h-full object-cover" />
-                    ) : (
-                      <img src={item.image} alt={item.author} className="w-full h-full object-cover" />
-                    )}
-                    <button className="absolute inset-0 m-auto w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center rounded-full bg-white/90 text-gray-900 shadow">
-                      <img src="/play.svg" alt="Play" className="w-5 h-5" />
-                    </button>
-                    <div className="absolute bottom-3 left-4 text-white drop-shadow">
-                      <div className="font-semibold text-sm">{item.author}</div>
-                      <div className="text-xs opacity-90">{item.position}</div>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="bg-white rounded-2xl border border-gray-200 p-5 sm:p-6 shadow-sm h-full">
-                    <div className="flex items-center gap-3 mb-4">
-                      <img src={item.image} alt={item.author} className="w-8 h-8 rounded-full object-cover" />
-                      <div className="text-sm text-gray-900 font-medium">{item.author}</div>
-                    </div>
-                    <p className="text-sm text-gray-600 leading-relaxed mb-6 line-clamp-6">{item.content}</p>
-                    <div>
-                      <div className="text-gray-900 font-semibold">{item.author}</div>
-                      <div className="text-xs text-gray-400">{item.position}</div>
-                    </div>
-                  </div>
-                )}
+          {([...reviews, ...reviews] as typeof reviews).map((item, idx) => (
+            <div key={idx} className="snap-start flex-shrink-0 w-[280px] sm:w-[320px] md:w-[360px]">
+              <div className="bg-white rounded-2xl border border-gray-200 p-5 sm:p-6 shadow-sm h-full">
+                <div className="flex items-center gap-3 mb-4">
+                  <img src={item.image} alt={item.author} className="w-8 h-8 rounded-full object-cover" />
+                  <div className="text-sm text-gray-900 font-medium">{item.author}</div>
+                </div>
+                <p className="text-sm text-gray-600 leading-relaxed mb-6 line-clamp-6">{item.content}</p>
+                <div>
+                  <div className="text-gray-900 font-semibold">{item.author}</div>
+                  <div className="text-xs text-gray-400">{item.position}</div>
+                </div>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
         {/* Edge gradients for slight blur/fade */}
         <div className="pointer-events-none absolute inset-y-0 left-0 w-10 sm:w-14 bg-gradient-to-r from-white to-transparent" />

@@ -16,7 +16,7 @@ const HeroSection = () => {
       <div className="absolute inset-2 sm:inset-6 md:h-full rounded-3xl overflow-hidden lg:w-[95vw] md:w-[93vw] w-[93vw] h-[80vw]">
         <div className="">
           <img
-            src="/he.svg"
+            src="/main-hero.svg"
             alt=""
             className="absolute inset-0 object-cover lg:w-[95vw] md:w-[93vw] w-[93vw] h-[80vw] md:h-full"
           />
