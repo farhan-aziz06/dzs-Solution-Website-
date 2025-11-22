@@ -38,7 +38,7 @@ const VisionSection = () => {
     >
       <div className="mb-6 sm:mb-8 lg:mb-12">
         <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-gray-900 mb-2 sm:mb-3">
-          From Vision to Value
+          From Vision to Value.
         </h2>
         <p className="text-gray-400 text-sm sm:text-base max-w-xl lg:max-w-3xl leading-relaxed">
           We craft smart digital solutions with a focus on AI, web, and app development. From idea to launch, we build products that drive growth, solve real problems, and stand out in today's digital world.

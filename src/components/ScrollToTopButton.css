@@ -1,0 +1,81 @@
+.scroll-to-top-button {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  padding: 12px 20px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #7165FF 0%, #DF56FE 100%);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(113, 101, 255, 0.4);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  animation: fadeIn 0.3s ease-in-out, float 3s ease-in-out infinite;
+}
+
+.button-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.button-text {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.scroll-to-top-button:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 8px 20px rgba(113, 101, 255, 0.6);
+  background: linear-gradient(135deg, #8577FF 0%, #E966FF 100%);
+}
+
+.scroll-to-top-button:active {
+  transform: translateY(-3px) scale(1.05);
+}
+
+.scroll-to-top-button svg {
+  transition: transform 0.3s ease;
+}
+
+.scroll-to-top-button:hover svg {
+  transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .scroll-to-top-button {
+    bottom: 24px;
+    right: 24px;
+    padding: 10px 16px;
+  }
+
+  .button-text {
+    font-size: 12px;
+  }
+}

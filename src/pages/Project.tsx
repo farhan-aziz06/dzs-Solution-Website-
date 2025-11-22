@@ -1,11 +1,19 @@
 import Header from '@/components/Header';
 import React, { useEffect, useState } from 'react';
 import Services from '@/pages/Services';
+import Tooltip from '@/components/Tooltip';
+import '@/components/Tooltip.css';
 
 const Projects = () => {
   const [isHeaderVisible, setIsHeaderVisible] = useState(false);
   const [isProjectsVisible, setIsProjectsVisible] = useState(false);
   const [activeTab, setActiveTab] = useState('Artificial Intelligence');
+  const [tooltip, setTooltip] = useState({
+    visible: false,
+    text: '',
+    x: 0,
+    y: 0
+  });
 
   useEffect(() => {
     setIsHeaderVisible(true);
@@ -21,39 +29,43 @@ const projects = [
   {
     title: "Deal Taxi Platform",
     category: "Full-Stack Mobile & Admin Panel",
-    team: ["/arrij.jpeg", "/user.png", "/Farhan1.png"],
-    image: "/taxiapp.png",
+    team: ["/arrij.webp", "/human.webp", "/Farhan1.webp","/taha.webp"],
+    image: "/taxiapp.webp",
     bgColor: "bg-gradient-to-br from-blue-900 to-blue-950",
-    badge: "App"
+    badge: "App",
+    description: "Complete taxi booking platform with driver app, passenger app, and powerful admin panel. Features real-time GPS tracking, automated dispatch, payment integration, and analytics dashboard. Built with React Native and Node.js microservices."
   },
   {
     title: "NY Caffeine End-to-End System",
     category: "Mobile App & Admin Dashboard",
-    team: ["/arrij.jpeg", "/user.png"],
+    team: ["/arrij.webp", "human.webp", "/Farhan1.webp","taha.webp"],
     image: "/fig2.svg",
     bgColor: "bg-gradient-to-br from-blue-400 to-blue-600",
-    badge: "App"
+    badge: "App",
+    description: "Full-stack cafe management system with mobile ordering app and comprehensive admin panel. Includes menu management, inventory tracking, order processing, delivery integration, and real-time analytics. Improved operational efficiency by 65%."
   },
   {
     title: "AI-Powered Lead Generation",
     category: "AI Automation & CRM Integration",
-    team: ["/umar1.webp", "/user.png", "/Farhan1.png"],
+    team: ["/umar1.webp", "/human.webp", "/Farhan1.webp"],
     image: "/fig2.svg",
     bgColor: "bg-gradient-to-br from-gray-800 to-gray-900",
-    badge: "AI"
+    badge: "AI",
+    description: "Intelligent lead generation system using machine learning to identify, score, and nurture quality leads. Features automated workflows, CRM integration, predictive analytics, and smart segmentation. Increased conversion rates by over 70%."
   },
   {
     title: "Dome Water",
     category: "Mobile App, Admin Panel & Backend",
-    team: ["/umar1.webp","/arrij.jpeg", "/user.png", "/Farhan1.png"],
-    image: "/dome.png",
+    team: ["/umar1.webp","/arrij.webp", "/human.webp", "/Farhan1.webp"],
+    image: "/dome.webp",
     bgColor: "bg-gradient-to-br from-gray-900 to-black",
-    badge: "App & Admin Panel"
+    badge: "App & Admin Panel",
+    description: "Water delivery management platform with mobile app for customers and drivers, plus complete admin dashboard. Features order scheduling, route optimization, inventory management, and payment processing with real-time tracking."
   },
     // {
     //   title: "SaaS Workflow Automation",
     //   category: "Web Platform & AI Integration",
-    //   team: ["/girl.svg", "/girl1.svg", "/boy.svg"],
+    //   team: ["/girl.svg", "/Farhan1.webp", "/boy.svg"],
     //   image: "/saas_workflow.png",
     //   bgColor: "bg-gradient-to-br from-blue-400 to-blue-600",
     //   badge: "Web"
@@ -61,10 +73,11 @@ const projects = [
   {
     title: "Microservices Taxi Backend",
     category: "Backend Optimization & Redis Cache",
-    team: ["/arrij.jpeg", "/user.png", "/farhan.png","farhan-2.png"],
-    image: "/taxi-2.png",
+    team: ["/arrij.webp", "/human.webp", "/farhan.png","/taha.webp"],
+    image: "/taxi-2.webp",
     bgColor: "bg-gradient-to-br from-gray-800 to-gray-900",
-    badge: "Backend"
+    badge: "Backend",
+    description: "High-performance microservices architecture for taxi platform with Redis caching, message queues, and load balancing. Handles 10,000+ concurrent requests with sub-100ms response times. Built with Node.js, Redis, and Docker."
   },
 ];
 
@@ -174,6 +187,29 @@ const projects = [
                         : 'translate-y-20 opacity-0'
                     }`}
                     style={{ transitionDelay: `${400 + index * 150}ms` }}
+                    onMouseEnter={() => {
+                      setTooltip({
+                        visible: true,
+                        text: project.description,
+                        x: 0,
+                        y: 0
+                      });
+                    }}
+                    onMouseMove={(e) => {
+                      setTooltip(prev => ({
+                        ...prev,
+                        x: e.clientX,
+                        y: e.clientY
+                      }));
+                    }}
+                    onMouseLeave={() => {
+                      setTooltip({
+                        visible: false,
+                        text: '',
+                        x: 0,
+                        y: 0
+                      });
+                    }}
                   >
                     {/* Card Image */}
                     <div
@@ -248,6 +284,14 @@ const projects = [
           </section>
         </div>
       </section>
+
+      {/* Floating Tooltip */}
+      <Tooltip
+        text={tooltip.text}
+        x={tooltip.x}
+        y={tooltip.y}
+        visible={tooltip.visible}
+      />
     </div>
   );
 };

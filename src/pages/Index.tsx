@@ -47,7 +47,6 @@ const Index = () => {
         <ServicesSection />
         <ProjectsSection />
       </Suspense>
-      {/* <ContactSection /> */}
       <div className="flex flex-col items-center px-4 md:px-12 lg:px-8 xl:px-8 py-4">
         <div className="py-4 text-center">
           {/* Ready to build the future with */}
@@ -61,7 +60,7 @@ const Index = () => {
             <Info
               name="Farhan"
               role="Solution Specialist"
-              profileImage="/girl1.svg"
+              profileImage="/Farhan1.webp"
               email="teamdzssolutions@dzssolutions.com"
               ctaHref="#"
             />

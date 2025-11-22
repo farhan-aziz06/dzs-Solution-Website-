@@ -1,10 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react';
+import Tooltip from '@/components/Tooltip';
+import '@/components/Tooltip.css';
 
 const ProjectsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [servicesVisible, setServicesVisible] = useState(false);
   const sectionRef = useRef(null);
   const servicesRef = useRef(null);
+  const [tooltip, setTooltip] = useState({
+    visible: false,
+    text: '',
+    x: 0,
+    y: 0
+  });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -54,18 +62,20 @@ const ProjectsSection = () => {
   {
     title: "Deal Taxi Platform",
     category: "Full-Stack Mobile & Admin Panel",
-    team: ["/arrij.jpeg", "/user.png", "/Farhan1.png"],
-    image: "/taxiapp.png",
+    team: ["/arrij.webp", "/human.webp", "/Farhan1.webp"],
+    image: "/taxiapp.webp",
     bgColor: "bg-gradient-to-br from-blue-900 to-blue-950",
-    badge: "App"
+    badge: "App",
+    description: "Complete taxi booking platform with driver app, passenger app, and powerful admin panel. Features real-time GPS tracking, automated dispatch, payment integration, and analytics dashboard. Built with React Native and Node.js microservices."
   },
   {
     title: "Dome Water",
     category: "Mobile App, Admin Panel & Backend",
-    team: ["/umar1.webp","/arrij.jpeg", "/user.png", "/Farhan1.png"],
-    image: "/dome.png",
+    team: ["/umar1.webp","/arrij.webp", "/human.webp", "/Farhan1.webp"],
+    image: "/dome.webp",
     bgColor: "bg-gradient-to-br from-gray-900 to-black",
-    badge: "App"
+    badge: "App",
+    description: "Water delivery management platform with mobile app for customers and drivers, plus complete admin dashboard. Features order scheduling, route optimization, inventory management, and payment processing with real-time tracking."
   },
   ];
 
@@ -111,6 +121,29 @@ const ProjectsSection = () => {
                     : 'translate-y-20 opacity-0'
                 }`}
                 style={{ transitionDelay: `${400 + (index * 150)}ms` }}
+                onMouseEnter={() => {
+                  setTooltip({
+                    visible: true,
+                    text: project.description,
+                    x: 0,
+                    y: 0
+                  });
+                }}
+                onMouseMove={(e) => {
+                  setTooltip(prev => ({
+                    ...prev,
+                    x: e.clientX,
+                    y: e.clientY
+                  }));
+                }}
+                onMouseLeave={() => {
+                  setTooltip({
+                    visible: false,
+                    text: '',
+                    x: 0,
+                    y: 0
+                  });
+                }}
               >
                 {/* Image Container */}
                 <div className={`relative rounded-2xl sm:rounded-3xl aspect-[5/3] flex items-center justify-center overflow-hidden mb-3 sm:mb-4 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1`}>
@@ -304,6 +337,14 @@ const ProjectsSection = () => {
           </div>
         </div>
       </div>
+
+      {/* Floating Tooltip */}
+      <Tooltip
+        text={tooltip.text}
+        x={tooltip.x}
+        y={tooltip.y}
+        visible={tooltip.visible}
+      />
     </section>
   );
 };

@@ -8,9 +8,9 @@ const TeamSection = () => {
     name: "Farhan Aziz",
     role: "Founder & CEO",
     image:
-      "/Farhan1.png",
+      "/Farhan1.webp",
     quote:
-      "Building human-centered AI that turns complex data into simple decisions.",
+      "Building AI-powered SaaS products that turn complex processes into simple, scalable solutions.",
     bio:
       "Founder & tech entrepreneur specializing in mobile apps, web platforms, SaaS MVPs, and AI automation."};
 
@@ -22,17 +22,22 @@ const TeamSection = () => {
         "/umar1.webp",
     },
     {
-      name: "Hajirah Sultan",
-      role: "Designs Head",
+      name: "Taha Ashfaq ",
+      role: "Deasigns Head",
       image:
-        "/user.png",
+        "/taha.webp",
     },
-   
+    {
+      name: "Hajirah Sultan",
+      role: "Designs and Branding Expert",
+      image:
+        "/human.webp",
+    },
     {
       name: "Areeba Aziz",
       role: "Sales & Marketing",
       image:
-        "/user.png",
+        "/human.webp",
     },
   ];
 

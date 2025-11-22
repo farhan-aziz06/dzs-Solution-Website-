@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo } from "react";
 import { Menu, X } from "lucide-react";
 
-const Header = () => {
+const Header = memo(() => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -54,10 +54,6 @@ const Header = () => {
             alt="Contact" 
             className="w-24 sm:w-28 md:w-32 lg:w-36 xl:w-40 h-auto"
             style={{ minHeight: '24px' }}
-            onError={(e) => {
-              console.log('SVG failed to load from /contactbutton.svg');
-            }}
-            onLoad={() => console.log('SVG loaded successfully')}
           />
         </a>
 
@@ -136,10 +132,6 @@ const Header = () => {
                 alt="Contact"
                 className="w-32 sm:w-36 md:w-40 h-auto"
                 style={{ minHeight: '28px' }}
-                onError={(e) => {
-                  console.log('SVG failed to load from /contactbutton.svg');
-                }}
-                onLoad={() => console.log('SVG loaded successfully')}
               />
             </a>
           </div>
@@ -147,6 +139,8 @@ const Header = () => {
       </div>
     </>
   );
-};
+});
+
+Header.displayName = 'Header';
 
 export default Header;

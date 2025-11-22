@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { memo } from 'react';
 
-const Footer = () => {
+const Footer = memo(() => {
   return (
     <footer className="relative bg-gray-900 text-white pt-12 pb-20 px-6 sm:px-8 lg:px-12 overflow-hidden">
       {/* Grainy texture overlay */}
@@ -62,13 +62,15 @@ const Footer = () => {
 
         {/* Large DZS text at bottom */}
         <div className="mt-8 lg:mt-12">
-          <h1 className="text-7xl sm:text-8xl lg:text-9xl font-bold text-white leading-none">
+          <h1 className="text-5xl sm:text-8xl lg:text-9xl font-bold text-white leading-none">
             DZS SOLUTIONS.
           </h1>
         </div>
       </div>
     </footer>
   );
-};
+});
+
+Footer.displayName = 'Footer';
 
 export default Footer;

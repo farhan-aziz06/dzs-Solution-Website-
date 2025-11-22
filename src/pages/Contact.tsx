@@ -60,7 +60,7 @@ const Contact = () => {
           <NameInfo
             name="Farhan"
             role="Solution Specialist"
-            profileImage="/girl1.svg"
+            profileImage="Farhan1.webp"
             email="teamdzssolutions@dzssolutions.com"
             ctaHref="#"
           />

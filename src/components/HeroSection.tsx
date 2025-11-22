@@ -80,7 +80,7 @@ const HeroSection = () => {
           {/* <div className="hidden max-sm:mt-4 max-sm:flex">
             <div className="bg-white rounded-2xl shadow-xl p-3 flex items-center space-x-3 w-[90%]">
               <div className="flex -space-x-3 flex-shrink-0">
-                {["/girl1.svg", "/boy.svg", "/girl.svg"].map((src, i) => (
+                {["/Farhan1.webp", "/boy.svg", "/girl.svg"].map((src, i) => (
                   <img
                     key={i}
                     src={src}
@@ -137,7 +137,7 @@ const HeroSection = () => {
           
         >
           <div className=" -space-x-2 flex">
-            {["/girl1.svg", "/boy.svg", "/girl.svg"].map((src, i) => (
+            {["/Farhan1.webp", "/boy.svg", "/girl.svg"].map((src, i) => (
               <img
                 key={i}
                 src={src}

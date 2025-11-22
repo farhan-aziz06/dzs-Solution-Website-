@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 
 type NameInfoProps = {
   name: string;
@@ -9,7 +9,7 @@ type NameInfoProps = {
   arrow?: React.ReactNode;
 };
 
-const NameInfo: React.FC<NameInfoProps> = ({
+const NameInfo: React.FC<NameInfoProps> = memo(({
   name,
   role,
   profileImage,
@@ -79,8 +79,8 @@ const NameInfo: React.FC<NameInfoProps> = ({
       </div>
     </div>
   );
-};
+});
+
+NameInfo.displayName = 'NameInfo';
 
 export default NameInfo;
-
-

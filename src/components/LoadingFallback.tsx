@@ -1,10 +1,10 @@
-import React from "react";
+import React, { memo } from "react";
 
 type Props = {
   message?: string;
 };
 
-const LoadingFallback: React.FC<Props> = ({ message = "" }) => {
+const LoadingFallback: React.FC<Props> = memo(({ message = "" }) => {
   return (
     <div className="flex flex-col items-center justify-center py-12">
       {/* Place the provided logo image at public/dzs-logo.png */}
@@ -22,6 +22,8 @@ const LoadingFallback: React.FC<Props> = ({ message = "" }) => {
       ) : null}
     </div>
   );
-};
+});
+
+LoadingFallback.displayName = 'LoadingFallback';
 
 export default LoadingFallback;
