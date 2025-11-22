@@ -15,7 +15,7 @@ const ClientReviews = () => {
       author: "Sheemon & Eden",
       position: "Co-Founder & CTO",
       initials: "S&E",
-      image: "/user.png"
+      image: "/man.webp"
     },
     {
       title: "Exceptional AI Automation and Lead Generation Results",
@@ -23,7 +23,7 @@ const ClientReviews = () => {
       author: "Michael Harrington",
       position: "Head of Sales",
       initials: "MH",
-      image: "/user.png"
+      image: "/man.webp"
     },
     {
     title: "End-to-End Cafe Platform Delivered Perfectly",
@@ -31,7 +31,7 @@ const ClientReviews = () => {
     author: "Johnathan Doe",
     position: "CEO",
     initials: "JD",
-    image: "/user.png"
+    image: "/man.webp"
   }
 
    
